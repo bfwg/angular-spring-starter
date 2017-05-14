@@ -1,0 +1,19 @@
+<md-toolbar color="primary" class="app-navbar">
+  <button md-button md-ripple routerLink="/">
+    <img alt="Angular2-Spring-JWT" class="app-angular-logo" src="assets/image/angular-white-transparent.svg">
+    <span>Angular2-Springboot-JWT</span>
+  </button>
+
+  <div class="right">
+    <button *ngIf="!hasSignedIn()" routerLink="/login" md-button md-ripple>
+      <span>Login</span>
+    </button>
+    <button *ngIf="hasSignedIn()" md-button md-ripple>
+      <span>Aloha, {{userName()}}</span>
+    </button>
+    <button *ngIf="hasSignedIn()" (click)="logout()" md-button md-ripple>
+      <span>Logout</span>
+    </button>
+  </div>
+</md-toolbar>
+

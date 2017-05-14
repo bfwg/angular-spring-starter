@@ -1,0 +1,26 @@
+:host {
+  position: relative;
+  z-index: 10;
+  color: #fff;
+}
+
+.app-navbar {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  .right {
+    margin-left: auto;
+    float: right;
+  }
+}
+
+.app-navbar span {
+  text-transform: uppercase !important;
+}
+
+.app-angular-logo {
+  margin: 0 4px 3px 0;
+  height: 26px;
+}
+

@@ -1,0 +1,39 @@
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center none">
+  <app-api-card
+    fxFlex
+    title='"Foo"'
+    subTitle="Public"
+    imgUrl="assets/image/foo.png"
+    content='This is an demo public endpoint which requires no authentication.'
+    apiText="/api/foo"
+    [responseObj]="fooResponse"
+    (apiClick)="makeRequest($event)"
+  >
+  </app-api-card>
+
+  <app-api-card
+     fxFlex
+     title='"Who am I"'
+     subTitle="Authorized role: USER"
+     imgUrl="assets/image/user.png"
+     content='The regular endpoint which returns the current user information. You have to sign in as either a User or an Admin to gain the access to this endpoint.'
+     apiText="/api/user/whoami"
+     [responseObj]="whoamIResponse"
+     (apiClick)="makeRequest($event)"
+  >
+  </app-api-card>
+
+  <app-api-card
+     class="last"
+     fxFlex
+     title='"All users"'
+     subTitle="Authorized role: ADMIN"
+     imgUrl="assets/image/admin.png"
+     content='This endpoint will give you a list of all the users. You have to sign in as an Admin to gain the access to this endpoint.'
+     apiText="/api/user/all"
+     [responseObj]="allUserResponse"
+     (apiClick)="makeRequest($event)"
+  >
+  </app-api-card>
+</div>
+<app-github></app-github>

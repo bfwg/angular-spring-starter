@@ -1,0 +1,47 @@
+:host {
+  background-size: cover;
+  background-position: 50% 90% !important;
+  background-repeat: no-repeat;
+}
+
+.content {
+  width: 100%;
+}
+
+md-card {
+  max-width: 350px;
+  text-align: center;
+  animation: fadein 1s;
+  -o-animation: fadein 1s; /* Opera */
+  -moz-animation: fadein 1s; /* Firefox */
+  -webkit-animation: fadein 1s; /* Safari and Chrome */
+
+}
+
+md-input-container {
+  display: block;
+  margin: 30px 0 30px 0;
+}
+
+md-spinner {
+  width: 25px;
+  height: 25px;
+  margin: 20px auto 0 auto;
+}
+
+button {
+  display: block;
+  width: 100%;
+}
+
+.error {
+  color: #a94442;
+  font-weight: bold;
+}
+
+
+@media screen and (max-width: 599px) {
+  md-card {
+    max-width: 999px;
+  }
+}

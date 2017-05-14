@@ -1,0 +1,33 @@
+app-api-card {
+  margin: 0 50px 0 0;
+  &.last {
+    margin: 0 0 0 0;
+  }
+}
+
+app-github {
+  margin: 50px -70px -50px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1279px) {
+  app-api-card {
+    margin: 0 4px 0 0;
+    &.last {
+      margin: 0 0 0 0;
+    }
+  }
+
+  app-github {
+    margin: 20px -30px -20px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  app-api-card {
+    margin: 0 0 12px 0;
+  }
+
+  app-github {
+    margin: 8px -12px -8px;
+  }
+}

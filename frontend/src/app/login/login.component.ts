@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
    * that the form has been submitted
    * and is awaiting a response
    */
-  submitted: boolean = false;
+  submitted = false;
 
   /**
    * Diagnostic message from received

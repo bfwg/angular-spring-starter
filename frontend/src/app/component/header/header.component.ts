@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
   }
 
   userName() {
-    let user = this.userService.currentUser;
+    const user = this.userService.currentUser;
     return user.firstname + ' ' + user.lastname;
   }
 

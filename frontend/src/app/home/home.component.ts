@@ -31,21 +31,21 @@ export class HomeComponent implements OnInit {
         this.forgeResonseObj(this.fooResponse, res, path);
       }, err => {
         this.forgeResonseObj(this.fooResponse, err, path);
-      })
+      });
     } else if (path === this.config.whoami_url) {
       this.userService.getMyInfo()
       .subscribe(res => {
         this.forgeResonseObj(this.whoamIResponse, res, path);
       }, err => {
         this.forgeResonseObj(this.whoamIResponse, err, path);
-      })
+      });
     } else {
       this.userService.getAll()
       .subscribe(res => {
         this.forgeResonseObj(this.allUserResponse, res, path);
       }, err => {
         this.forgeResonseObj(this.allUserResponse, err, path);
-      })
+      });
     }
   }
 
@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
       obj['status'] = res.status;
       try {
         obj['body'] = JSON.stringify(JSON.parse(res._body), null, 2);
-      } catch(err) {
+      } catch (err) {
         obj['body'] = res._body;
       }
     } else {

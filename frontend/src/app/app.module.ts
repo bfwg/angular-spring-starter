@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 
+import { LoginGuard } from './guard';
+
 import {
   HeaderComponent,
   ApiCardComponent,
@@ -51,6 +53,7 @@ export function initUserFactory(userService: UserService) {
     FlexLayoutModule.forRoot()
   ],
   providers: [
+    LoginGuard,
     FooService,
     AuthService,
     ApiService,

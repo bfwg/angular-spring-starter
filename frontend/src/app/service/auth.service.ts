@@ -12,8 +12,8 @@ export class AuthService {
   ) { }
 
   login(user) {
-    let body = `username=${user.username}&password=${user.password}`;
-    var headers = new Headers();
+    const body = `username=${user.username}&password=${user.password}`;
+    const headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     return this.apiService.post(this.config.login_url, body, headers);
   }

@@ -29,7 +29,7 @@ export class ApiCardComponent implements OnInit {
   }
 
   responsePanelClass() {
-    let rClass = ['response'];
+    const rClass = ['response'];
     if (this.expand) {
       rClass.push('expand');
     }

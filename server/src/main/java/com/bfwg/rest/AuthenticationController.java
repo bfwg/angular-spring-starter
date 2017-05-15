@@ -2,7 +2,6 @@ package com.bfwg.rest;
 
 import com.bfwg.model.UserTokenState;
 import com.bfwg.security.TokenHelper;
-import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;

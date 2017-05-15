@@ -8,7 +8,51 @@
 > If you're looking for Angular 1.x please use [springboot-jwt-starter](https://github.com/bfwg/springboot-jwt-starter)
 > A Springboot token-based security starter kit featuring [Angular4](https://angular.io/) and [Springboot](https://projects.spring.io/spring-boot/) ([JSON Web Token](https://jwt.io/))
 
+> Token authentication is a more modern approach and is designed solve problems session IDs stored server-side can’t. Using tokens in place of session IDs can lower your server load, streamline permission management, and provide better tools for supporting a distributed or cloud-based infrastructure.
+>
 > -- <cite>Stormpath</cite>
+
+### Quick start
+**Make sure you have Maven and Java 1.7 or greater**
+**Make sure you also have NPM and angular-cli globally installed**
+```bash
+# clone our repo
+# --depth 1 removes all but one .git commit history
+git clone --depth 1 https://github.com/bfwg/angular-spring-jwt-starter.git
+
+# change directory to the repo's frontend folder
+cd angular-spring-jwt-starter/web-ui
+
+# build frontend project to /server/src/main/resources/static folder
+ng build
+
+# change directory to the repo's backend folder
+cd ../server
+
+# install the repo with mvn
+mvn install
+
+# start the server
+mvn spring-boot:run
+
+# the app will be running on port 8080
+# there are two built-in user accounts to demonstrate the differing levels of access to the endpoints:
+# - User - user:123
+# - Admin - admin:123
+```
+
+### Technology Stack
+Component         | Technology
+---               | ---
+Frontend          | [Angular 4+](https://github.com/angular/angular)
+Backend (REST)    | [SpringBoot](https://projects.spring.io/spring-boot) (Java)
+Security          | Token Based (Spring Security and [JWT](https://github.com/jwtk/jjwt) )
+In Memory DB      | H2 
+Persistence       | JPA (Using Spring Data)
+Client Build Tools| [angular-cli](https://github.com/angular/angular-cli), Webpack, npm
+Server Build Tools| Maven
+
+
 
 ### JSON Web Token
 > JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.

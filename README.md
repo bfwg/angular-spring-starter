@@ -14,14 +14,14 @@
 
 ### Quick start
 **Make sure you have Maven and Java 1.7 or greater**
-**Make sure you also have NPM and angular-cli globally installed**
+**Make sure you also have NPM 3.1, Node 6.9.5 and angular-cli@1.0.0 globally installed**
 ```bash
 # clone our repo
 # --depth 1 removes all but one .git commit history
 git clone --depth 1 https://github.com/bfwg/angular-spring-jwt-starter.git
 
 # change directory to the repo's frontend folder
-cd angular-spring-jwt-starter/web-ui
+cd angular-spring-jwt-starter/frontend
 
 # build frontend project to /server/src/main/resources/static folder
 ng build
@@ -41,6 +41,11 @@ mvn spring-boot:run
 # - Admin - admin:123
 ```
 
+### Detailed Documentation
+
+*  [Frontend(Angualr2) Documentation][frontend-doc]
+*  [Backend(Springboot) Documentation][server-doc]
+
 ### Technology Stack
 Component         | Technology
 ---               | ---
@@ -51,7 +56,6 @@ In Memory DB      | H2
 Persistence       | JPA (Using Spring Data)
 Client Build Tools| [angular-cli](https://github.com/angular/angular-cli), Webpack, npm
 Server Build Tools| Maven
-
 
 
 ### JSON Web Token
@@ -68,3 +72,6 @@ ___
 # License
  [MIT](/LICENSE)
 
+
+[frontend-doc]: https://github.com/bfwg/angular-spring-jwt-starter/tree/master/frontend/README.md
+[server-doc]: https://github.com/bfwg/angular-spring-jwt-starter/tree/master/server/README.md

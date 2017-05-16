@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
+import java.util.List;
+
 /**
  * Created by fan.jin on 2017-05-11.
  */
@@ -14,6 +16,6 @@ public interface DeletableModelRepository<T extends DeletableModel>
 
     @Override
     @Query( "select m from #{#entityName} m where m.deletedAt IS NULL Order By m.id" )
-    public Iterable<T> findAll();
+    public List<T> findAll();
 
 }

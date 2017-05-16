@@ -26,6 +26,6 @@ nbdist/
 ### Mac ###
 .DS_Store
 
-### springboot-jwt-starter ###
+### frontend ###
 npm-debug.*
-src/main/static/
+src/main/resources/static/

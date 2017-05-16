@@ -19,7 +19,7 @@ import 'rxjs/add/observable/interval';
 })
 export class LoginComponent implements OnInit {
   title = 'Login';
-  githubLink = 'https://github.com/bfwg/springboot-jwt-starter';
+  githubLink = 'https://github.com/bfwg/angular-spring-starter';
   form: FormGroup;
 
   /**

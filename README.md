@@ -9,15 +9,15 @@
   </a>
 </p>
 
-# Angular2 Springboot JWT Starter
-> An Angular fullstack starter kit featuring [Angular 4](https://angular.io), [Router](https://angular.io/docs/ts/latest/guide/router.html), [Forms](https://angular.io/docs/ts/latest/guide/forms.html),
+# Angular2 Spring Boot JWT Starter
+> An Angular full stack starter kit featuring [Angular 4](https://angular.io), [Router](https://angular.io/docs/ts/latest/guide/router.html), [Forms](https://angular.io/docs/ts/latest/guide/forms.html),
 [Http](https://angular.io/docs/ts/latest/guide/server-communication.html),
 [Services](https://gist.github.com/gdi2290/634101fec1671ee12b3e#_follow_@AngularClass_on_twitter),
 [Spring boot](https://projects.spring.io/spring-boot/),
-[Json Web Token](https://jwt.io/)
+[JSON Web Token](https://jwt.io/)
 
-> If you're looking for Angular 1.x please use [springboot-jwt-starter](https://github.com/bfwg/springboot-jwt-starter)
-> A Springboot token-based security starter kit featuring [Angular4](https://angular.io/) and [Springboot](https://projects.spring.io/spring-boot/) ([JSON Web Token](https://jwt.io/))
+> If you're looking for using Angular 1.x for frontend implementation, please check out [springboot-jwt-starter](https://github.com/bfwg/springboot-jwt-starter)
+> A Spring Boot token-based security starter kit featuring [AngularJS](https://angularjs.org/) and [Spring Boot](https://projects.spring.io/spring-boot/) ([JSON Web Token](https://jwt.io/))
 
 ### Quick start
 **Make sure you have Maven and Java 1.7 or greater**
@@ -25,10 +25,14 @@
 ```bash
 # clone our repo
 # --depth 1 removes all but one .git commit history
-git clone --depth 1 https://github.com/bfwg/angular-spring-jwt-starter.git
+git clone --depth 1 https://github.com/bfwg/angular-spring-starter.git
 
 # change directory to the repo's frontend folder
-cd angular-spring-jwt-starter/frontend
+cd angular-spring-starter/frontend
+
+# install the frontend dependencies with npm
+# npm install @angular/cli@1.0.0 -g
+npm install
 
 # build frontend project to /server/src/main/resources/static folder
 ng build
@@ -36,7 +40,7 @@ ng build
 # change directory to the repo's backend folder
 cd ../server
 
-# install the repo with mvn
+# install the server dependencies with mvn
 mvn install
 
 # start the server
@@ -47,7 +51,49 @@ mvn spring-boot:run
 # - User - user:123
 # - Admin - admin:123
 ```
-For more detailed configureation/documentation, please checkout the [frontend][frontend-doc] and [server][server-doc] folder.
+For more detailed configuration/documentation, please check out the [frontend][frontend-doc] and [server][server-doc] folder.
+
+### Development
+Since the frontend app needs a dev-server for a faster development speed, we need a way to proxy the request to our spring boot backend which is running on port `8080`. I'm using [nginx](https://www.nginx.com/).
+
+Nginx configuration for *Development* 
+
+Put the below code snippet in your nginx.conf file.
+We are proxying everything to port **4201**.
+```
+server {
+    listen       4201;
+
+    location / {
+        proxy_pass http://localhost:4200;
+        include proxy-hosts.d/proxy-headers.conf;
+    }
+
+    location ~ ^/(api|auth) {
+        proxy_pass http://localhost:8080;
+        include proxy-hosts.d/proxy-headers.conf;
+    }
+}
+```
+Nginx configuration for *Production* 
+
+Please build the frontend app first by running `ng build` in the frontend folder. 
+Put the below code snippet in your nginx.conf file.
+We are proxying everything to port **80**, and redirecting everything to `index.html`.
+```
+server {
+    listen      80;
+    index index.html index.htm;
+    server_name localhost;
+    root /path/to/angular-spring-jwt-starter/server/src/main/resources/static;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+        proxy_pass http://localhost:8080;
+        include proxy-hosts.d/proxy-headers.conf;
+    }
+}
+```
 
 
 ### JSON Web Token
@@ -58,15 +104,17 @@ for more info, checkout https://jwt.io/
 >
 > -- <cite>Stormpath</cite>
 
+### Contributing
+I'll accept pretty much everything so feel free to open a Pull-Request
 
-This project is inspried by
+This project is inspired by
 - [Stormpath](https://stormpath.com/blog/token-auth-spa)
 - [Cerberus](https://github.com/brahalla/Cerberus)
 - [jwt-spring-security-demo](https://github.com/szerhusenBC/jwt-spring-security-demo)
 
 ___
 
-# License
+## License
  [MIT](/LICENSE)
 
 

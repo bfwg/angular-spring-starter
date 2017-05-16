@@ -1,13 +1,9 @@
-### Quick start
+## Running the backend server
 **Make sure you have Maven and Java 1.7 or greater**
 
 ```bash
-# clone our repo
-# --depth 1 removes all but one .git commit history
-git clone --depth 1 https://github.com/bfwg/angular-spring-jwt-starter.git
-
 # change directory to server
-cd angular-spring-jwt-starter/server
+cd angular-spring-starter/server
 
 # install the repo with mvn
 mvn install
@@ -24,7 +20,7 @@ mvn spring-boot:run
 
 ### File Structure
 ```
-angular-spring-jwt-starter/server
+angular-spring-starter/server
  ├──src/                                                        * our source files
  │   ├──main
  │   │   ├──java.com.bfwg

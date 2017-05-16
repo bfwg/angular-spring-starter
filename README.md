@@ -8,10 +8,6 @@
 > If you're looking for Angular 1.x please use [springboot-jwt-starter](https://github.com/bfwg/springboot-jwt-starter)
 > A Springboot token-based security starter kit featuring [Angular4](https://angular.io/) and [Springboot](https://projects.spring.io/spring-boot/) ([JSON Web Token](https://jwt.io/))
 
-> Token authentication is a more modern approach and is designed solve problems session IDs stored server-side can’t. Using tokens in place of session IDs can lower your server load, streamline permission management, and provide better tools for supporting a distributed or cloud-based infrastructure.
->
-> -- <cite>Stormpath</cite>
-
 ### Quick start
 **Make sure you have Maven and Java 1.7 or greater**
 **Make sure you also have NPM 3.1, Node 6.9.5 and angular-cli@1.0.0 globally installed**
@@ -40,11 +36,8 @@ mvn spring-boot:run
 # - User - user:123
 # - Admin - admin:123
 ```
+For more detailed configureation/documentation, please checkout the [frontend][frontend-doc] and [server][server-doc] folder.
 
-### Detailed Documentation
-
-*  [Frontend(Angualr2) Documentation][frontend-doc]
-*  [Backend(Springboot) Documentation][server-doc]
 
 ### Technology Stack
 Component         | Technology
@@ -52,7 +45,7 @@ Component         | Technology
 Frontend          | [Angular 4+](https://github.com/angular/angular)
 Backend (REST)    | [SpringBoot](https://projects.spring.io/spring-boot) (Java)
 Security          | Token Based (Spring Security and [JWT](https://github.com/jwtk/jjwt) )
-In Memory DB      | H2 
+In Memory DB      | H2
 Persistence       | JPA (Using Spring Data)
 Client Build Tools| [angular-cli](https://github.com/angular/angular-cli), Webpack, npm
 Server Build Tools| Maven
@@ -61,6 +54,11 @@ Server Build Tools| Maven
 ### JSON Web Token
 > JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
 for more info, checkout https://jwt.io/
+
+> Token authentication is a more modern approach and is designed solve problems session IDs stored server-side can’t. Using tokens in place of session IDs can lower your server load, streamline permission management, and provide better tools for supporting a distributed or cloud-based infrastructure.
+>
+> -- <cite>Stormpath</cite>
+
 
 This project is inspried by
 - [Stormpath](https://stormpath.com/blog/token-auth-spa)
@@ -73,5 +71,5 @@ ___
  [MIT](/LICENSE)
 
 
-[frontend-doc]: https://github.com/bfwg/angular-spring-jwt-starter/tree/master/frontend/README.md
-[server-doc]: https://github.com/bfwg/angular-spring-jwt-starter/tree/master/server/README.md
+[frontend-doc]: https://github.com/bfwg/angular-spring-jwt-starter/tree/master/frontend
+[server-doc]: https://github.com/bfwg/angular-spring-jwt-starter/tree/master/server

@@ -1,3 +1,9 @@
+[![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/bfwg/angular2-springboot-jwt-starter)
+[![Build Status](https://travis-ci.org/bfwg/angular-spring-jwt-starter.svg?branch=master)](https://travis-ci.org/bfwg/angular-spring-jwt-starter)
+[![Maintenance Status][status-image]][status-url]
+[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bfwg/angular-spring-jwt-starter/blob/master/LICENSE)
+
+
 # Angular2 Springboot JWT Starter
 > An Angular fullstack starter kit featuring [Angular 4](https://angular.io), [Router](https://angular.io/docs/ts/latest/guide/router.html), [Forms](https://angular.io/docs/ts/latest/guide/forms.html),
 [Http](https://angular.io/docs/ts/latest/guide/server-communication.html),
@@ -73,3 +79,5 @@ ___
 
 [frontend-doc]: https://github.com/bfwg/angular-spring-jwt-starter/tree/master/frontend
 [server-doc]: https://github.com/bfwg/angular-spring-jwt-starter/tree/master/server
+[status-image]: https://img.shields.io/badge/status-maintained-brightgreen.svg
+[status-url]: https://github.com/bfwg/angular-spring-jwt-starter

@@ -3,6 +3,11 @@
 [![Maintenance Status][status-image]][status-url]
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bfwg/angular-spring-jwt-starter/blob/master/LICENSE)
 
+<p align="center">
+  <a href="" target="_blank">
+    <img src="https://cloud.githubusercontent.com/assets/12819525/26094670/b0f6f192-39cf-11e7-8048-ab710b3dc1d1.png" alt="Spring Boot and Angular 2" width="500" height="320"/>
+  </a>
+</p>
 
 # Angular2 Springboot JWT Starter
 > An Angular fullstack starter kit featuring [Angular 4](https://angular.io), [Router](https://angular.io/docs/ts/latest/guide/router.html), [Forms](https://angular.io/docs/ts/latest/guide/forms.html),
@@ -43,18 +48,6 @@ mvn spring-boot:run
 # - Admin - admin:123
 ```
 For more detailed configureation/documentation, please checkout the [frontend][frontend-doc] and [server][server-doc] folder.
-
-
-### Technology Stack
-Component         | Technology
----               | ---
-Frontend          | [Angular 4+](https://github.com/angular/angular)
-Backend (REST)    | [SpringBoot](https://projects.spring.io/spring-boot) (Java)
-Security          | Token Based (Spring Security and [JWT](https://github.com/jwtk/jjwt) )
-In Memory DB      | H2
-Persistence       | JPA (Using Spring Data)
-Client Build Tools| [angular-cli](https://github.com/angular/angular-cli), Webpack, npm
-Server Build Tools| Maven
 
 
 ### JSON Web Token

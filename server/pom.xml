@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>com.bfwg</groupId>
+	<artifactId>angular-spring-starter</artifactId>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>springboot-security-jwt</name>
-	<description>Demo project for Spring Boot</description>
+	<name>angular-spring-starter</name>
+	<description>The backend server for Angular2 Spring Boot JWT Starter</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -38,10 +38,10 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt</artifactId>
-            <version>0.6.0</version>
-        </dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>0.6.0</version>
+    </dependency>
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
@@ -59,48 +59,11 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-          <groupId>org.webjars</groupId>
-          <artifactId>angularjs</artifactId>
-          <version>1.5.8</version>
-        </dependency>
-
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>angular-cookies</artifactId>
-			<version>1.6.0</version>
-		</dependency>
-
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>angular-route</artifactId>
-            <version>1.5.9</version>
-        </dependency>
-
-        <dependency>
-          <groupId>org.webjars</groupId>
-          <artifactId>bootstrap</artifactId>
-          <version>3.3.7</version>
-        </dependency>
-
-		<dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>jquery</artifactId>
-            <version>2.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>material-design-lite</artifactId>
-            <version>1.2.1</version>
-        </dependency>
-
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <optional>true</optional>
+    </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

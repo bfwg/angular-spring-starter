@@ -71,12 +71,16 @@ server {
 
     location / {
         proxy_pass http://localhost:4200;
-        include proxy-hosts.d/proxy-headers.conf;
+        proxy_set_header  Host             $http_host;
+        proxy_set_header  X-Real-IP        $remote_addr;
+        proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
     }
 
     location ~ ^/(api|auth) {
         proxy_pass http://localhost:8080;
-        include proxy-hosts.d/proxy-headers.conf;
+        proxy_set_header  Host             $http_host;
+        proxy_set_header  X-Real-IP        $remote_addr;
+        proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
     }
 }
 ```
@@ -90,12 +94,21 @@ server {
     listen      80;
     index index.html index.htm;
     server_name localhost;
-    root /path/to/angular-spring-jwt-starter/server/src/main/resources/static;
+    root /path/to/angular-spring-starter/server/src/main/resources/static;
 
     location / {
         try_files $uri $uri/ /index.html;
         proxy_pass http://localhost:8080;
-        include proxy-hosts.d/proxy-headers.conf;
+        proxy_set_header  Host             $http_host;
+        proxy_set_header  X-Real-IP        $remote_addr;
+        proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
+    }
+    
+    location ~ ^/(api|auth) {
+        proxy_pass http://localhost:8080;
+        proxy_set_header  Host             $http_host;
+        proxy_set_header  X-Real-IP        $remote_addr;
+        proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
     }
 }
 ```

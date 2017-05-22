@@ -23,11 +23,20 @@ app-github {
 }
 
 @media screen and (max-width: 599px) {
+
+  .content {
+    /* https://github.com/angular/flex-layout/issues/295 */
+    display: block !important;
+  }
+
   app-api-card {
+    /* https://github.com/angular/flex-layout/issues/295 */
+    display: block !important;
     margin: 0 0 12px 0;
   }
 
   app-github {
     margin: 8px -12px -8px;
   }
+
 }

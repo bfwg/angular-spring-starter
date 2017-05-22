@@ -8,7 +8,7 @@
     <button *ngIf="!hasSignedIn()" routerLink="/login" md-button md-ripple>
       <span>Login</span>
     </button>
-    <button *ngIf="hasSignedIn()" md-button md-ripple>
+    <button fxHide.xs *ngIf="hasSignedIn()" md-button md-ripple>
       <span>Aloha, {{userName()}}</span>
     </button>
     <button *ngIf="hasSignedIn()" (click)="logout()" md-button md-ripple>

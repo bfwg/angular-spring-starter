@@ -1,0 +1,1 @@
+{"typings": "../typings/testing/index.d.ts", "main": "../bundles/common-testing.umd.js", "module": "../@angular/common/testing.es5.js", "es2015": "../@angular/common/testing.js"}

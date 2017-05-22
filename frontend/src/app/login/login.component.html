@@ -1,4 +1,4 @@
-<div class="content" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center">
+<div class="content" fxLayout="row" fxLayoutAlign="center">
 
     <md-card elevation="5" fxFlex>
 
@@ -14,10 +14,10 @@
 
         <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
           <md-input-container>
-            <input mdInput formControlName="username" required placeholder="Username">
+            <input mdInput formControlName="username" required placeholder="user/admin">
           </md-input-container>
           <md-input-container>
-            <input mdInput formControlName="password" required type="password" placeholder="Password">
+            <input mdInput formControlName="password" required type="password" placeholder="123">
           </md-input-container>
           <button type="submit" [disabled]="!loginForm.form.valid" md-raised-button color="primary">Login</button>
         </form>

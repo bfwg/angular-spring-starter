@@ -41,9 +41,18 @@ button {
 
 
 @media screen and (max-width: 599px) {
+
+  .content {
+    /* https://github.com/angular/flex-layout/issues/295 */
+    display: block !important;
+  }
+
   md-card {
+    /* https://github.com/angular/flex-layout/issues/295 */
+    display: block !important;
     max-width: 999px;
   }
+
 }
 
 a {

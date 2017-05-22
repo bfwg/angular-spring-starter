@@ -1,5 +1,5 @@
 [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/bfwg/angular2-springboot-jwt-starter)
-[![Build Status](https://travis-ci.org/bfwg/angular-spring-jwt-starter.svg?branch=master)](https://travis-ci.org/bfwg/angular-spring-jwt-starter)
+[![Build Status](https://travis-ci.org/bfwg/angular-spring-starter.svg?branch=master)](https://travis-ci.org/bfwg/angular-spring-starter)
 [![Maintenance Status][status-image]][status-url]
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bfwg/angular-spring-jwt-starter/blob/master/LICENSE)
 
@@ -18,6 +18,10 @@
 
 > If you're looking for using Angular 1.x for frontend implementation, please check out [springboot-jwt-starter](https://github.com/bfwg/springboot-jwt-starter)
 > A Spring Boot token-based security starter kit featuring [AngularJS](https://angularjs.org/) and [Spring Boot](https://projects.spring.io/spring-boot/) ([JSON Web Token](https://jwt.io/))
+### [Live Demo](http://angular-spring-starter.fanjin.computer)
+<p align="center">
+    <img width="800" alt="Springboot JWT Starter" src="https://cloud.githubusercontent.com/assets/12819525/26290994/3895daca-3e60-11e7-9465-421e0b029343.png">
+</p>
 
 ### Quick start
 **Make sure you have Maven and Java 1.7 or greater**
@@ -71,12 +75,16 @@ server {
 
     location / {
         proxy_pass http://localhost:4200;
-        include proxy-hosts.d/proxy-headers.conf;
+        proxy_set_header  Host             $http_host;
+        proxy_set_header  X-Real-IP        $remote_addr;
+        proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
     }
 
     location ~ ^/(api|auth) {
         proxy_pass http://localhost:8080;
-        include proxy-hosts.d/proxy-headers.conf;
+        proxy_set_header  Host             $http_host;
+        proxy_set_header  X-Real-IP        $remote_addr;
+        proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
     }
 }
 ```
@@ -90,12 +98,21 @@ server {
     listen      80;
     index index.html index.htm;
     server_name localhost;
-    root /path/to/angular-spring-jwt-starter/server/src/main/resources/static;
+    root /path/to/angular-spring-starter/server/src/main/resources/static;
 
     location / {
         try_files $uri $uri/ /index.html;
         proxy_pass http://localhost:8080;
-        include proxy-hosts.d/proxy-headers.conf;
+        proxy_set_header  Host             $http_host;
+        proxy_set_header  X-Real-IP        $remote_addr;
+        proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
+    }
+    
+    location ~ ^/(api|auth) {
+        proxy_pass http://localhost:8080;
+        proxy_set_header  Host             $http_host;
+        proxy_set_header  X-Real-IP        $remote_addr;
+        proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
     }
 }
 ```

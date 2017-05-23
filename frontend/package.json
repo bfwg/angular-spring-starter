@@ -1,6 +1,6 @@
 {
-  "name": "angular-spring-jwt-starter",
-  "version": "0.0.1",
+  "name": "angular-spring-starter-ui",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

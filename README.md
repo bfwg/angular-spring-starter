@@ -24,7 +24,7 @@
     <img width="800" alt="Springboot JWT Starter" src="https://cloud.githubusercontent.com/assets/12819525/26290994/3895daca-3e60-11e7-9465-421e0b029343.png">
 </p>
 
-### Quick start
+## Quick start
 **Make sure you have Maven and Java 1.7 or greater**
 **Make sure you also have NPM 3.1, Node 6.9.5 and angular-cli@1.0.0 globally installed**
 ```bash
@@ -63,10 +63,10 @@ User - user:123
 
 For more detailed configuration/documentation, please check out the [frontend][frontend-doc] and [server][server-doc] folder.
 
-### Development
+## Development
 Since the frontend app needs a dev-server for a faster development speed, we need a way to proxy the request to our spring boot backend which is running on port `8080`. I'm using [nginx](https://www.nginx.com/).
 
-Nginx configuration for *Development* 
+Nginx configuration for *Development*
 
 Put the below code snippet in your nginx.conf file.
 We are proxying everything to port **4201**.
@@ -89,9 +89,19 @@ server {
     }
 }
 ```
-Nginx configuration for *Production* 
 
-Please build the frontend app first by running `ng build` in the frontend folder. 
+## Deployment
+
+Besides building and running the app, I'm using [nginx](https://www.nginx.com/) again for my production server.
+
+The follow nginx configuration code does two things:
+
+- Redirect everything to index.html.
+- Redirect `/auth` and `/api` to Spring Boot server.
+
+Nginx configuration for *Production*
+
+Please build the frontend app first by running `ng build` in the frontend folder.
 Put the below code snippet in your nginx.conf file.
 We are proxying everything to port **80**, and redirecting everything to `index.html`.
 ```
@@ -108,7 +118,7 @@ server {
         proxy_set_header  X-Real-IP        $remote_addr;
         proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
     }
-    
+
     location ~ ^/(api|auth) {
         proxy_pass http://localhost:8080;
         proxy_set_header  Host             $http_host;
@@ -121,7 +131,7 @@ server {
 
 ### JSON Web Token
 > JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
-for more info, checkout https://jwt.io/
+for more info, check out https://jwt.io/
 
 > Token authentication is a more modern approach and is designed solve problems session IDs stored server-side can’t. Using tokens in place of session IDs can lower your server load, streamline permission management, and provide better tools for supporting a distributed or cloud-based infrastructure.
 >

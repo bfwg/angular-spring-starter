@@ -8,6 +8,7 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 /**
  * Created by fan.jin on 2017-05-11.
@@ -16,29 +17,29 @@ import java.io.Serializable;
 public class DatedModel implements Serializable {
 
     @Column( name = "created_at" )
-    private DateTime createdAt;
+    private Timestamp createdAt;
 
     @Column( name = "updated_at" )
-    private DateTime updatedAt;
+    private Timestamp updatedAt;
 
     public DatedModel() {
     }
 
     @JsonIgnore
-    public DateTime getCreatedAt() {
+    public Timestamp getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt( DateTime createdAt ) {
+    public void setCreatedAt( Timestamp createdAt ) {
         this.createdAt = createdAt;
     }
 
     @JsonIgnore
-    public DateTime getUpdatedAt() {
+    public Timestamp getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt( DateTime updatedAt ) {
+    public void setUpdatedAt( Timestamp updatedAt ) {
         this.updatedAt = updatedAt;
     }
 
@@ -49,7 +50,7 @@ public class DatedModel implements Serializable {
     }
 
     protected void preSaveImpl() {
-        DateTime now = new DateTime();
+        Timestamp now = new Timestamp(new DateTime().getMillis());
         if ( getCreatedAt() == null ) {
             setCreatedAt( now );
         }

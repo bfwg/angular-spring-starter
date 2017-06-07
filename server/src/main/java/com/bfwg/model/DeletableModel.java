@@ -1,10 +1,10 @@
 package com.bfwg.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.joda.time.DateTime;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import java.sql.Timestamp;
 
 /**
  * Created by fan.jin on 2017-05-11.
@@ -13,17 +13,17 @@ import javax.persistence.MappedSuperclass;
 public abstract class DeletableModel extends DatedModel {
 
     @Column( name = "deleted_at" )
-    private DateTime deletedAt;
+    private Timestamp deletedAt;
 
     public DeletableModel() {
     }
 
     @JsonIgnore
-    public DateTime getDeletedAt() {
+    public Timestamp getDeletedAt() {
         return deletedAt;
     }
 
-    public void setDeletedAt( DateTime deletedAt ) {
+    public void setDeletedAt( Timestamp deletedAt ) {
         this.deletedAt = deletedAt;
     }
 

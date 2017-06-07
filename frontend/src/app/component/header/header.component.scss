@@ -24,3 +24,14 @@
   height: 26px;
 }
 
+.greeting-button {
+  display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+  .greeting-button {
+    display: none;
+  }
+}
+
+

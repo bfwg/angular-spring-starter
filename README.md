@@ -39,6 +39,44 @@ cd angular-spring-starter/frontend
 # npm install @angular/cli@1.0.0 -g
 npm install
 
+# start the frontend app
+npm start
+
+# change directory to the repo's backend folder
+cd ../server
+
+# install the server dependencies with mvn
+mvn install
+
+# start the backend server
+mvn spring-boot:run
+
+# the fronend angular app will be running on port 4200
+# the spring-boot server will be running on port 8080
+```
+
+There are two user accounts present to demonstrate the different levels of access to the endpoints in
+the API and the different authorization exceptions:
+```
+Admin - admin:123
+User - user:123
+```
+For more detailed configuration/documentation, please check out the [frontend][frontend-doc] and [server][server-doc] folder.
+
+## Deployment
+
+```bash
+# clone our repo
+# --depth 1 removes all but one .git commit history
+git clone --depth 1 https://github.com/bfwg/angular-spring-starter.git
+
+# change directory to the repo's frontend folder
+cd angular-spring-starter/frontend
+
+# install the frontend dependencies with npm
+# npm install @angular/cli@1.0.0 -g
+npm install
+
 # build frontend project to /server/src/main/resources/static folder
 ng build
 
@@ -53,81 +91,7 @@ mvn spring-boot:run
 
 # the app will be running on port 8080
 ```
-
-There are two user accounts present to demonstrate the different levels of access to the endpoints in
-the API and the different authorization exceptions:
-```
-Admin - admin:123
-User - user:123
-```
-
-For more detailed configuration/documentation, please check out the [frontend][frontend-doc] and [server][server-doc] folder.
-
-## Development
-Since the frontend app needs a dev-server for a faster development speed, we need a way to proxy the request to our spring boot backend which is running on port `8080`. I'm using [nginx](https://www.nginx.com/).
-
-Nginx configuration for *Development*
-
-Put the below code snippet in your nginx.conf file.
-We are proxying everything to port **4201**.
-```
-server {
-    listen       4201;
-
-    location / {
-        proxy_pass http://localhost:4200;
-        proxy_set_header  Host             $http_host;
-        proxy_set_header  X-Real-IP        $remote_addr;
-        proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
-    }
-
-    location ~ ^/(api|auth) {
-        proxy_pass http://localhost:8080;
-        proxy_set_header  Host             $http_host;
-        proxy_set_header  X-Real-IP        $remote_addr;
-        proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
-    }
-}
-```
-
-## Deployment
-
-Besides building and running the app, I'm using [nginx](https://www.nginx.com/) again for my production server.
-
-The follow nginx configuration code does two things:
-
-- Redirect everything to index.html.
-- Redirect `/auth` and `/api` to Spring Boot server.
-
-Nginx configuration for *Production*
-
-Please build the frontend app first by running `ng build` in the frontend folder.
-Put the below code snippet in your nginx.conf file.
-We are proxying everything to port **80**, and redirecting everything to `index.html`.
-```
-server {
-    listen      80;
-    index index.html index.htm;
-    server_name localhost;
-    root /path/to/angular-spring-starter/server/src/main/resources/static;
-
-    location / {
-        try_files $uri $uri/ /index.html;
-        proxy_pass http://localhost:8080;
-        proxy_set_header  Host             $http_host;
-        proxy_set_header  X-Real-IP        $remote_addr;
-        proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
-    }
-
-    location ~ ^/(api|auth) {
-        proxy_pass http://localhost:8080;
-        proxy_set_header  Host             $http_host;
-        proxy_set_header  X-Real-IP        $remote_addr;
-        proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
-    }
-}
-```
-
+For more deployment related info checkout here: [DEPLOYMENT DOC](https://angular.io/docs/ts/latest/guide/deployment.html)
 
 ### JSON Web Token
 > JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.

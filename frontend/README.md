@@ -35,6 +35,7 @@ angular-spring-starter/frontend
  ├──karma.conf.js                                               * karma config for our unit tests
  ├──package.json                                                * what npm uses to manage it's dependencies
  ├──protractor.conf.js                                          * protractor config for our end-to-end tests
+ ├──proxy.conf.json                                             * proxy frontend request to backend :8080
  ├──tsconfig.json                                               * typescript config used outside webpack
  └──tslint.json                                                 * typescript lint config
 ```

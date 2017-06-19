@@ -55,7 +55,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private AuthenticationFailureHandler authenticationFailureHandler;
 
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -67,15 +66,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(jwtAuthenticationTokenFilter(), BasicAuthenticationFilter.class)
                 .authorizeRequests()
                 .anyRequest()
-                    .authenticated().and()
+                .authenticated().and()
                 .formLogin()
-                    .loginPage("/auth/login")
-                    .successHandler(authenticationSuccessHandler)
-                    .failureHandler(authenticationFailureHandler).and()
+                .loginPage("/auth/login")
+                .successHandler(authenticationSuccessHandler)
+                .failureHandler(authenticationFailureHandler).and()
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/auth/logout"))
                 .logoutSuccessHandler(logoutSuccess)
                 .deleteCookies(TOKEN_COOKIE);
+
     }
 
 }

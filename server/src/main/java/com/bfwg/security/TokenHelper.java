@@ -4,7 +4,10 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.joda.time.DateTime;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.Cookie;
@@ -34,6 +37,9 @@ public class TokenHelper {
 
     @Value("${jwt.cookie}")
     private String AUTH_COOKIE;
+
+    @Autowired
+    UserDetailsService userDetailsService;
 
     private SignatureAlgorithm SIGNATURE_ALGORITHM = SignatureAlgorithm.HS512;
 
@@ -80,8 +86,14 @@ public class TokenHelper {
     }
 
     public Boolean canTokenBeRefreshed(String token) {
-        final Date expirationDate = getClaimsFromToken(token).getExpiration();
-        return expirationDate.compareTo(generateCurrentDate()) > 0;
+        try {
+            final Date expirationDate = getClaimsFromToken(token).getExpiration();
+            String username = getUsernameFromToken(token);
+            UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+            return expirationDate.compareTo(generateCurrentDate()) > 0;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public String refreshToken(String token) {

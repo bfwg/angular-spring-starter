@@ -17,6 +17,7 @@ angular-spring-starter/frontend
  │   │   │   └──login.guard.ts                                  * the guard server that prevent authticated user from going into certain routes
  │   │   ├──home                                                * home dashboard component
  │   │   ├──login                                               * login page card component
+ │   │   ├──not-found                                           * not found page component
  │   │   ├──service
  │   │   │   ├──api.service.ts                                  * base api service class, the parent class for all api related services
  │   │   │   ├──auth.service.ts                                 * auth related api service like /login /logout

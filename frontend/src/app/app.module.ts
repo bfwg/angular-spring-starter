@@ -18,7 +18,7 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 
 import { LoginGuard } from './guard';
-
+import { NotFoundComponent } from './not-found';
 import {
   HeaderComponent,
   ApiCardComponent,
@@ -34,6 +34,7 @@ import {
   ConfigService
 } from './service';
 
+
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
 }
@@ -46,7 +47,8 @@ export function initUserFactory(userService: UserService) {
     ApiCardComponent,
     HomeComponent,
     GithubComponent,
-    LoginComponent
+    LoginComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

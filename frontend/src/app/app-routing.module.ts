@@ -18,8 +18,12 @@ export const routes: Routes = [
     canActivate: [LoginGuard]
   },
   {
-    path: '**',
+    path:'404',
     component: NotFoundComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/404'
   }
 ];
 

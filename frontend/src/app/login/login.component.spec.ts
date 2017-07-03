@@ -1,13 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LoginComponent } from './login.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ApiCardComponent, GithubComponent } from '../component';
-import {
-  MaterialModule
-} from '@angular/material';
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MockApiService } from '../service/mocks/api.service.mock';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import {
   ApiService,
@@ -25,21 +21,20 @@ describe('LoginComponent', () => {
     TestBed.configureTestingModule({
       declarations: [LoginComponent],
       imports: [
-        MaterialModule.forRoot(),
-        FormsModule,
         ReactiveFormsModule,
-        RouterTestingModule,
+        RouterTestingModule
       ],
-      providers:
-      [
+      providers: [
         UserService,
-        ApiService,
+        {
+          provide: ApiService,
+          useClass: MockApiService
+        },
         ConfigService,
-        AuthService,
-
-      ]
-    })
-      .compileComponents();
+        AuthService
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

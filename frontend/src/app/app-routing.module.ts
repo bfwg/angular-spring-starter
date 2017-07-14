@@ -18,7 +18,7 @@ export const routes: Routes = [
     canActivate: [LoginGuard]
   },
   {
-    path:'404',
+    path: '404',
     component: NotFoundComponent
   },
   {

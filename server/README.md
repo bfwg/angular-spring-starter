@@ -87,3 +87,5 @@ spring:
 ```
 *Hint: For other databases like MySQL sequences don't work for ID generation. So you have to change the GenerationType in the entity beans to 'AUTO' or 'IDENTITY'.*
 
+### Generating password hash for users
+I'm using [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) to encode passwords. Your can generate your hashes with this simple tool: [BCrypt Calculator](https://www.dailycred.com/article/bcrypt-calculator)

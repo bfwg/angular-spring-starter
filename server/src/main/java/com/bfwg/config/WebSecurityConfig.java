@@ -69,7 +69,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf()
-                .ignoringAntMatchers("/auth/login")
+                .ignoringAntMatchers("/login")
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and()
                 .sessionManagement().sessionCreationPolicy( SessionCreationPolicy.STATELESS ).and()
                 .exceptionHandling().authenticationEntryPoint( restAuthenticationEntryPoint ).and()
@@ -78,11 +78,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated().and()
                 .formLogin()
-                .loginPage("/auth/login")
+                .loginPage("/login")
                 .successHandler(authenticationSuccessHandler)
                 .failureHandler(authenticationFailureHandler).and()
                 .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/auth/logout"))
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessHandler(logoutSuccess)
                 .deleteCookies(TOKEN_COOKIE);
 

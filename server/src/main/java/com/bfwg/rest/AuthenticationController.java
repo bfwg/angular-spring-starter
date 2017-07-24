@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 @RestController
-@RequestMapping( value = "/auth", produces = MediaType.APPLICATION_JSON_VALUE )
+@RequestMapping( produces = MediaType.APPLICATION_JSON_VALUE )
 public class AuthenticationController {
 
     @Autowired
@@ -53,4 +53,5 @@ public class AuthenticationController {
            return ResponseEntity.accepted().body(userTokenState);
         }
     }
+
 }

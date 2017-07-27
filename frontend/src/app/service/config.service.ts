@@ -12,6 +12,8 @@ export class ConfigService {
 
   private _logout_url = '/logout';
 
+  private _change_password_url = '/changePassword';
+
   private _whoami_url = this._user_url + '/whoami';
 
   private _users_url = this._user_url + '/all';
@@ -36,6 +38,10 @@ export class ConfigService {
 
   get logout_url(): string {
       return this._logout_url;
+  }
+
+  get change_password_url(): string {
+      return this._change_password_url;
   }
 
   get foo_url(): string {

@@ -4,13 +4,10 @@ import com.bfwg.model.User;
 import com.bfwg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -25,8 +22,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
-    private UserDetailsManager userDetailsManager;
 
     @RequestMapping( method = GET, value = "/{userId}" )
     public User loadById( @PathVariable Long userId ) {
@@ -51,35 +46,6 @@ public class UserController {
                 .getContext()
                 .getAuthentication()
                 .getPrincipal();
-    }
-
-    @RequestMapping(value = "/changePassword", method = RequestMethod.POST)
-    @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> changePassword(@RequestBody @Valid PasswordChanger passwordChanger) {
-        userDetailsManager.changePassword(passwordChanger.oldPassword, passwordChanger.newPassword);
-        return ResponseEntity.ok().body("success");
-    }
-
-    public static class PasswordChanger {
-
-        private String oldPassword;
-        private String newPassword;
-
-        public String getOldPassword() {
-            return oldPassword;
-        }
-
-        public void setOldPassword(String oldPassword) {
-            this.oldPassword = oldPassword;
-        }
-
-        public String getNewPassword() {
-            return newPassword;
-        }
-
-        public void setNewPassword(String newPassword) {
-            this.newPassword = newPassword;
-        }
     }
 
 }

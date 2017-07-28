@@ -50,7 +50,6 @@ export class HomeComponent implements OnInit {
   }
 
   forgeResonseObj(obj, res, path) {
-    console.log(res);
     obj['path'] = path;
     obj['method'] = 'GET';
     if (res.ok === false) {

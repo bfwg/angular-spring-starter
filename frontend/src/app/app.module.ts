@@ -38,7 +38,6 @@ import {
 } from './service';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 
-
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
 }

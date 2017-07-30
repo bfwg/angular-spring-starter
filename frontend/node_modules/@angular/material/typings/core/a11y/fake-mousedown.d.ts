@@ -1,4 +1,11 @@
 /**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
  * Screenreaders will often fire fake mousedown events when a focusable element
  * is activated using the keyboard. We can typically distinguish between these faked
  * mousedown events and real mousedown events using the "buttons" property. While

@@ -1,6 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HomeComponent } from './home.component';
+import { ApiCardComponent, GithubComponent } from '../component';
+import { MockApiService } from '../service/mocks/api.service.mock';
+
+import {
+  MdButtonModule,
+  MdCardModule
+} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {
+  ApiService,
+  AuthService,
+  UserService,
+  FooService,
+  ConfigService
+} from '../service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,9 +23,27 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [
+        HomeComponent,
+        ApiCardComponent,
+        GithubComponent
+      ],
+      imports: [
+        MdButtonModule,
+        MdCardModule
+      ],
+      providers: [
+        {
+          provide: ApiService,
+          useClass: MockApiService
+        },
+        AuthService,
+        UserService,
+        FooService,
+        ConfigService
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

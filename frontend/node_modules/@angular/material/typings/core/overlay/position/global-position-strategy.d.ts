@@ -1,3 +1,10 @@
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 import { PositionStrategy } from './position-strategy';
 /**
  * A strategy for positioning overlays. Using this strategy, an overlay is given an

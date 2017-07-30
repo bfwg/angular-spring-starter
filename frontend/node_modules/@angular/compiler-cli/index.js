@@ -2,6 +2,7 @@
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -23,6 +24,17 @@ exports.Extractor = extractor_1.Extractor;
 __export(require("@angular/tsc-wrapped"));
 var version_1 = require("./src/version");
 exports.VERSION = version_1.VERSION;
+var expression_diagnostics_1 = require("./src/diagnostics/expression_diagnostics");
+exports.getTemplateExpressionDiagnostics = expression_diagnostics_1.getTemplateExpressionDiagnostics;
+exports.getExpressionScope = expression_diagnostics_1.getExpressionScope;
+var expression_type_1 = require("./src/diagnostics/expression_type");
+exports.AstType = expression_type_1.AstType;
+var typescript_symbols_1 = require("./src/diagnostics/typescript_symbols");
+exports.getClassMembersFromDeclaration = typescript_symbols_1.getClassMembersFromDeclaration;
+exports.getPipesTable = typescript_symbols_1.getPipesTable;
+exports.getSymbolQuery = typescript_symbols_1.getSymbolQuery;
+var symbols_1 = require("./src/diagnostics/symbols");
+exports.BuiltinType = symbols_1.BuiltinType;
 // TODO(hansl): moving to Angular 4 need to update this API.
 var ngtools_api_1 = require("./src/ngtools_api");
 exports.__NGTOOLS_PRIVATE_API_2 = ngtools_api_1.NgTools_InternalApi_NG_2;

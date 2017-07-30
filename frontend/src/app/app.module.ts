@@ -3,22 +3,25 @@ import { NgModule, APP_INITIALIZER} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 // material
-import { MaterialModule, MdIconRegistry } from '@angular/material';
-// different theme
-import 'style-loader!@angular/material/prebuilt-themes/pink-bluegrey.css';
-// import 'style-loader!@angular/material/prebuilt-themes/deeppurple-amber.css';
-// import 'style-loader!@angular/material/prebuilt-themes/indigo-pink.css';
-// import 'style-loader!@angular/material/prebuilt-themes/purple-green.css';
-
+import {
+  MdButtonModule,
+  MdMenuModule,
+  MdIconModule,
+  MdToolbarModule,
+  MdCardModule,
+  MdInputModule,
+  MdIconRegistry,
+  MdProgressSpinnerModule
+} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
-
-import { LoginGuard } from './guard';
-
+import { LoginGuard, GuestGuard } from './guard';
+import { NotFoundComponent } from './not-found';
+import { AccountMenuComponent } from './component/header/account-menu/account-menu.component';
 import {
   HeaderComponent,
   ApiCardComponent,
@@ -33,6 +36,7 @@ import {
   FooService,
   ConfigService
 } from './service';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -46,19 +50,30 @@ export function initUserFactory(userService: UserService) {
     ApiCardComponent,
     HomeComponent,
     GithubComponent,
-    LoginComponent
+    LoginComponent,
+    NotFoundComponent,
+    AccountMenuComponent,
+    ChangePasswordComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
-    MaterialModule.forRoot(),
-    FlexLayoutModule.forRoot()
+    MdMenuModule,
+    MdButtonModule,
+    MdIconModule,
+    MdInputModule,
+    MdToolbarModule,
+    MdCardModule,
+    MdProgressSpinnerModule,
+    FlexLayoutModule
   ],
   providers: [
     LoginGuard,
+    GuestGuard,
     FooService,
     AuthService,
     ApiService,

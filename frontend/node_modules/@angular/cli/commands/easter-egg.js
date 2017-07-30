@@ -9,6 +9,7 @@ function pickOne(of) {
 const MakeThisAwesomeCommand = Command.extend({
     name: 'make-this-awesome',
     works: 'insideProject',
+    hidden: true,
     run: function (commandOptions, rawArgs) {
         this[stringUtils.camelize(this.name)](commandOptions, rawArgs);
         return Promise.resolve();

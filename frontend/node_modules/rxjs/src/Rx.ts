@@ -110,8 +110,10 @@ import './add/operator/sampleTime';
 import './add/operator/scan';
 import './add/operator/sequenceEqual';
 import './add/operator/share';
+import './add/operator/shareReplay';
 import './add/operator/single';
 import './add/operator/skip';
+import './add/operator/skipLast';
 import './add/operator/skipUntil';
 import './add/operator/skipWhile';
 import './add/operator/startWith';
@@ -169,9 +171,9 @@ import { AsapScheduler } from './scheduler/AsapScheduler';
 import { AsyncScheduler } from './scheduler/AsyncScheduler';
 import { QueueScheduler } from './scheduler/QueueScheduler';
 import { AnimationFrameScheduler } from './scheduler/AnimationFrameScheduler';
-import { $$rxSubscriber as rxSubscriber } from './symbol/rxSubscriber';
-import { $$iterator as iterator } from './symbol/iterator';
-import { $$observable as observable } from './symbol/observable';
+import { rxSubscriber } from './symbol/rxSubscriber';
+import { iterator } from './symbol/iterator';
+import { observable } from './symbol/observable';
 
 /* tslint:enable:no-unused-variable */
 

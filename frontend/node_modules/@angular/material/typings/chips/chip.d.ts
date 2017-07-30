@@ -1,20 +1,38 @@
-import { ElementRef, EventEmitter, OnDestroy, OnInit, Renderer } from '@angular/core';
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { ElementRef, EventEmitter, OnDestroy, Renderer2 } from '@angular/core';
 import { Focusable } from '../core/a11y/focus-key-manager';
+import { CanColor } from '../core/common-behaviors/color';
+import { CanDisable } from '../core/common-behaviors/disabled';
 export interface MdChipEvent {
     chip: MdChip;
+}
+export declare class MdChipBase {
+    _renderer: Renderer2;
+    _elementRef: ElementRef;
+    constructor(_renderer: Renderer2, _elementRef: ElementRef);
+}
+export declare const _MdChipMixinBase: (new (...args: any[]) => CanColor) & (new (...args: any[]) => CanDisable) & typeof MdChipBase;
+/**
+ * Dummy directive to add CSS class to basic chips.
+ * @docs-private
+ */
+export declare class MdBasicChip {
 }
 /**
  * Material design styled Chip component. Used inside the MdChipList component.
  */
-export declare class MdChip implements Focusable, OnInit, OnDestroy {
-    protected _renderer: Renderer;
-    protected _elementRef: ElementRef;
-    /** Whether or not the chip is disabled. Disabled chips cannot be focused. */
-    protected _disabled: boolean;
-    /** Whether or not the chip is selected. */
+export declare class MdChip extends _MdChipMixinBase implements Focusable, OnDestroy, CanColor, CanDisable {
+    /** Whether the chip is selected. */
+    selected: boolean;
     protected _selected: boolean;
-    /** The palette color of selected chips. */
-    protected _color: string;
+    /** Whether the chip has focus. */
+    _hasFocus: boolean;
     /** Emitted when the chip is focused. */
     onFocus: EventEmitter<MdChipEvent>;
     /** Emitted when the chip is selected. */
@@ -23,31 +41,17 @@ export declare class MdChip implements Focusable, OnInit, OnDestroy {
     deselect: EventEmitter<MdChipEvent>;
     /** Emitted when the chip is destroyed. */
     destroy: EventEmitter<MdChipEvent>;
-    constructor(_renderer: Renderer, _elementRef: ElementRef);
-    ngOnInit(): void;
+    constructor(renderer: Renderer2, elementRef: ElementRef);
     ngOnDestroy(): void;
-    /** Whether or not the chip is disabled. */
-    /** Sets the disabled state of the chip. */
-    disabled: boolean;
-    /** A String representation of the current disabled state. */
-    readonly _isAriaDisabled: string;
-    /** Whether or not this chip is selected. */
-    selected: boolean;
     /**
      * Toggles the current selected state of this chip.
      * @return Whether the chip is selected.
      */
     toggleSelected(): boolean;
-    /** The color of the chip. Can be `primary`, `accent`, or `warn`. */
-    color: string;
     /** Allows for programmatic focusing of the chip. */
     focus(): void;
+    /** The aria-disabled state for the chip */
+    _isAriaDisabled(): string;
     /** Ensures events fire properly upon click. */
     _handleClick(event: Event): void;
-    /** Initializes the appropriate CSS classes based on the chip type (basic or standard). */
-    private _addDefaultCSSClass();
-    /** Updates the private _color variable and the native element. */
-    private _updateColor(newColor);
-    /** Sets the mat-color on the native element. */
-    private _setElementColor(color, isAdd);
 }

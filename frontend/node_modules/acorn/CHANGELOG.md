@@ -1,3 +1,59 @@
+## 5.1.1 (2017-07-06)
+
+### Bug fixes
+
+Fix problem with disambiguating regexp and division after a class.
+
+## 5.1.0 (2017-07-05)
+
+### Bug fixes
+
+Fix tokenizing of regexps in an object-desctructuring `for`/`of` loop and after `yield`.
+
+Parse zero-prefixed numbers with non-octal digits as decimal.
+
+Allow object/array patterns in rest parameters.
+
+Don't error when `yield` is used as a property name.
+
+Allow `async` as a shorthand object property.
+
+Make the ES module version of the loose parser actually work.
+
+### New features
+
+Implement the [template literal revision proposal](https://github.com/tc39/proposal-template-literal-revision) for ES9.
+
+New walker functions `full` and `fullAncestor`.
+
+## 5.0.3 (2017-04-01)
+
+### Bug fixes
+
+Fix spurious duplicate variable definition errors for named functions.
+
+## 5.0.2 (2017-03-30)
+
+### Bug fixes
+
+A binary operator after a parenthesized arrow expression is no longer incorrectly treated as an error.
+
+## 5.0.0 (2017-03-28)
+
+### Bug fixes
+
+Raise an error for duplicated lexical bindings.
+
+Fix spurious error when an assignement expression occurred after a spread expression.
+
+Accept regular expressions after `of` (in `for`/`of`), `yield` (in a generator), and braced arrow functions.
+
+Allow labels in front or `var` declarations, even in strict mode.
+
+### Breaking changes
+
+Parse declarations following `export default` as declaration nodes, not expressions. This means that class and function declarations nodes can now have `null` as their `id`.
+
 ## 4.0.11 (2017-02-07)
 
 ### Bug fixes

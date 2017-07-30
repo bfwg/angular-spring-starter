@@ -7,7 +7,6 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class ApiService {
 
-  csrfToken: string;
   headers = new Headers({
     'Accept': 'application/json'
   });

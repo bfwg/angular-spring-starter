@@ -1,4 +1,11 @@
-import { ModuleWithProviders, ComponentRef, TemplateRef, ComponentFactoryResolver, ViewContainerRef, OnDestroy } from '@angular/core';
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { ComponentRef, TemplateRef, ComponentFactoryResolver, ViewContainerRef, OnDestroy } from '@angular/core';
 import { Portal, TemplatePortal, ComponentPortal, BasePortalHost } from './portal';
 /**
  * Directive version of a `TemplatePortal`. Because the directive *is* a TemplatePortal,
@@ -43,6 +50,4 @@ export declare class PortalHostDirective extends BasePortalHost implements OnDes
     attachTemplatePortal(portal: TemplatePortal): Map<string, any>;
 }
 export declare class PortalModule {
-    /** @deprecated */
-    static forRoot(): ModuleWithProviders;
 }

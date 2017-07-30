@@ -4,6 +4,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { LoginGuard } from './guard';
+import { GuestGuard } from './guard';
+import { NotFoundComponent } from './not-found';
+import { ChangePasswordComponent } from './change-password';
 
 export const routes: Routes = [
   {
@@ -14,7 +17,20 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [GuestGuard]
+  },
+  {
+    path: 'change-password',
+    component: ChangePasswordComponent,
     canActivate: [LoginGuard]
+  },
+  {
+    path: '404',
+    component: NotFoundComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/404'
   }
 ];
 

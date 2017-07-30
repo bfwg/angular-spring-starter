@@ -39,6 +39,7 @@ export declare class MockNode implements ts.Node {
     getText(sourceFile?: ts.SourceFile): string;
     getFirstToken(sourceFile?: ts.SourceFile): ts.Node;
     getLastToken(sourceFile?: ts.SourceFile): ts.Node;
+    forEachChild<T>(cbNode: (node: ts.Node) => T, cbNodeArray?: (nodes: ts.Node[]) => T): T;
 }
 export declare class MockIdentifier extends MockNode implements ts.Identifier {
     name: string;
@@ -68,7 +69,7 @@ export declare class MockSymbol implements ts.Symbol {
     getName(): string;
     getDeclarations(): ts.Declaration[];
     getDocumentationComment(): ts.SymbolDisplayPart[];
-    getJsDocTags(): ts.JSDocTagInfo[];
+    getJsDocTags(): any[];
     static of(name: string): MockSymbol;
 }
 export declare function expectNoDiagnostics(diagnostics: ts.Diagnostic[]): void;

@@ -14,9 +14,12 @@ angular-spring-starter/frontend
  │   │   │   ├──github                                          * github banner in home page
  │   │   │   └──header
  │   │   ├──guard
- │   │   │   └──login.guard.ts                                  * the guard server that prevent authticated user from going into certain routes
+ │   │   │   ├──login.guard.ts                                  * prevents unauthticated users from going into certain routes
+ │   │   │   └──guest.guard.ts                                  * prevents authticated user from going into certain routes. e.g /login
  │   │   ├──home                                                * home dashboard component
  │   │   ├──login                                               * login page card component
+ │   │   ├──change-password                                     * change password card component
+ │   │   ├──not-found                                           * not found page component
  │   │   ├──service
  │   │   │   ├──api.service.ts                                  * base api service class, the parent class for all api related services
  │   │   │   ├──auth.service.ts                                 * auth related api service like /login /logout

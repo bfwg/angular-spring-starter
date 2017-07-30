@@ -1,8 +1,16 @@
-import { ElementRef, EventEmitter, OnDestroy, Renderer } from '@angular/core';
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { ElementRef, EventEmitter, OnDestroy, Renderer2 } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { HammerInput } from '../core';
 import { Dir } from '../core/rtl/dir';
 import { FocusOriginMonitor } from '../core/style/focus-origin-monitor';
+import { CanDisable } from '../core/common-behaviors/disabled';
 /**
  * Provider Expression that allows md-slider to register as a ControlValueAccessor.
  * This allows it to support [(ngModel)] and [formControl].
@@ -12,20 +20,20 @@ export declare const MD_SLIDER_VALUE_ACCESSOR: any;
 export declare class MdSliderChange {
     /** The MdSlider that changed. */
     source: MdSlider;
-    /** Thew new value of the source slider. */
+    /** The new value of the source slider. */
     value: number;
 }
+export declare class MdSliderBase {
+}
+export declare const _MdSliderMixinBase: (new (...args: any[]) => CanDisable) & typeof MdSliderBase;
 /**
  * Allows users to select from a range of values by moving the slider thumb. It is similar in
  * behavior to the native `<input type="range">` element.
  */
-export declare class MdSlider implements ControlValueAccessor, OnDestroy {
+export declare class MdSlider extends _MdSliderMixinBase implements ControlValueAccessor, OnDestroy, CanDisable {
     private _elementRef;
     private _focusOriginMonitor;
     private _dir;
-    /** Whether or not the slider is disabled. */
-    disabled: boolean;
-    private _disabled;
     /** Whether the slider is inverted. */
     invert: any;
     private _invert;
@@ -130,7 +138,7 @@ export declare class MdSlider implements ControlValueAccessor, OnDestroy {
     private readonly _invertMouseCoords;
     /** The language direction for this slider element. */
     private readonly _direction;
-    constructor(renderer: Renderer, _elementRef: ElementRef, _focusOriginMonitor: FocusOriginMonitor, _dir: Dir);
+    constructor(renderer: Renderer2, _elementRef: ElementRef, _focusOriginMonitor: FocusOriginMonitor, _dir: Dir);
     ngOnDestroy(): void;
     _onMouseenter(): void;
     _onClick(event: MouseEvent): void;

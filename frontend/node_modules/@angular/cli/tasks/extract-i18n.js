@@ -1,20 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const webpack = require("webpack");
-const path = require("path");
-const rimraf = require("rimraf");
-const Task = require('../ember-cli/lib/models/task');
 const webpack_xi18n_config_1 = require("../models/webpack-xi18n-config");
 const app_utils_1 = require("../utilities/app-utils");
+const Task = require('../ember-cli/lib/models/task');
+const MemoryFS = require('memory-fs');
 exports.Extracti18nTask = Task.extend({
     run: function (runTaskOptions) {
-        const project = this.project;
         const appConfig = app_utils_1.getAppFromConfig(runTaskOptions.app);
-        const buildDir = '.tmp';
-        const genDir = runTaskOptions.outputPath || appConfig.root;
         const config = new webpack_xi18n_config_1.XI18nWebpackConfig({
-            genDir,
-            buildDir,
+            genDir: runTaskOptions.outputPath || appConfig.root,
+            buildDir: '.tmp',
             i18nFormat: runTaskOptions.i18nFormat,
             locale: runTaskOptions.locale,
             outFile: runTaskOptions.outFile,
@@ -23,6 +19,7 @@ exports.Extracti18nTask = Task.extend({
             app: runTaskOptions.app,
         }, appConfig).buildConfig();
         const webpackCompiler = webpack(config);
+        webpackCompiler.outputFileSystem = new MemoryFS();
         return new Promise((resolve, reject) => {
             const callback = (err, stats) => {
                 if (err) {
@@ -36,10 +33,6 @@ exports.Extracti18nTask = Task.extend({
                 }
             };
             webpackCompiler.run(callback);
-        })
-            .then(() => {
-            // Deletes temporary build folder
-            rimraf.sync(path.resolve(project.root, buildDir));
         })
             .catch((err) => {
             if (err) {

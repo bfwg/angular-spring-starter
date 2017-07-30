@@ -1,6 +1,13 @@
-import { ComponentRef, NgZone, OnDestroy, Renderer, ElementRef } from '@angular/core';
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { ComponentRef, NgZone, OnDestroy, Renderer2, ElementRef } from '@angular/core';
 import { AnimationEvent } from '@angular/animations';
-import { BasePortalHost, ComponentPortal, TemplatePortal, PortalHostDirective } from '../core';
+import { BasePortalHost, ComponentPortal, PortalHostDirective } from '../core';
 import { MdSnackBarConfig } from './snack-bar-config';
 import { Observable } from 'rxjs/Observable';
 export declare type SnackBarState = 'initial' | 'visible' | 'complete' | 'void';
@@ -24,11 +31,11 @@ export declare class MdSnackBarContainer extends BasePortalHost implements OnDes
     animationState: SnackBarState;
     /** The snack bar configuration. */
     snackBarConfig: MdSnackBarConfig;
-    constructor(_ngZone: NgZone, _renderer: Renderer, _elementRef: ElementRef);
+    constructor(_ngZone: NgZone, _renderer: Renderer2, _elementRef: ElementRef);
     /** Attach a component portal as content to this snack bar container. */
     attachComponentPortal<T>(portal: ComponentPortal<T>): ComponentRef<T>;
     /** Attach a template portal as content to this snack bar container. */
-    attachTemplatePortal(portal: TemplatePortal): Map<string, any>;
+    attachTemplatePortal(): Map<string, any>;
     /** Handle end of animations, updating the state of the snackbar. */
     onAnimationEnd(event: AnimationEvent): void;
     /** Begin animation of snack bar entrance into view. */

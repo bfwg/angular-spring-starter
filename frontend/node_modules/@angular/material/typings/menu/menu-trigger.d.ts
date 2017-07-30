@@ -1,4 +1,11 @@
-import { AfterViewInit, ElementRef, EventEmitter, OnDestroy, Renderer, ViewContainerRef } from '@angular/core';
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { AfterViewInit, ElementRef, EventEmitter, OnDestroy, ViewContainerRef } from '@angular/core';
 import { MdMenuPanel } from './menu-panel';
 import { Dir, LayoutDirection, Overlay } from '../core';
 /**
@@ -9,7 +16,6 @@ export declare class MdMenuTrigger implements AfterViewInit, OnDestroy {
     private _overlay;
     private _element;
     private _viewContainerRef;
-    private _renderer;
     private _dir;
     private _portal;
     private _overlayRef;
@@ -28,7 +34,7 @@ export declare class MdMenuTrigger implements AfterViewInit, OnDestroy {
     onMenuOpen: EventEmitter<void>;
     /** Event emitted when the associated menu is closed. */
     onMenuClose: EventEmitter<void>;
-    constructor(_overlay: Overlay, _element: ElementRef, _viewContainerRef: ViewContainerRef, _renderer: Renderer, _dir: Dir);
+    constructor(_overlay: Overlay, _element: ElementRef, _viewContainerRef: ViewContainerRef, _dir: Dir);
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
     /** Whether the menu is open. */

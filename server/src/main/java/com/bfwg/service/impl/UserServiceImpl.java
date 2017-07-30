@@ -17,6 +17,7 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
+
     @Autowired
     private UserRepository userRepository;
 
@@ -38,4 +39,5 @@ public class UserServiceImpl implements UserService {
         List<User> result = userRepository.findAll();
         return result;
     }
+
 }

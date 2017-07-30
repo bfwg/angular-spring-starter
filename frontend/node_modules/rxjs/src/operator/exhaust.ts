@@ -24,7 +24,7 @@ import { subscribeToResult } from '../util/subscribeToResult';
  *
  * @example <caption>Run a finite timer for each click, only if there is no currently active timer</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000));
+ * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000).take(5));
  * var result = higherOrder.exhaust();
  * result.subscribe(x => console.log(x));
  *
@@ -35,9 +35,8 @@ import { subscribeToResult } from '../util/subscribeToResult';
  * @see {@link exhaustMap}
  * @see {@link zipAll}
  *
- * @return {Observable} Returns an Observable that takes a source of Observables
- * and propagates the first observable exclusively until it completes before
- * subscribing to the next.
+ * @return {Observable} An Observable that takes a source of Observables and propagates the first observable
+ * exclusively until it completes before subscribing to the next.
  * @method exhaust
  * @owner Observable
  */

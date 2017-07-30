@@ -4,6 +4,9 @@
   color: #fff;
 }
 
+// The menu popup is rendered outside the header component
+// so we will restyle a couple things inside a global /deep/ selector
+
 .app-navbar {
   width: 100%;
   display: flex;
@@ -24,11 +27,30 @@
   height: 26px;
 }
 
-.greeting-button {
-  display: inline-block;
+.greeting-hamburger {
+  display: none;
 }
 
+
+/deep/ {
+  .app-header-accountMenu.mat-menu-panel {
+    border-radius: 3px;
+    max-width: initial;
+    overflow: visible;
+
+    .mat-menu-content {
+      max-width: initial;
+      padding: 0;
+      overflow: hidden;
+      display: inline-block;
+      margin-bottom: -6px;
+    }
+  }
+}
 @media screen and (max-width: 600px) {
+  .greeting-hamburger {
+    display: block;
+  }
   .greeting-button {
     display: none;
   }

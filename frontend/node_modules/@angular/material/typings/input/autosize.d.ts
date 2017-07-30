@@ -1,23 +1,32 @@
-import { ElementRef, OnInit } from '@angular/core';
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { ElementRef, AfterViewInit } from '@angular/core';
 /**
  * Directive to automatically resize a textarea to fit its content.
  */
-export declare class MdTextareaAutosize implements OnInit {
+export declare class MdTextareaAutosize implements AfterViewInit {
     private _elementRef;
-    /** Minimum number of rows for this textarea. */
+    private _minRows;
+    private _maxRows;
     minRows: number;
-    mdAutosizeMinRows: number;
-    /** Maximum number of rows for this textarea. */
     maxRows: number;
-    mdAutosizeMaxRows: number;
+    _matAutosizeMinRows: number;
+    _matAutosizeMaxRows: number;
     /** Cached height of a textarea with a single row. */
     private _cachedLineHeight;
     constructor(_elementRef: ElementRef);
-    /** The minimum height of the textarea as determined by minRows. */
-    readonly _minHeight: string;
-    /** The maximum height of the textarea as determined by maxRows. */
-    readonly _maxHeight: string;
-    ngOnInit(): void;
+    /** Sets the minimum height of the textarea as determined by minRows. */
+    _setMinHeight(): void;
+    /** Sets the maximum height of the textarea as determined by maxRows. */
+    _setMaxHeight(): void;
+    ngAfterViewInit(): void;
+    /** Sets a style property on the textarea element. */
+    private _setTextareaStyle(property, value);
     /**
      * Cache the height of a single-row textarea.
      *

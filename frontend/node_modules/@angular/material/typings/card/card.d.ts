@@ -32,6 +32,12 @@ export declare class MdCardFooter {
  * Image used in a card, needed to add the mat- CSS styling.
  * @docs-private
  */
+export declare class MdCardImage {
+}
+/**
+ * Image used in a card, needed to add the mat- CSS styling.
+ * @docs-private
+ */
 export declare class MdCardSmImage {
 }
 /**
@@ -45,12 +51,6 @@ export declare class MdCardMdImage {
  * @docs-private
  */
 export declare class MdCardLgImage {
-}
-/**
- * Image used in a card, needed to add the mat- CSS styling.
- * @docs-private
- */
-export declare class MdCardImage {
 }
 /**
  * Large image used in a card, needed to add the mat- CSS styling.

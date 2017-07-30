@@ -1,13 +1,20 @@
-import { ElementRef, Renderer } from '@angular/core';
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { ElementRef, Renderer2 } from '@angular/core';
+import { CanColor } from '../core/common-behaviors/color';
 export declare class MdToolbarRow {
 }
-export declare class MdToolbar {
-    private elementRef;
-    private renderer;
-    private _color;
-    constructor(elementRef: ElementRef, renderer: Renderer);
-    /** The color of the toolbar. Can be primary, accent, or warn. */
-    color: string;
-    private _updateColor(newColor);
-    private _setElementColor(color, isAdd);
+export declare class MdToolbarBase {
+    _renderer: Renderer2;
+    _elementRef: ElementRef;
+    constructor(_renderer: Renderer2, _elementRef: ElementRef);
+}
+export declare const _MdToolbarMixinBase: (new (...args: any[]) => CanColor) & typeof MdToolbarBase;
+export declare class MdToolbar extends _MdToolbarMixinBase implements CanColor {
+    constructor(renderer: Renderer2, elementRef: ElementRef);
 }

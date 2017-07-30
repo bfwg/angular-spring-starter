@@ -1,9 +1,15 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -35,11 +41,12 @@ exports.I18nExtractionCliOptions = I18nExtractionCliOptions;
 var NgcCliOptions = (function (_super) {
     __extends(NgcCliOptions, _super);
     function NgcCliOptions(_a) {
-        var _b = _a.i18nFormat, i18nFormat = _b === void 0 ? null : _b, _c = _a.i18nFile, i18nFile = _c === void 0 ? null : _c, _d = _a.locale, locale = _d === void 0 ? null : _d, _e = _a.basePath, basePath = _e === void 0 ? null : _e;
+        var _b = _a.i18nFormat, i18nFormat = _b === void 0 ? null : _b, _c = _a.i18nFile, i18nFile = _c === void 0 ? null : _c, _d = _a.locale, locale = _d === void 0 ? null : _d, _e = _a.missingTranslation, missingTranslation = _e === void 0 ? null : _e, _f = _a.basePath, basePath = _f === void 0 ? null : _f;
         var _this = _super.call(this, { basePath: basePath }) || this;
         _this.i18nFormat = i18nFormat;
         _this.i18nFile = i18nFile;
         _this.locale = locale;
+        _this.missingTranslation = missingTranslation;
         return _this;
     }
     return NgcCliOptions;

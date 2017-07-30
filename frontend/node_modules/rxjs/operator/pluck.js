@@ -13,7 +13,7 @@ var map_1 = require('./map');
  * Observable. If a property can't be resolved, it will return `undefined` for
  * that value.
  *
- * @example <caption>Map every every click to the tagName of the clicked target element</caption>
+ * @example <caption>Map every click to the tagName of the clicked target element</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
  * var tagNames = clicks.pluck('target', 'tagName');
  * tagNames.subscribe(x => console.log(x));
@@ -22,8 +22,7 @@ var map_1 = require('./map');
  *
  * @param {...string} properties The nested properties to pluck from each source
  * value (an object).
- * @return {Observable} Returns a new Observable of property values from the
- * source values.
+ * @return {Observable} A new Observable of property values from the source values.
  * @method pluck
  * @owner Observable
  */

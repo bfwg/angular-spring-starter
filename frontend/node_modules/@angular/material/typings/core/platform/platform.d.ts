@@ -4,6 +4,7 @@
  * @docs-private
  */
 export declare class Platform {
+    isBrowser: boolean;
     /** Layout Engines */
     EDGE: boolean;
     TRIDENT: boolean;
@@ -13,4 +14,5 @@ export declare class Platform {
     IOS: boolean;
     FIREFOX: boolean;
     ANDROID: boolean;
+    SAFARI: boolean;
 }

@@ -9,7 +9,7 @@ import { subscribeToResult } from '../util/subscribeToResult';
 /* tslint:disable:max-line-length */
 export function exhaustMap<T, R>(this: Observable<T>, project: (value: T, index: number) => ObservableInput<R>): Observable<R>;
 export function exhaustMap<T, I, R>(this: Observable<T>, project: (value: T, index: number) => ObservableInput<I>, resultSelector: (outerValue: T, innerValue: I, outerIndex: number, innerIndex: number) => R): Observable<R>;
-/* tslint:disable:max-line-length */
+/* tslint:enable:max-line-length */
 
 /**
  * Projects each source value to an Observable which is merged in the output
@@ -31,7 +31,7 @@ export function exhaustMap<T, I, R>(this: Observable<T>, project: (value: T, ind
  *
  * @example <caption>Run a finite timer for each click, only if there is no currently active timer</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.exhaustMap((ev) => Rx.Observable.interval(1000));
+ * var result = clicks.exhaustMap((ev) => Rx.Observable.interval(1000).take(5));
  * result.subscribe(x => console.log(x));
  *
  * @see {@link concatMap}
@@ -39,7 +39,7 @@ export function exhaustMap<T, I, R>(this: Observable<T>, project: (value: T, ind
  * @see {@link mergeMap}
  * @see {@link switchMap}
  *
- * @param {function(value: T, ?index: number): Observable} project A function
+ * @param {function(value: T, ?index: number): ObservableInput} project A function
  * that, when applied to an item emitted by the source Observable, returns an
  * Observable.
  * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]

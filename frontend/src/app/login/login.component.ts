@@ -1,15 +1,15 @@
 import { Inject } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-
+import { Router, ActivatedRoute } from '@angular/router';
+import { DisplayMessage } from '../shared/models/display-message';
+import { Subscription } from 'rxjs/Subscription';
 import {
   UserService,
   AuthService
 } from '../service';
 
 import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/interval';
 
 @Component({
@@ -17,7 +17,7 @@ import 'rxjs/add/observable/interval';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   title = 'Login';
   githubLink = 'https://github.com/bfwg/angular-spring-starter';
   form: FormGroup;
@@ -30,27 +30,35 @@ export class LoginComponent implements OnInit {
   submitted = false;
 
   /**
-   * Diagnostic message from received
-   * form request error
+   * Notification message from received
+   * form request or router
    */
-  errorDiagnostic: string;
+  notification: DisplayMessage;
+
+  private routeMessageSub: Subscription;
 
   constructor(
     private userService: UserService,
     private authService: AuthService,
     private router: Router,
+    private route: ActivatedRoute,
     private formBuilder: FormBuilder
   ) {
 
   }
 
   ngOnInit() {
-
+    this.routeMessageSub = this.route.params.subscribe((params: DisplayMessage) => {
+      this.notification = params;
+    });
     this.form = this.formBuilder.group({
       username: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(64)])],
       password: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(32)])]
     });
+  }
 
+  ngOnDestroy() {
+    this.routeMessageSub.unsubscribe();
   }
 
   repository() {
@@ -61,8 +69,8 @@ export class LoginComponent implements OnInit {
     /**
      * Innocent until proven guilty
      */
+    this.notification = undefined;
     this.submitted = true;
-    this.errorDiagnostic = null;
 
     this.authService.login(this.form.value)
     // show me the animation
@@ -73,7 +81,7 @@ export class LoginComponent implements OnInit {
     },
     error => {
       this.submitted = false;
-      this.errorDiagnostic = 'Incorrect username or password.';
+      this.notification = { msgType: 'error', msgBody: 'Incorrect username or password.' };
     });
 
   }

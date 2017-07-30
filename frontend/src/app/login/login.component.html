@@ -12,6 +12,8 @@
 
       <md-card-content>
 
+        <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
+
         <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
           <md-input-container>
             <input mdInput formControlName="username" required placeholder="user/admin">
@@ -23,8 +25,6 @@
         </form>
 
         <md-spinner *ngIf="submitted" mode="indeterminate"></md-spinner>
-
-        <p class="error" *ngIf="errorDiagnostic">{{errorDiagnostic}}</p>
 
         <br>
         <hr>

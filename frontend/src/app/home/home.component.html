@@ -5,7 +5,7 @@
     subTitle="Public"
     imgUrl="assets/image/foo.png"
     content='This is an demo public endpoint which requires no authentication.'
-    apiText="/api/foo"
+    apiText="/foo"
     [responseObj]="fooResponse"
     (apiClick)="makeRequest($event)"
   >
@@ -17,7 +17,7 @@
      subTitle="Authorized role: USER"
      imgUrl="assets/image/user.png"
      content='The regular endpoint which returns the current user information. You have to sign in as either a User or an Admin to gain the access to this endpoint.'
-     apiText="/api/user/whoami"
+     apiText="/user/whoami"
      [responseObj]="whoamIResponse"
      (apiClick)="makeRequest($event)"
   >
@@ -30,7 +30,7 @@
      subTitle="Authorized role: ADMIN"
      imgUrl="assets/image/admin.png"
      content='This endpoint will give you a list of all the users. You have to sign in as an Admin to gain the access to this endpoint.'
-     apiText="/api/user/all"
+     apiText="/user/all"
      [responseObj]="allUserResponse"
      (apiClick)="makeRequest($event)"
   >

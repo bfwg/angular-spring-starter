@@ -4,16 +4,16 @@ import { UserService } from '../service';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class LoginGuard implements CanActivate {
+export class GuestGuard implements CanActivate {
 
   constructor(private router: Router, private userService: UserService) {}
 
   canActivate(): boolean {
     if (this.userService.currentUser) {
-      return true;
-    } else {
       this.router.navigate(['/']);
       return false;
+    } else {
+      return true;
     }
   }
 }

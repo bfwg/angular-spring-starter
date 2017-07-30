@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 // material
 import {
   MdButtonModule,
+  MdMenuModule,
   MdIconModule,
   MdToolbarModule,
   MdCardModule,
@@ -18,8 +19,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
-import { LoginGuard } from './guard';
+import { LoginGuard, GuestGuard } from './guard';
 import { NotFoundComponent } from './not-found';
+import { AccountMenuComponent } from './component/header/account-menu/account-menu.component';
 import {
   HeaderComponent,
   ApiCardComponent,
@@ -34,7 +36,7 @@ import {
   FooService,
   ConfigService
 } from './service';
-
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -49,7 +51,9 @@ export function initUserFactory(userService: UserService) {
     HomeComponent,
     GithubComponent,
     LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AccountMenuComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -58,6 +62,7 @@ export function initUserFactory(userService: UserService) {
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
+    MdMenuModule,
     MdButtonModule,
     MdIconModule,
     MdInputModule,
@@ -68,6 +73,7 @@ export function initUserFactory(userService: UserService) {
   ],
   providers: [
     LoginGuard,
+    GuestGuard,
     FooService,
     AuthService,
     ApiService,

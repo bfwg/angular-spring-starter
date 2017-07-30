@@ -1,6 +1,5 @@
 package com.bfwg.rest;
 
-import com.bfwg.model.PasswordChanger;
 import com.bfwg.model.UserTokenState;
 import com.bfwg.security.TokenHelper;
 import com.bfwg.service.impl.CustomUserDetailsService;
@@ -66,10 +65,15 @@ public class AuthenticationController {
     @RequestMapping(value = "/changePassword", method = RequestMethod.POST)
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> changePassword(@RequestBody PasswordChanger passwordChanger) {
-        userDetailsService.changePassword(passwordChanger.getOldPassword(), passwordChanger.getNewPassword());
+        userDetailsService.changePassword(passwordChanger.oldPassword, passwordChanger.newPassword);
         Map<String, String> result = new HashMap<>();
         result.put( "result", "success" );
         return ResponseEntity.accepted().body(result);
+    }
+
+    static class PasswordChanger {
+        public String oldPassword;
+        public String newPassword;
     }
 
 }

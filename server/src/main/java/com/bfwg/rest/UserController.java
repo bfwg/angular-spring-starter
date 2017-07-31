@@ -17,18 +17,18 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  */
 
 @RestController
-@RequestMapping( value = "/user", produces = MediaType.APPLICATION_JSON_VALUE )
+@RequestMapping( value = "/api", produces = MediaType.APPLICATION_JSON_VALUE )
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping( method = GET, value = "/{userId}" )
+    @RequestMapping( method = GET, value = "/user/{userId}" )
     public User loadById( @PathVariable Long userId ) {
         return this.userService.findById( userId );
     }
 
-    @RequestMapping( method = GET, value= "/all")
+    @RequestMapping( method = GET, value= "/user/all")
     public List<User> loadAll() {
         return this.userService.findAll();
     }

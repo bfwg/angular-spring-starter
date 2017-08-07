@@ -7,7 +7,6 @@ import { ConfigService } from './config.service';
 export class UserService {
 
   currentUser;
-  credentials;
 
   constructor(
     private apiService: ApiService,

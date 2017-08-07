@@ -72,6 +72,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         } else {
           alert('Server error');
         }
+
       });
   }
 

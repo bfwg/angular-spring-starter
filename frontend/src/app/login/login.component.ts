@@ -9,7 +9,7 @@ import {
   AuthService
 } from '../service';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable, Subject } from 'rxjs';
 import 'rxjs/add/observable/interval';
 
 @Component({
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit, OnDestroy {
    */
   notification: DisplayMessage;
 
-  private routeMessageSub: Subscription;
+  private ngUnsubscribe: Subject<void> = new Subject<void>();
 
   constructor(
     private userService: UserService,
@@ -48,7 +48,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.routeMessageSub = this.route.params.subscribe((params: DisplayMessage) => {
+    this.route.params
+    .takeUntil(this.ngUnsubscribe)
+    .subscribe((params: DisplayMessage) => {
       this.notification = params;
     });
     this.form = this.formBuilder.group({
@@ -58,7 +60,20 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.routeMessageSub.unsubscribe();
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+  }
+
+  onResetCredentials() {
+    this.userService.resetCredentials()
+    .takeUntil(this.ngUnsubscribe)
+    .subscribe(res => {
+      if (res.result === 'success') {
+        alert('Password has been reset to 123 for all accounts');
+      } else {
+        alert('Server error');
+      }
+    });
   }
 
   repository() {

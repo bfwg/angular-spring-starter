@@ -24,7 +24,7 @@ import java.util.Map;
  */
 
 @RestController
-@RequestMapping( produces = MediaType.APPLICATION_JSON_VALUE )
+@RequestMapping( value = "/api", produces = MediaType.APPLICATION_JSON_VALUE )
 public class AuthenticationController {
 
     @Autowired

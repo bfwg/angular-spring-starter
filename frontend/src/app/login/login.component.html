@@ -23,9 +23,12 @@
           </md-input-container>
           <button type="submit" [disabled]="!loginForm.form.valid" md-raised-button color="primary">Login</button>
         </form>
+        <br>
+        <div *ngIf="!submitted" >
+          <button mdTooltip="Reset password if someone has changed it already!" (click)="onResetCredentials()" md-raised-button color="accent">Reset Credentials</button>
+        </div>
 
         <md-spinner *ngIf="submitted" mode="indeterminate"></md-spinner>
-
         <br>
         <hr>
 

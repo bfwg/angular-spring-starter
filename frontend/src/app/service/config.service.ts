@@ -20,7 +20,13 @@ export class ConfigService {
 
   private _users_url = this._user_url + '/all';
 
+  private _reset_credentials_url = this._user_url + '/reset-credentials';
+
   private _foo_url = this._api_url + '/foo';
+
+  get reset_credentials_url(): string {
+      return this._reset_credentials_url;
+  }
 
   get refresh_token_url(): string {
       return this._refresh_token_url;

@@ -7,6 +7,7 @@ import { ConfigService } from './config.service';
 export class UserService {
 
   currentUser;
+  credentials;
 
   constructor(
     private apiService: ApiService,
@@ -25,6 +26,10 @@ export class UserService {
     })
     .catch(() => null);
     return promise;
+  }
+
+  resetCredentials() {
+    return this.apiService.get(this.config.reset_credentials_url);
   }
 
   getMyInfo() {

@@ -214,12 +214,13 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_8__app_routing_module__["a" /* AppRoutingModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_material__["a" /* MdMenuModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MdButtonModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MdIconModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_material__["d" /* MdInputModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MdToolbarModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MdCardModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MdProgressSpinnerModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MdTooltipModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MdButtonModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_material__["d" /* MdIconModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MdInputModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MdCardModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MdProgressSpinnerModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_flex_layout__["a" /* FlexLayoutModule */]
         ],
         providers: [
@@ -230,7 +231,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_15__service__["c" /* ApiService */],
             __WEBPACK_IMPORTED_MODULE_15__service__["d" /* UserService */],
             __WEBPACK_IMPORTED_MODULE_15__service__["e" /* ConfigService */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MdIconRegistry */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MdIconRegistry */],
             {
                 'provide': __WEBPACK_IMPORTED_MODULE_1__angular_core__["c" /* APP_INITIALIZER */],
                 'useFactory': initUserFactory,
@@ -917,7 +918,7 @@ var _a, _b;
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\" fxLayout=\"row\" fxLayoutAlign=\"center none\">\n  <app-api-card\n    fxFlex\n    title='\"Foo\"'\n    subTitle=\"Public\"\n    imgUrl=\"assets/image/foo.png\"\n    content='This is an demo public endpoint which requires no authentication.'\n    apiText=\"/foo\"\n    [responseObj]=\"fooResponse\"\n    (apiClick)=\"makeRequest($event)\"\n  >\n  </app-api-card>\n\n  <app-api-card\n     fxFlex\n     title='\"Who am I\"'\n     subTitle=\"Authorized role: USER\"\n     imgUrl=\"assets/image/user.png\"\n     content='The regular endpoint which returns the current user information. You have to sign in as either a User or an Admin to gain the access to this endpoint.'\n     apiText=\"/user/whoami\"\n     [responseObj]=\"whoamIResponse\"\n     (apiClick)=\"makeRequest($event)\"\n  >\n  </app-api-card>\n\n  <app-api-card\n     class=\"last\"\n     fxFlex\n     title='\"All users\"'\n     subTitle=\"Authorized role: ADMIN\"\n     imgUrl=\"assets/image/admin.png\"\n     content='This endpoint will give you a list of all the users. You have to sign in as an Admin to gain the access to this endpoint.'\n     apiText=\"/user/all\"\n     [responseObj]=\"allUserResponse\"\n     (apiClick)=\"makeRequest($event)\"\n  >\n  </app-api-card>\n</div>\n<app-github></app-github>\n"
+module.exports = "<div class=\"content\" fxLayout=\"row\" fxLayoutAlign=\"center none\">\n  <app-api-card\n    fxFlex\n    title='\"Foo\"'\n    subTitle=\"Public\"\n    imgUrl=\"assets/image/foo.png\"\n    content='This is an demo public endpoint which requires no authentication.'\n    apiText=\"/api/foo\"\n    [responseObj]=\"fooResponse\"\n    (apiClick)=\"makeRequest($event)\"\n  >\n  </app-api-card>\n\n  <app-api-card\n     fxFlex\n     title='\"Who am I\"'\n     subTitle=\"Authorized role: USER\"\n     imgUrl=\"assets/image/user.png\"\n     content='The regular endpoint which returns the current user information. You have to sign in as either a User or an Admin to gain the access to this endpoint.'\n     apiText=\"/api/whoami\"\n     [responseObj]=\"whoamIResponse\"\n     (apiClick)=\"makeRequest($event)\"\n  >\n  </app-api-card>\n\n  <app-api-card\n     class=\"last\"\n     fxFlex\n     title='\"All users\"'\n     subTitle=\"Authorized role: ADMIN\"\n     imgUrl=\"assets/image/admin.png\"\n     content='This endpoint will give you a list of all the users. You have to sign in as an Admin to gain the access to this endpoint.'\n     apiText=\"/api/user/all\"\n     [responseObj]=\"allUserResponse\"\n     (apiClick)=\"makeRequest($event)\"\n  >\n  </app-api-card>\n</div>\n<app-github></app-github>\n"
 
 /***/ }),
 
@@ -1055,7 +1056,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\" fxLayout=\"row\" fxLayoutAlign=\"center\">\n\n    <md-card elevation=\"5\" fxFlex>\n\n      <md-card-subtitle>\n        <h2>Angular Spring Starter</h2>\n      </md-card-subtitle>\n\n      <md-card-title>\n        <h2>{{title}}</h2>\n      </md-card-title>\n\n      <md-card-content>\n\n        <p [class]=\"notification.msgType\" *ngIf=\"notification\">{{notification.msgBody}}</p>\n\n        <form *ngIf=\"!submitted\" [formGroup]=\"form\" (ngSubmit)=\"onSubmit()\" #loginForm=\"ngForm\">\n          <md-input-container>\n            <input mdInput formControlName=\"username\" required placeholder=\"user/admin\">\n          </md-input-container>\n          <md-input-container>\n            <input mdInput formControlName=\"password\" required type=\"password\" placeholder=\"123\">\n          </md-input-container>\n          <button type=\"submit\" [disabled]=\"!loginForm.form.valid\" md-raised-button color=\"primary\">Login</button>\n        </form>\n\n        <md-spinner *ngIf=\"submitted\" mode=\"indeterminate\"></md-spinner>\n\n        <br>\n        <hr>\n\n        <p><i>Created by <a href=\"https://github.com/bfwg\">Fan Jin</a></i></p>\n        <p><i>Click below to go to repository</i></p>\n        <button (click)=\"repository()\" md-raised-button color=\"accent\">GitHub Repository</button>\n\n      </md-card-content>\n\n    </md-card>\n\n</div>\n"
+module.exports = "<div class=\"content\" fxLayout=\"row\" fxLayoutAlign=\"center\">\n\n    <md-card elevation=\"5\" fxFlex>\n\n      <md-card-subtitle>\n        <h2>Angular Spring Starter</h2>\n      </md-card-subtitle>\n\n      <md-card-title>\n        <h2>{{title}}</h2>\n      </md-card-title>\n\n      <md-card-content>\n\n        <p [class]=\"notification.msgType\" *ngIf=\"notification\">{{notification.msgBody}}</p>\n\n        <form *ngIf=\"!submitted\" [formGroup]=\"form\" (ngSubmit)=\"onSubmit()\" #loginForm=\"ngForm\">\n          <md-input-container>\n            <input mdInput formControlName=\"username\" required placeholder=\"user/admin\">\n          </md-input-container>\n          <md-input-container>\n            <input mdInput formControlName=\"password\" required type=\"password\" placeholder=\"123\">\n          </md-input-container>\n          <button type=\"submit\" [disabled]=\"!loginForm.form.valid\" md-raised-button color=\"primary\">Login</button>\n        </form>\n        <br>\n        <div *ngIf=\"!submitted\" >\n          <button mdTooltip=\"Reset password if someone has changed it already!\" (click)=\"onResetCredentials()\" md-raised-button color=\"accent\">Reset Credentials</button>\n        </div>\n\n        <md-spinner *ngIf=\"submitted\" mode=\"indeterminate\"></md-spinner>\n        <br>\n        <hr>\n\n        <p><i>Created by <a href=\"https://github.com/bfwg\">Fan Jin</a></i></p>\n        <p><i>Click below to go to repository</i></p>\n        <button (click)=\"repository()\" md-raised-button color=\"accent\">GitHub Repository</button>\n\n      </md-card-content>\n\n    </md-card>\n\n</div>\n"
 
 /***/ }),
 
@@ -1085,8 +1086,10 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service__ = __webpack_require__("../../../../../src/app/service/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_interval__ = __webpack_require__("../../../../rxjs/add/observable/interval.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_interval___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_interval__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_interval__ = __webpack_require__("../../../../rxjs/add/observable/interval.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_interval___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_interval__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1097,6 +1100,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1117,10 +1121,13 @@ var LoginComponent = (function () {
          * and is awaiting a response
          */
         this.submitted = false;
+        this.ngUnsubscribe = new __WEBPACK_IMPORTED_MODULE_4_rxjs__["Subject"]();
     }
     LoginComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.routeMessageSub = this.route.params.subscribe(function (params) {
+        this.route.params
+            .takeUntil(this.ngUnsubscribe)
+            .subscribe(function (params) {
             _this.notification = params;
         });
         this.form = this.formBuilder.group({
@@ -1129,7 +1136,20 @@ var LoginComponent = (function () {
         });
     };
     LoginComponent.prototype.ngOnDestroy = function () {
-        this.routeMessageSub.unsubscribe();
+        this.ngUnsubscribe.next();
+        this.ngUnsubscribe.complete();
+    };
+    LoginComponent.prototype.onResetCredentials = function () {
+        this.userService.resetCredentials()
+            .takeUntil(this.ngUnsubscribe)
+            .subscribe(function (res) {
+            if (res.result === 'success') {
+                alert('Password has been reset to 123 for all accounts');
+            }
+            else {
+                alert('Server error');
+            }
+        });
     };
     LoginComponent.prototype.repository = function () {
         window.location.href = this.githubLink;
@@ -1375,15 +1395,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var ConfigService = (function () {
     function ConfigService() {
-        this._user_url = '/user';
-        this._refresh_token_url = '/refresh';
-        this._login_url = '/login';
-        this._logout_url = '/logout';
-        this._change_password_url = '/changePassword';
-        this._whoami_url = this._user_url + '/whoami';
+        this._api_url = '/api';
+        this._refresh_token_url = this._api_url + '/refresh';
+        this._login_url = this._api_url + '/login';
+        this._logout_url = this._api_url + '/logout';
+        this._change_password_url = this._api_url + '/changePassword';
+        this._whoami_url = this._api_url + '/whoami';
+        this._user_url = this._api_url + '/user';
         this._users_url = this._user_url + '/all';
-        this._foo_url = '/foo';
+        this._reset_credentials_url = this._user_url + '/reset-credentials';
+        this._foo_url = this._api_url + '/foo';
     }
+    Object.defineProperty(ConfigService.prototype, "reset_credentials_url", {
+        get: function () {
+            return this._reset_credentials_url;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(ConfigService.prototype, "refresh_token_url", {
         get: function () {
             return this._refresh_token_url;
@@ -1544,6 +1573,9 @@ var UserService = (function () {
         })
             .catch(function () { return null; });
         return promise;
+    };
+    UserService.prototype.resetCredentials = function () {
+        return this.apiService.get(this.config.reset_credentials_url);
     };
     UserService.prototype.getMyInfo = function () {
         var _this = this;

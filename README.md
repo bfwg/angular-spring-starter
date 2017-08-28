@@ -119,3 +119,4 @@ ___
 [server-doc]: https://github.com/bfwg/angular-spring-jwt-starter/tree/master/server
 [status-image]: https://img.shields.io/badge/status-maintained-brightgreen.svg
 [status-url]: https://github.com/bfwg/angular-spring-jwt-starter
+

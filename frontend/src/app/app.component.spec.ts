@@ -1,4 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
@@ -8,7 +9,6 @@ import { MockApiService } from './service/mocks/api.service.mock';
 import { LoginGuard } from './guard';
 import { NotFoundComponent } from './not-found';
 import {
-  HeaderComponent,
   ApiCardComponent,
   FooterComponent,
   GithubComponent,
@@ -35,7 +35,6 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        HeaderComponent,
         FooterComponent,
       ],
       imports: [
@@ -52,7 +51,8 @@ describe('AppComponent', () => {
         UserService,
         FooService,
         ConfigService
-      ]
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 
@@ -62,10 +62,4 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it('should render title in a span tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('span').textContent).toContain('Angular-Spring-Starter');
-  }));
 });

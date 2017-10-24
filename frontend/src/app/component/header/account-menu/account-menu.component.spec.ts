@@ -1,12 +1,17 @@
 import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import {
+  AuthService,
   ConfigService,
   ApiService,
   UserService
-} from 'app/services';
-import { MockUserService } from 'app/shared/mocks';
+} from '../../../service';
+import {
+  MockUserService,
+  MockApiService
+} from '../../../service/mocks';
 import { AccountMenuComponent } from './account-menu.component';
 
 describe('AccountMenuComponent', () => {
@@ -15,11 +20,19 @@ describe('AccountMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule
+      ],
       providers: [
         {
           provide: UserService,
           useClass: MockUserService
         },
+        {
+          provide: ApiService,
+          useClass: MockApiService
+        },
+        AuthService,
         ConfigService
       ],
       declarations: [AccountMenuComponent],

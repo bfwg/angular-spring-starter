@@ -13,8 +13,7 @@ COPY . $WORKDIR
 RUN mvn clean install && \
     chown -R app:app /home/app && \
     cp -v target/*.jar app.jar
-
-
+    
 EXPOSE 8080
 
 USER app

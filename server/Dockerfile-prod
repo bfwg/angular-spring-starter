@@ -1,0 +1,22 @@
+# FROM frolvlad/alpine-oraclejdk8:slim
+FROM openjdk:8-alpine
+
+VOLUME /tmp
+ENV JAVA_OPTS=""
+
+RUN addgroup -S app && adduser -S -g app app \
+&& apk update && apk upgrade && apk add --no-cache build-base
+
+WORKDIR /home/app
+
+COPY target/*.jar app.jar
+
+RUN chown -R app:app /home/app
+
+EXPOSE 8080
+
+USER app
+CMD java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar app.jar
+# CMD ["java", "$JAVA_OPTS","-Djava.security.egd=file:/dev/./urandom -jar app.jar"]
+# CMD [ "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar app.jar" ]
+# ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar app.jar" ]

@@ -15,7 +15,7 @@ import java.util.List;
 
 @Entity
 @Table(name="USER")
-public class User extends DeletableModel implements UserDetails, Serializable {
+public class User implements UserDetails, Serializable {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

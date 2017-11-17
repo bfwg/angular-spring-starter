@@ -24,7 +24,7 @@ describe('NotFoundComponent', () => {
   });
 
   it('<h1> tag should contains \'Page Not Found\'', () => {
-    let fixture = TestBed.createComponent(NotFoundComponent);
+    fixture = TestBed.createComponent(NotFoundComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Page Not Found');

@@ -11,14 +11,16 @@ export class AuthService {
   constructor(
     private apiService: ApiService,
     private userService: UserService,
-    private config: ConfigService
+    private config: ConfigService,
   ) { }
 
   login(user) {
     const body = `username=${user.username}&password=${user.password}`;
     const headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    return this.apiService.post(this.config.login_url, body, headers);
+    return this.apiService.post(this.config.login_url, body, headers).map(() => {
+      this.userService.getMyInfo().subscribe();
+    });
   }
 
   logout() {

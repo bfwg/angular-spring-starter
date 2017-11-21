@@ -7,28 +7,29 @@ module.exports = str => {
 		return 0;
 	}
 
-	let width = 0;
-
 	str = stripAnsi(str);
+
+	let width = 0;
 
 	for (let i = 0; i < str.length; i++) {
 		const code = str.codePointAt(i);
 
-		// ignore control characters
-		if (code <= 0x1f || (code >= 0x7f && code <= 0x9f)) {
+		// Ignore control characters
+		if (code <= 0x1F || (code >= 0x7F && code <= 0x9F)) {
 			continue;
 		}
 
-		// surrogates
-		if (code >= 0x10000) {
+		// Ignore combining characters
+		if (code >= 0x300 && code <= 0x36F) {
+			continue;
+		}
+
+		// Surrogates
+		if (code > 0xFFFF) {
 			i++;
 		}
 
-		if (isFullwidthCodePoint(code)) {
-			width += 2;
-		} else {
-			width++;
-		}
+		width += isFullwidthCodePoint(code) ? 2 : 1;
 	}
 
 	return width;

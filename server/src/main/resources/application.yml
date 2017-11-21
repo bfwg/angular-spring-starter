@@ -9,3 +9,8 @@ jwt:
 
 server:
   port: 8081
+
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.bfwg: DEBUG

@@ -1,3 +1,216 @@
+<a name="0.8.12"></a>
+## [0.8.12](https://github.com/angular/zone.js/compare/v0.8.11...0.8.12) (2017-06-07)
+
+
+### Bug Fixes
+
+* **doc:** fix [#793](https://github.com/angular/zone.js/issues/793), fix confuseing bluebird patch doc ([#794](https://github.com/angular/zone.js/issues/794)) ([0c5da04](https://github.com/angular/zone.js/commit/0c5da04))
+* **patch:** fix [#791](https://github.com/angular/zone.js/issues/791), fix mediaQuery/Notification patch uses wrong global ([#792](https://github.com/angular/zone.js/issues/792)) ([67634ae](https://github.com/angular/zone.js/commit/67634ae))
+* **toString:** fix [#802](https://github.com/angular/zone.js/issues/802), fix ios 9 MutationObserver toString error ([#803](https://github.com/angular/zone.js/issues/803)) ([68aa03e](https://github.com/angular/zone.js/commit/68aa03e))
+* **xhr:** inner onreadystatechange should not triigger Zone callback ([#800](https://github.com/angular/zone.js/issues/800)) ([7bd1418](https://github.com/angular/zone.js/commit/7bd1418))
+
+
+### Features
+
+* **patch:** fix [#696](https://github.com/angular/zone.js/issues/696), patch HTMLCanvasElement.toBlob as MacroTask ([#788](https://github.com/angular/zone.js/issues/788)) ([7ca3995](https://github.com/angular/zone.js/commit/7ca3995))
+* **patch:** fix [#758](https://github.com/angular/zone.js/issues/758), patch cordova.exec success/error with zone.wrap ([#789](https://github.com/angular/zone.js/issues/789)) ([857929d](https://github.com/angular/zone.js/commit/857929d))
+
+
+
+<a name="0.8.11"></a>
+## [0.8.11](https://github.com/angular/zone.js/compare/v0.8.10...0.8.11) (2017-05-19)
+
+
+### Bug Fixes
+
+* **closure:** patchOnProperty with exact eventNames as possible ([#768](https://github.com/angular/zone.js/issues/768)) ([582ff7b](https://github.com/angular/zone.js/commit/582ff7b))
+* **patch:** fix [#744](https://github.com/angular/zone.js/issues/744), add namespace to load patch name ([#774](https://github.com/angular/zone.js/issues/774)) ([89f990a](https://github.com/angular/zone.js/commit/89f990a))
+* **task:** fix [#778](https://github.com/angular/zone.js/issues/778), sometimes task will run after being canceled ([#780](https://github.com/angular/zone.js/issues/780)) ([b7238c8](https://github.com/angular/zone.js/commit/b7238c8))
+* **webcomponents:** fix [#782](https://github.com/angular/zone.js/issues/782), fix conflicts with shadydom of webcomponents ([#784](https://github.com/angular/zone.js/issues/784)) ([245f8e9](https://github.com/angular/zone.js/commit/245f8e9))
+* **webpack:** access `process` through `_global` so that WebPack does not accidently browserify ([#786](https://github.com/angular/zone.js/issues/786)) ([1919b36](https://github.com/angular/zone.js/commit/1919b36))
+
+
+
+<a name="0.8.10"></a>
+## [0.8.10](https://github.com/angular/zone.js/compare/v0.8.9...0.8.10) (2017-05-03)
+
+
+### Bug Fixes
+
+* **showError:** fix ignoreConsoleErrorUncaughtError may change during drain microtask ([#763](https://github.com/angular/zone.js/issues/763)) ([4baeb5c](https://github.com/angular/zone.js/commit/4baeb5c))
+* **spec:** fix [#760](https://github.com/angular/zone.js/issues/760), fakeAsyncTestSpec should handle microtask with additional args ([#762](https://github.com/angular/zone.js/issues/762)) ([f8d17ac](https://github.com/angular/zone.js/commit/f8d17ac))
+* Package Error stack rewriting as a separate bundle. ([#770](https://github.com/angular/zone.js/issues/770)) ([b5e33fd](https://github.com/angular/zone.js/commit/b5e33fd))
+* **timer:** fix [#437](https://github.com/angular/zone.js/issues/437), [#744](https://github.com/angular/zone.js/issues/744), fix nativescript timer issue, fix nodejs v0.10.x timer issue ([#772](https://github.com/angular/zone.js/issues/772)) ([3218b5a](https://github.com/angular/zone.js/commit/3218b5a))
+
+
+### Features
+
+* make codebase more modular so that only parts of it can be loaded ([#748](https://github.com/angular/zone.js/issues/748)) ([e933cbd](https://github.com/angular/zone.js/commit/e933cbd))
+* **patch:** load non standard api with new load module method ([#764](https://github.com/angular/zone.js/issues/764)) ([97c03b5](https://github.com/angular/zone.js/commit/97c03b5))
+
+
+
+<a name="0.8.9"></a>
+## [0.8.9](https://github.com/angular/zone.js/compare/v0.8.8...0.8.9) (2017-04-25)
+
+
+### Bug Fixes
+
+* **patch:** fix [#746](https://github.com/angular/zone.js/issues/746), check desc get is null and only patch window.resize additionally ([#747](https://github.com/angular/zone.js/issues/747)) ([e598310](https://github.com/angular/zone.js/commit/e598310))
+
+
+
+<a name="0.8.8"></a>
+## [0.8.8](https://github.com/angular/zone.js/compare/v0.8.7...0.8.8) (2017-04-21)
+
+
+### Bug Fixes
+
+* on<property> handling broken in v0.8.7 ([fbe7b13](https://github.com/angular/zone.js/commit/fbe7b13))
+
+
+
+<a name="0.8.7"></a>
+## [0.8.7](https://github.com/angular/zone.js/compare/v0.8.5...0.8.7) (2017-04-21)
+
+
+### Bug Fixes
+
+* **doc:** fix typo in document, fix a typescript warning in test ([#732](https://github.com/angular/zone.js/issues/732)) ([55cf064](https://github.com/angular/zone.js/commit/55cf064))
+* **error:** fix [#706](https://github.com/angular/zone.js/issues/706), handleError when onHasTask throw error ([#709](https://github.com/angular/zone.js/issues/709)) ([06d1ac0](https://github.com/angular/zone.js/commit/06d1ac0))
+* **error:** remove throw in Error constructor to improve performance in IE11 ([#704](https://github.com/angular/zone.js/issues/704)) ([88d1a49](https://github.com/angular/zone.js/commit/88d1a49)), closes [#698](https://github.com/angular/zone.js/issues/698)
+* **listener:** fix [#616](https://github.com/angular/zone.js/issues/616), webdriver removeEventListener throw permission denied error ([#699](https://github.com/angular/zone.js/issues/699)) ([e02960d](https://github.com/angular/zone.js/commit/e02960d))
+* **patch:** fix [#707](https://github.com/angular/zone.js/issues/707), should not try to patch non configurable property ([#717](https://github.com/angular/zone.js/issues/717)) ([e422fb1](https://github.com/angular/zone.js/commit/e422fb1))
+* **patch:** fix [#708](https://github.com/angular/zone.js/issues/708), modify the canPatchDescriptor logic when browser don't provide onreadystatechange ([#711](https://github.com/angular/zone.js/issues/711)) ([7d4d07f](https://github.com/angular/zone.js/commit/7d4d07f))
+* **patch:** fix [#719](https://github.com/angular/zone.js/issues/719), window onproperty callback this is undefined ([#723](https://github.com/angular/zone.js/issues/723)) ([160531b](https://github.com/angular/zone.js/commit/160531b))
+* **task:** fix [#705](https://github.com/angular/zone.js/issues/705), don't json task.data to prevent cyclic error ([#712](https://github.com/angular/zone.js/issues/712)) ([92a39e2](https://github.com/angular/zone.js/commit/92a39e2))
+* **test:** fix [#718](https://github.com/angular/zone.js/issues/718), use async test to do unhandle promise rejection test ([#726](https://github.com/angular/zone.js/issues/726)) ([0a06874](https://github.com/angular/zone.js/commit/0a06874))
+* **test:** fix websocket test server will crash when test in chrome ([#733](https://github.com/angular/zone.js/issues/733)) ([5090cf9](https://github.com/angular/zone.js/commit/5090cf9))
+* **toString:** fix [#666](https://github.com/angular/zone.js/issues/666), Zone patched method toString should like before patched ([#686](https://github.com/angular/zone.js/issues/686)) ([0d0ee53](https://github.com/angular/zone.js/commit/0d0ee53))
+* resolve errors with closure ([#722](https://github.com/angular/zone.js/issues/722)) ([51e7ffe](https://github.com/angular/zone.js/commit/51e7ffe))
+* **typo:** fix typo, remove extra semicolons, unify api doc ([#697](https://github.com/angular/zone.js/issues/697)) ([967a991](https://github.com/angular/zone.js/commit/967a991))
+
+
+### Features
+
+* **closure:** fix [#727](https://github.com/angular/zone.js/issues/727), add zone_externs.js for closure compiler ([#731](https://github.com/angular/zone.js/issues/731)) ([b60e9e6](https://github.com/angular/zone.js/commit/b60e9e6))
+* **error:** Remove all Zone frames from stack ([#693](https://github.com/angular/zone.js/issues/693)) ([681a017](https://github.com/angular/zone.js/commit/681a017))
+* **EventListenerOptions:** fix [#737](https://github.com/angular/zone.js/issues/737), add support to EventListenerOptions ([#738](https://github.com/angular/zone.js/issues/738)) ([a89830d](https://github.com/angular/zone.js/commit/a89830d))
+* **patch:** fix [#499](https://github.com/angular/zone.js/issues/499), let promise instance toString active like native ([#734](https://github.com/angular/zone.js/issues/734)) ([2f11e67](https://github.com/angular/zone.js/commit/2f11e67))
+
+
+
+<a name="0.8.5"></a>
+## [0.8.5](https://github.com/angular/zone.js/compare/v0.8.4...0.8.5) (2017-03-21)
+
+
+### Bug Fixes
+
+* add support for subclassing of Errors ([81297ee](https://github.com/angular/zone.js/commit/81297ee))
+* improve long-stack-trace stack format detection ([6010557](https://github.com/angular/zone.js/commit/6010557))
+* remove left over console.log ([eeaab91](https://github.com/angular/zone.js/commit/eeaab91))
+* **event:** fix [#667](https://github.com/angular/zone.js/issues/667), eventHandler should return result ([#682](https://github.com/angular/zone.js/issues/682)) ([5c4e24d](https://github.com/angular/zone.js/commit/5c4e24d))
+* **jasmine:** modify jasmine test ifEnvSupports message ([#689](https://github.com/angular/zone.js/issues/689)) ([5635ac0](https://github.com/angular/zone.js/commit/5635ac0))
+* **REVERT:** remove zone internal stack frames in error.stack ([#632](https://github.com/angular/zone.js/issues/632)) ([#690](https://github.com/angular/zone.js/issues/690)) ([291d5a0](https://github.com/angular/zone.js/commit/291d5a0))
+
+
+### Features
+
+* **dom:** fix [#664](https://github.com/angular/zone.js/issues/664), patch window,document,SVGElement onProperties ([#687](https://github.com/angular/zone.js/issues/687)) ([61aee2e](https://github.com/angular/zone.js/commit/61aee2e))
+
+
+
+<a name="0.8.4"></a>
+## [0.8.4](https://github.com/angular/zone.js/compare/v0.8.3...0.8.4) (2017-03-16)
+
+
+### Bug Fixes
+
+* correct declaration which breaks closure ([0e19304](https://github.com/angular/zone.js/commit/0e19304))
+* stack rewriting now works with source maps ([bcd09a0](https://github.com/angular/zone.js/commit/bcd09a0))
+
+
+
+<a name="0.8.3"></a>
+## [0.8.3](https://github.com/angular/zone.js/compare/v0.8.1...0.8.3) (2017-03-15)
+
+
+### Bug Fixes
+
+* **zone:** consistent access to __symbol__ to work with closure ([f742394](https://github.com/angular/zone.js/commit/f742394))
+
+
+<a name="0.8.2"></a>
+## [0.8.2](https://github.com/angular/zone.js/compare/v0.8.1...0.8.2) (2017-03-14)
+
+
+### Bug Fixes
+
+* **zone:** fix [#674](https://github.com/angular/zone.js/issues/674), handle error.stack readonly case ([#675](https://github.com/angular/zone.js/issues/675)) ([8322be8](https://github.com/angular/zone.js/commit/8322be8))
+
+
+
+<a name="0.8.1"></a>
+## [0.8.1](https://github.com/angular/zone.js/compare/v0.8.0...0.8.1) (2017-03-13)
+
+
+### Bug Fixes
+
+* **example:** Update counting.html ([#648](https://github.com/angular/zone.js/issues/648)) ([a63ae5f](https://github.com/angular/zone.js/commit/a63ae5f))
+* **XHR:** fix [#671](https://github.com/angular/zone.js/issues/671), patch XMLHttpRequestEventTarget prototype ([300dc36](https://github.com/angular/zone.js/commit/300dc36))
+
+
+### Features
+
+* **error:** remove zone internal stack frames in error.stack ([#632](https://github.com/angular/zone.js/issues/632)) ([76fa891](https://github.com/angular/zone.js/commit/76fa891))
+* **task:** add task lifecycle doc and testcases to explain task state transition. ([#651](https://github.com/angular/zone.js/issues/651)) ([ef39a44](https://github.com/angular/zone.js/commit/ef39a44))
+
+
+
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/angular/zone.js/compare/v0.7.8...0.8.0) (2017-03-10)
+
+
+
+### Features
+
+* Upgrade TypeScript to v2.2.1
+
+
+
+<a name="0.7.8"></a>
+## [0.7.8](https://github.com/angular/zone.js/compare/v0.7.6...0.7.8) (2017-03-10)
+
+
+### Bug Fixes
+
+* **core:** remove debugger ([#639](https://github.com/angular/zone.js/issues/639)) ([0534b19](https://github.com/angular/zone.js/commit/0534b19))
+* **error:** fix [#618](https://github.com/angular/zone.js/issues/618), ZoneAwareError should copy Error's static propeties ([#647](https://github.com/angular/zone.js/issues/647)) ([2d30914](https://github.com/angular/zone.js/commit/2d30914))
+* **jasmine:** support "pending" `it` clauses with no test body ([96cb3d0](https://github.com/angular/zone.js/commit/96cb3d0)), closes [#659](https://github.com/angular/zone.js/issues/659)
+* **minification:** fix [#607](https://github.com/angular/zone.js/issues/607) to change catch variable name to error/err ([#609](https://github.com/angular/zone.js/issues/609)) ([33d0d8d](https://github.com/angular/zone.js/commit/33d0d8d))
+* **node:** patch crypto as macroTask and add test cases for crypto, remove http patch ([#612](https://github.com/angular/zone.js/issues/612)) ([9e81037](https://github.com/angular/zone.js/commit/9e81037))
+* **package:** use fixed version typescript,clang-format and jasmine ([#650](https://github.com/angular/zone.js/issues/650)) ([84459f1](https://github.com/angular/zone.js/commit/84459f1))
+* **patch:** check timer patch return undefined ([#628](https://github.com/angular/zone.js/issues/628)) ([47962df](https://github.com/angular/zone.js/commit/47962df))
+* **patch:** fix [#618](https://github.com/angular/zone.js/issues/618), use zoneSymbol as property name to avoid name conflict ([#645](https://github.com/angular/zone.js/issues/645)) ([fcd8be5](https://github.com/angular/zone.js/commit/fcd8be5))
+* **task:** findEventTask should return Task array ([#633](https://github.com/angular/zone.js/issues/633)) ([14c7a6f](https://github.com/angular/zone.js/commit/14c7a6f))
+* **task:** fix [#638](https://github.com/angular/zone.js/issues/638), eventTask/Periodical task should not be reset after cancel in running state ([#642](https://github.com/angular/zone.js/issues/642)) ([eb9250d](https://github.com/angular/zone.js/commit/eb9250d))
+* **timers:** cleanup task reference when exception ([#637](https://github.com/angular/zone.js/issues/637)) ([2594940](https://github.com/angular/zone.js/commit/2594940))
+* **webapi:** refactor webapi to not import util.ts directly ([8b2543e](https://github.com/angular/zone.js/commit/8b2543e)), closes [#652](https://github.com/angular/zone.js/issues/652)
+* **xhr:** fix [#657](https://github.com/angular/zone.js/issues/657), sometimes xhr will fire onreadystatechange with done twice ([#658](https://github.com/angular/zone.js/issues/658)) ([36c0899](https://github.com/angular/zone.js/commit/36c0899))
+* **zonespec:** don't throw and exception when setInterval is called within a async test zone ([#641](https://github.com/angular/zone.js/issues/641)) ([c07560f](https://github.com/angular/zone.js/commit/c07560f))
+
+
+### Features
+
+* add Zone.root api ([#601](https://github.com/angular/zone.js/issues/601)) ([9818139](https://github.com/angular/zone.js/commit/9818139))
+* allow tasks to be canceled and rescheduled on different zone in a zone delegate ([#629](https://github.com/angular/zone.js/issues/629)) ([76c6ebf](https://github.com/angular/zone.js/commit/76c6ebf))
+* make fetch() zone-aware without triggering extra requests or uncatchable errors. ([#622](https://github.com/angular/zone.js/issues/622)) ([6731ad0](https://github.com/angular/zone.js/commit/6731ad0))
+* **bluebird:** patch bluebird promise and treat it as microtask ([#655](https://github.com/angular/zone.js/issues/655)) ([e783bfa](https://github.com/angular/zone.js/commit/e783bfa))
+* **electron/nw:** fix [#533](https://github.com/angular/zone.js/issues/533), in electron/nw.js, we may need to patch both browser API and nodejs API, so we need a zone-mix.js to contains both patched API. ([6d31734](https://github.com/angular/zone.js/commit/6d31734))
+* **longStackTraceSpec:** handled promise rejection can also render longstacktrace ([#631](https://github.com/angular/zone.js/issues/631)) ([a4c6525](https://github.com/angular/zone.js/commit/a4c6525))
+* **promise:** fix [#621](https://github.com/angular/zone.js/issues/621), add unhandledRejection handler and ignore consoleError ([#627](https://github.com/angular/zone.js/issues/627)) ([f3547cc](https://github.com/angular/zone.js/commit/f3547cc))
+
+
 <a name="0.7.6"></a>
 ## [0.7.6](https://github.com/angular/zone.js/compare/v0.7.4...0.7.6) (2017-01-17)
 

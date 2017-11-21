@@ -20,7 +20,18 @@ var stringify = function stringify (obj, depth) {
     case 'undefined':
       return 'undefined'
     case 'function':
-      return obj.toString().replace(/\{[\s\S]*\}/, '{ ... }')
+      try {
+        // function abc(a, b, c) { /* code goes here */ }
+        //   -> function abc(a, b, c) { ... }
+        return obj.toString().replace(/\{[\s\S]*\}/, '{ ... }')
+      } catch (err) {
+        if (err instanceof TypeError) {
+          // Proxy(function abc(...) { ... })
+          return 'Proxy(function ' + (obj.name || '') + '(...) { ... })'
+        } else {
+          throw err
+        }
+      }
     case 'boolean':
       return obj ? 'true' : 'false'
     case 'object':
@@ -200,12 +211,12 @@ var ContextKarma = function (callParentKarmaMethod) {
 
     contextWindow.confirm = function (msg) {
       self.log('confirm', [msg])
-      _confirm(msg)
+      return _confirm(msg)
     }
 
     contextWindow.prompt = function (msg, defaultVal) {
       self.log('prompt', [msg, defaultVal])
-      _prompt(msg, defaultVal)
+      return _prompt(msg, defaultVal)
     }
 
     // If we want to overload our console, then do it
@@ -1954,17 +1965,17 @@ var isPlainObject = function isPlainObject(obj) {
 	// Own properties are enumerated firstly, so to speed up,
 	// if last one is own, then all properties are own.
 	var key;
-	for (key in obj) {/**/}
+	for (key in obj) { /**/ }
 
 	return typeof key === 'undefined' || hasOwn.call(obj, key);
 };
 
 module.exports = function extend() {
-	var options, name, src, copy, copyIsArray, clone,
-		target = arguments[0],
-		i = 1,
-		length = arguments.length,
-		deep = false;
+	var options, name, src, copy, copyIsArray, clone;
+	var target = arguments[0];
+	var i = 1;
+	var length = arguments.length;
+	var deep = false;
 
 	// Handle a deep copy situation
 	if (typeof target === 'boolean') {
@@ -1972,7 +1983,8 @@ module.exports = function extend() {
 		target = arguments[1] || {};
 		// skip the boolean and the target
 		i = 2;
-	} else if ((typeof target !== 'object' && typeof target !== 'function') || target == null) {
+	}
+	if (target == null || (typeof target !== 'object' && typeof target !== 'function')) {
 		target = {};
 	}
 
@@ -2011,7 +2023,6 @@ module.exports = function extend() {
 	// Return the modified object
 	return target;
 };
-
 
 },{}],10:[function(require,module,exports){
 (function (global){

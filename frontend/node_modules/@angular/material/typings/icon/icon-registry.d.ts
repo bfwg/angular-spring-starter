@@ -1,6 +1,13 @@
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { Optional } from '@angular/core';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { Http } from '@angular/http';
-import { MdError } from '../core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
 import 'rxjs/add/observable/of';
@@ -12,20 +19,17 @@ import 'rxjs/add/operator/finally';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 /**
- * Exception thrown when attempting to load an icon with a name that cannot be found.
+ * Returns an exception to be thrown in the case when attempting to
+ * load an icon with a name that cannot be found.
  * @docs-private
  */
-export declare class MdIconNameNotFoundError extends MdError {
-    constructor(iconName: string);
-}
+export declare function getMdIconNameNotFoundError(iconName: string): Error;
 /**
- * Exception thrown when attempting to load SVG content that does not contain the expected
- * <svg> tag.
+ * Returns an exception to be thrown when the consumer attempts to use
+ * `<md-icon>` without including @angular/http.
  * @docs-private
  */
-export declare class MdIconSvgTagNotFoundError extends MdError {
-    constructor();
-}
+export declare function getMdIconNoHttpProviderError(): Error;
 /**
  * Service to register and display icons used by the <md-icon> component.
  * - Registers icon URLs by namespace and name.
@@ -120,7 +124,7 @@ export declare class MdIconRegistry {
     /**
      * Returns an Observable that produces the icon (as an <svg> DOM element) with the given name
      * and namespace. The icon must have been previously registered with addIcon or addIconSet;
-     * if not, the Observable will throw an MdIconNameNotFoundError.
+     * if not, the Observable will throw an error.
      *
      * @param name Name of the icon to be retrieved.
      * @param namespace Namespace in which to look for the icon.
@@ -136,7 +140,7 @@ export declare class MdIconRegistry {
      * if found copies the element to a new <svg> element. If not found, fetches all icon sets
      * that have not been cached, and searches again after all fetches are completed.
      * The returned Observable produces the SVG element if possible, and throws
-     * MdIconNameNotFoundError if no icon with the specified name can be found.
+     * an error if no icon with the specified name can be found.
      */
     private _getSvgFromIconSetConfigs(name, iconSetConfigs);
     /**
@@ -170,6 +174,10 @@ export declare class MdIconRegistry {
      */
     private _svgElementFromString(str);
     /**
+     * Converts an element into an SVG node by cloning all of its children.
+     */
+    private _toSvgElement(element);
+    /**
      * Sets the default attributes for an SVG element to be used as an icon.
      */
     private _setSvgAttributes(svg);
@@ -179,3 +187,9 @@ export declare class MdIconRegistry {
      */
     private _fetchUrl(safeUrl);
 }
+export declare function ICON_REGISTRY_PROVIDER_FACTORY(parentRegistry: MdIconRegistry, http: Http, sanitizer: DomSanitizer): MdIconRegistry;
+export declare const ICON_REGISTRY_PROVIDER: {
+    provide: typeof MdIconRegistry;
+    deps: (Optional[] | typeof DomSanitizer)[];
+    useFactory: (parentRegistry: MdIconRegistry, http: Http, sanitizer: DomSanitizer) => MdIconRegistry;
+};

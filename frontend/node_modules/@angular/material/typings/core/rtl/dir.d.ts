@@ -1,4 +1,11 @@
-import { ModuleWithProviders, EventEmitter } from '@angular/core';
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { EventEmitter } from '@angular/core';
 export declare type LayoutDirection = 'ltr' | 'rtl';
 /**
  * Directive to listen for changes of direction of part of the DOM.
@@ -17,6 +24,4 @@ export declare class Dir {
     value: LayoutDirection;
 }
 export declare class RtlModule {
-    /** @deprecated */
-    static forRoot(): ModuleWithProviders;
 }

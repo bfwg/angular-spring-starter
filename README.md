@@ -1,11 +1,11 @@
-[![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](http://angular-spring-starter.fanjin.computer/)
+[![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](http://angular-spring-starter.fanjin.io/)
 [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/bfwg/angular4-spring-boot-jwt-starter)
 [![Build Status](https://travis-ci.org/bfwg/angular-spring-starter.svg?branch=master)](https://travis-ci.org/bfwg/angular-spring-starter)
 [![Maintenance Status][status-image]][status-url]
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bfwg/angular-spring-jwt-starter/blob/master/LICENSE)
 
 <p align="center">
-  <a href="http://angular-spring-starter.fanjin.computer" target="_blank">
+  <a href="http://angular-spring-starter.fanjin.io" target="_blank">
     <img src="https://cloud.githubusercontent.com/assets/12819525/26094670/b0f6f192-39cf-11e7-8048-ab710b3dc1d1.png" alt="Spring Boot and Angular 2" width="500" height="320"/>
   </a>
 </p>
@@ -19,7 +19,7 @@
 
 > If you're looking for using Angular 1.x for frontend implementation, please check out [springboot-jwt-starter](https://github.com/bfwg/springboot-jwt-starter)
 > A Spring Boot token-based security starter kit featuring [AngularJS](https://angularjs.org/) and [Spring Boot](https://projects.spring.io/spring-boot/) ([JSON Web Token](https://jwt.io/))
-### [Live Demo](http://angular-spring-starter.fanjin.computer)
+### [Live Demo](http://angular-spring-starter.fanjin.io)
 <p align="center">
     <img width="800" alt="Springboot JWT Starter" src="https://cloud.githubusercontent.com/assets/12819525/26290994/3895daca-3e60-11e7-9465-421e0b029343.png">
 </p>
@@ -101,6 +101,17 @@ for more info, check out https://jwt.io/
 >
 > -- <cite>Stormpath</cite>
 
+### Importing the Project in IntelliJ IDEA
+1. Click "Import Project" on the launch screen
+2. Select the projects root folder, then select "Import project from external model" and choose "Maven"
+3. Tick the checkboxes "Import Maven projects automatically" and "Import projects recursively"
+4. Continue the dialog until the IDE opens the project
+5. Open the "Project Structure" dialog
+6. On the left side, choose "Modules" and click the "Add" button
+7. Choose "Import Module", then select the ```frontend``` folder
+8. Choose "Create module from existing sources" and continue in the dialog until the module is added.
+9. You should now see both (frontend and backend) modules in the Project view
+
 ### Contributing
 I'll accept pretty much everything so feel free to open a Pull-Request
 
@@ -119,3 +130,4 @@ ___
 [server-doc]: https://github.com/bfwg/angular-spring-jwt-starter/tree/master/server
 [status-image]: https://img.shields.io/badge/status-maintained-brightgreen.svg
 [status-url]: https://github.com/bfwg/angular-spring-jwt-starter
+

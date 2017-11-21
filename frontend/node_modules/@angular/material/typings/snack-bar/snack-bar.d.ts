@@ -47,6 +47,7 @@ export declare class MdSnackBar {
     private _attachSnackbarContent<T>(component, container, overlayRef);
     /**
      * Creates a new overlay and places it in the correct location.
+     * @param config The user-specified snack bar config.
      */
-    private _createOverlay();
+    private _createOverlay(config);
 }

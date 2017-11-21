@@ -1878,7 +1878,7 @@ pp$1.parseStatement = function (declaration, topLevel) {
         }
 
         if (!this.inModule) {
-          this.raise(this.state.start, "'import' and 'export' may appear only with 'sourceType: module'");
+          this.raise(this.state.start, "'import' and 'export' may appear only with 'sourceType: \"module\"'");
         }
       }
       return starttype === types._import ? this.parseImport(node) : this.parseExport(node);
@@ -2668,7 +2668,7 @@ pp$1.parseExportDeclaration = function () {
 
 pp$1.isExportDefaultSpecifier = function () {
   if (this.match(types.name)) {
-    return this.state.value !== "type" && this.state.value !== "async" && this.state.value !== "interface";
+    return this.state.value !== "async";
   }
 
   if (!this.match(types._default)) {
@@ -2981,6 +2981,8 @@ pp$2.toAssignable = function (node, isBinding, contextDescription) {
 
       case "SpreadProperty":
         node.type = "RestProperty";
+        var arg = node.argument;
+        this.toAssignable(arg, isBinding, contextDescription);
         break;
 
       case "ArrayExpression":
@@ -4498,7 +4500,8 @@ pp$6.processComment = function (node) {
 
   var stack = this.state.commentStack;
 
-  var lastChild = void 0,
+  var firstChild = void 0,
+      lastChild = void 0,
       trailingComments = void 0,
       i = void 0,
       j = void 0;
@@ -4529,8 +4532,50 @@ pp$6.processComment = function (node) {
   }
 
   // Eating the stack.
+  if (stack.length > 0 && last(stack).start >= node.start) {
+    firstChild = stack.pop();
+  }
+
   while (stack.length > 0 && last(stack).start >= node.start) {
     lastChild = stack.pop();
+  }
+
+  if (!lastChild && firstChild) lastChild = firstChild;
+
+  // Attach comments that follow a trailing comma on the last
+  // property in an object literal or a trailing comma in function arguments
+  // as trailing comments
+  if (firstChild && this.state.leadingComments.length > 0) {
+    var lastComment = last(this.state.leadingComments);
+
+    if (firstChild.type === "ObjectProperty") {
+      if (lastComment.start >= node.start) {
+        if (this.state.commentPreviousNode) {
+          for (j = 0; j < this.state.leadingComments.length; j++) {
+            if (this.state.leadingComments[j].end < this.state.commentPreviousNode.end) {
+              this.state.leadingComments.splice(j, 1);
+              j--;
+            }
+          }
+
+          if (this.state.leadingComments.length > 0) {
+            firstChild.trailingComments = this.state.leadingComments;
+            this.state.leadingComments = [];
+          }
+        }
+      }
+    } else if (node.type === "CallExpression" && node.arguments && node.arguments.length) {
+      var lastArg = last(node.arguments);
+
+      if (lastArg && lastComment.start >= lastArg.start && lastComment.end <= node.end) {
+        if (this.state.commentPreviousNode) {
+          if (this.state.leadingComments.length > 0) {
+            lastArg.trailingComments = this.state.leadingComments;
+            this.state.leadingComments = [];
+          }
+        }
+      }
+    }
   }
 
   if (lastChild) {
@@ -4751,6 +4796,19 @@ var estreePlugin = function (instance) {
     };
   });
 
+  instance.extend("stmtToDirective", function (inner) {
+    return function (stmt) {
+      var directive = inner.call(this, stmt);
+      var value = stmt.expression.value;
+
+      // Reset value to the actual value as in estree mode we want
+      // the stmt to have the real value and not the raw value
+      directive.value.value = value;
+
+      return directive;
+    };
+  });
+
   instance.extend("parseBlockBody", function (inner) {
     return function (node) {
       var _this2 = this;
@@ -4768,16 +4826,14 @@ var estreePlugin = function (instance) {
     };
   });
 
-  instance.extend("parseClassMethod", function (inner) {
-    return function (classBody) {
-      for (var _len3 = arguments.length, args = Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
-        args[_key3 - 1] = arguments[_key3];
+  instance.extend("parseClassMethod", function () {
+    return function (classBody, method, isGenerator, isAsync) {
+      this.parseMethod(method, isGenerator, isAsync);
+      if (method.typeParameters) {
+        method.value.typeParameters = method.typeParameters;
+        delete method.typeParameters;
       }
-
-      inner.call.apply(inner, [this, classBody].concat(args));
-
-      var body = classBody.body;
-      body[body.length - 1].type = "MethodDefinition";
+      classBody.body.push(this.finishNode(method, "MethodDefinition"));
     };
   });
 
@@ -4801,8 +4857,8 @@ var estreePlugin = function (instance) {
           return this.estreeParseLiteral(false);
 
         default:
-          for (var _len4 = arguments.length, args = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
-            args[_key4] = arguments[_key4];
+          for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+            args[_key3] = arguments[_key3];
           }
 
           return inner.call.apply(inner, [this].concat(args));
@@ -4812,8 +4868,8 @@ var estreePlugin = function (instance) {
 
   instance.extend("parseLiteral", function (inner) {
     return function () {
-      for (var _len5 = arguments.length, args = Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
-        args[_key5] = arguments[_key5];
+      for (var _len4 = arguments.length, args = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+        args[_key4] = arguments[_key4];
       }
 
       var node = inner.call.apply(inner, [this].concat(args));
@@ -4829,8 +4885,8 @@ var estreePlugin = function (instance) {
       var funcNode = this.startNode();
       funcNode.kind = node.kind; // provide kind, so inner method correctly sets state
 
-      for (var _len6 = arguments.length, args = Array(_len6 > 1 ? _len6 - 1 : 0), _key6 = 1; _key6 < _len6; _key6++) {
-        args[_key6 - 1] = arguments[_key6];
+      for (var _len5 = arguments.length, args = Array(_len5 > 1 ? _len5 - 1 : 0), _key5 = 1; _key5 < _len5; _key5++) {
+        args[_key5 - 1] = arguments[_key5];
       }
 
       funcNode = inner.call.apply(inner, [this, funcNode].concat(args));
@@ -4843,8 +4899,8 @@ var estreePlugin = function (instance) {
 
   instance.extend("parseObjectMethod", function (inner) {
     return function () {
-      for (var _len7 = arguments.length, args = Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
-        args[_key7] = arguments[_key7];
+      for (var _len6 = arguments.length, args = Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
+        args[_key6] = arguments[_key6];
       }
 
       var node = inner.call.apply(inner, [this].concat(args));
@@ -4860,8 +4916,8 @@ var estreePlugin = function (instance) {
 
   instance.extend("parseObjectProperty", function (inner) {
     return function () {
-      for (var _len8 = arguments.length, args = Array(_len8), _key8 = 0; _key8 < _len8; _key8++) {
-        args[_key8] = arguments[_key8];
+      for (var _len7 = arguments.length, args = Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
+        args[_key7] = arguments[_key7];
       }
 
       var node = inner.call.apply(inner, [this].concat(args));
@@ -4877,8 +4933,8 @@ var estreePlugin = function (instance) {
 
   instance.extend("toAssignable", function (inner) {
     return function (node, isBinding) {
-      for (var _len9 = arguments.length, args = Array(_len9 > 2 ? _len9 - 2 : 0), _key9 = 2; _key9 < _len9; _key9++) {
-        args[_key9 - 2] = arguments[_key9];
+      for (var _len8 = arguments.length, args = Array(_len8 > 2 ? _len8 - 2 : 0), _key8 = 2; _key8 < _len8; _key8++) {
+        args[_key8 - 2] = arguments[_key8];
       }
 
       if (isSimpleProperty(node)) {
@@ -5031,11 +5087,28 @@ pp$8.flowParseDeclare = function (node) {
     }
   } else if (this.isContextual("type")) {
     return this.flowParseDeclareTypeAlias(node);
+  } else if (this.isContextual("opaque")) {
+    return this.flowParseDeclareOpaqueType(node);
   } else if (this.isContextual("interface")) {
     return this.flowParseDeclareInterface(node);
+  } else if (this.match(types._export)) {
+    return this.flowParseDeclareExportDeclaration(node);
   } else {
     this.unexpected();
   }
+};
+
+pp$8.flowParseDeclareExportDeclaration = function (node) {
+  this.expect(types._export);
+  if (this.isContextual("opaque") // declare export opaque ...
+  ) {
+      node.declaration = this.flowParseDeclare(this.startNode());
+      node.default = false;
+
+      return this.finishNode(node, "DeclareExportDeclaration");
+    }
+
+  throw this.unexpected();
 };
 
 pp$8.flowParseDeclareVariable = function (node) {
@@ -5095,6 +5168,12 @@ pp$8.flowParseDeclareTypeAlias = function (node) {
   this.next();
   this.flowParseTypeAlias(node);
   return this.finishNode(node, "DeclareTypeAlias");
+};
+
+pp$8.flowParseDeclareOpaqueType = function (node) {
+  this.next();
+  this.flowParseOpaqueType(node, true);
+  return this.finishNode(node, "DeclareOpaqueType");
 };
 
 pp$8.flowParseDeclareInterface = function (node) {
@@ -5174,6 +5253,33 @@ pp$8.flowParseTypeAlias = function (node) {
   this.semicolon();
 
   return this.finishNode(node, "TypeAlias");
+};
+
+// Opaque type aliases
+
+pp$8.flowParseOpaqueType = function (node, declare) {
+  this.expectContextual("type");
+  node.id = this.flowParseRestrictedIdentifier();
+
+  if (this.isRelational("<")) {
+    node.typeParameters = this.flowParseTypeParameterDeclaration();
+  } else {
+    node.typeParameters = null;
+  }
+
+  // Parse the supertype
+  node.supertype = null;
+  if (this.match(types.colon)) {
+    node.supertype = this.flowParseTypeInitialiser(types.colon);
+  }
+
+  node.impltype = null;
+  if (!declare) {
+    node.impltype = this.flowParseTypeInitialiser(types.eq);
+  }
+  this.semicolon();
+
+  return this.finishNode(node, "OpaqueType");
 };
 
 // Type annotations
@@ -5277,7 +5383,7 @@ pp$8.flowParseObjectTypeMethodish = function (node) {
   }
 
   this.expect(types.parenL);
-  while (this.match(types.name)) {
+  while (!this.match(types.parenR) && !this.match(types.ellipsis)) {
     node.params.push(this.flowParseFunctionTypeParam());
     if (!this.match(types.parenR)) {
       this.expect(types.comma);
@@ -5482,7 +5588,7 @@ pp$8.flowParseFunctionTypeParam = function () {
 };
 
 pp$8.reinterpretTypeAsFunctionTypeParam = function (type) {
-  var node = this.startNodeAt(type.start, type.loc);
+  var node = this.startNodeAt(type.start, type.loc.start);
   node.name = null;
   node.optional = false;
   node.typeAnnotation = type;
@@ -5693,7 +5799,7 @@ pp$8.flowParsePrefixType = function () {
 pp$8.flowParseAnonFunctionWithoutParens = function () {
   var param = this.flowParsePrefixType();
   if (!this.state.noAnonFunctionType && this.eat(types.arrow)) {
-    var node = this.startNodeAt(param.start, param.loc);
+    var node = this.startNodeAt(param.start, param.loc.start);
     node.params = [this.reinterpretTypeAsFunctionTypeParam(param)];
     node.rest = null;
     node.returnType = this.flowParseType();
@@ -5811,7 +5917,7 @@ var flowPlugin = function (instance) {
     return function (node, expr) {
       if (expr.type === "Identifier") {
         if (expr.name === "declare") {
-          if (this.match(types._class) || this.match(types.name) || this.match(types._function) || this.match(types._var)) {
+          if (this.match(types._class) || this.match(types.name) || this.match(types._function) || this.match(types._var) || this.match(types._export)) {
             return this.flowParseDeclare(node);
           }
         } else if (this.match(types.name)) {
@@ -5819,6 +5925,8 @@ var flowPlugin = function (instance) {
             return this.flowParseInterface(node);
           } else if (expr.name === "type") {
             return this.flowParseTypeAlias(node);
+          } else if (expr.name === "opaque") {
+            return this.flowParseOpaqueType(node, false);
           }
         }
       }
@@ -5830,7 +5938,17 @@ var flowPlugin = function (instance) {
   // export type
   instance.extend("shouldParseExportDeclaration", function (inner) {
     return function () {
-      return this.isContextual("type") || this.isContextual("interface") || inner.call(this);
+      return this.isContextual("type") || this.isContextual("interface") || this.isContextual("opaque") || inner.call(this);
+    };
+  });
+
+  instance.extend("isExportDefaultSpecifier", function (inner) {
+    return function () {
+      if (this.match(types.name) && (this.state.value === "type" || this.state.value === "interface" || this.state.value === "opaque")) {
+        return false;
+      }
+
+      return inner.call(this);
     };
   });
 
@@ -5904,11 +6022,18 @@ var flowPlugin = function (instance) {
           // export type Foo = Bar;
           return this.flowParseTypeAlias(declarationNode);
         }
-      } else if (this.isContextual("interface")) {
+      } else if (this.isContextual("opaque")) {
         node.exportKind = "type";
+
         var _declarationNode = this.startNode();
         this.next();
-        return this.flowParseInterface(_declarationNode);
+        // export opaque type Foo = Bar;
+        return this.flowParseOpaqueType(_declarationNode, false);
+      } else if (this.isContextual("interface")) {
+        node.exportKind = "type";
+        var _declarationNode2 = this.startNode();
+        this.next();
+        return this.flowParseInterface(_declarationNode2);
       } else {
         return inner.call(this, node);
       }

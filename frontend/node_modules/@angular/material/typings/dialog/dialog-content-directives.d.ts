@@ -6,6 +6,10 @@ export declare class MdDialogClose {
     dialogRef: MdDialogRef<any>;
     /** Screenreader label for the button. */
     ariaLabel: string;
+    /** Dialog close input. */
+    dialogResult: any;
+    /** Dialog close input for compatibility mode. */
+    _matDialogClose: any;
     constructor(dialogRef: MdDialogRef<any>);
 }
 /**

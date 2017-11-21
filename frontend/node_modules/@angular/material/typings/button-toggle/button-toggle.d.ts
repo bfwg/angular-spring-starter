@@ -1,9 +1,19 @@
-import { ElementRef, Renderer, OnInit, QueryList, AfterViewInit } from '@angular/core';
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { ElementRef, Renderer2, EventEmitter, OnInit, QueryList, AfterViewInit } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
 import { UniqueSelectionDispatcher, FocusOriginMonitor } from '../core';
+import { CanDisable } from '../core/common-behaviors/disabled';
 /** Acceptable types for a button toggle. */
 export declare type ToggleType = 'checkbox' | 'radio';
+export declare class MdButtonToggleGroupBase {
+}
+export declare const _MdButtonToggleGroupMixinBase: (new (...args: any[]) => CanDisable) & typeof MdButtonToggleGroupBase;
 /**
  * Provider Expression that allows md-button-toggle-group to register as a ControlValueAccessor.
  * This allows it to support [(ngModel)].
@@ -18,13 +28,11 @@ export declare class MdButtonToggleChange {
     value: any;
 }
 /** Exclusive selection button toggle group that behaves like a radio-button group. */
-export declare class MdButtonToggleGroup implements AfterViewInit, ControlValueAccessor {
+export declare class MdButtonToggleGroup extends _MdButtonToggleGroupMixinBase implements AfterViewInit, ControlValueAccessor, CanDisable {
     /** The value for the button toggle group. Should match currently selected button toggle. */
     private _value;
     /** The HTML name attribute applied to toggles in this group. */
     private _name;
-    /** Disables all toggles in the group. */
-    private _disabled;
     /** Whether the button toggle group should be vertical. */
     private _vertical;
     /** The currently selected button toggle, should match the value. */
@@ -43,8 +51,6 @@ export declare class MdButtonToggleGroup implements AfterViewInit, ControlValueA
     ngAfterViewInit(): void;
     /** `name` attribute for the underlying `input` element. */
     name: string;
-    /** Whether the toggle group is disabled. */
-    disabled: boolean;
     /** Whether the toggle group is vertical. */
     vertical: boolean;
     /** Value of the toggle group. */
@@ -52,8 +58,7 @@ export declare class MdButtonToggleGroup implements AfterViewInit, ControlValueA
     /** Whether the toggle group is selected. */
     selected: MdButtonToggle;
     /** Event emitted when the group's value changes. */
-    readonly change: Observable<MdButtonToggleChange>;
-    private _change;
+    change: EventEmitter<MdButtonToggleChange>;
     private _updateButtonToggleNames();
     private _updateSelectedButtonToggleFromValue();
     /** Dispatch change event with current selection and group value. */
@@ -82,13 +87,9 @@ export declare class MdButtonToggleGroup implements AfterViewInit, ControlValueA
     setDisabledState(isDisabled: boolean): void;
 }
 /** Multiple selection button-toggle group. `ngModel` is not supported in this mode. */
-export declare class MdButtonToggleGroupMultiple {
-    /** Disables all toggles in the group. */
-    private _disabled;
+export declare class MdButtonToggleGroupMultiple extends _MdButtonToggleGroupMixinBase implements CanDisable {
     /** Whether the button toggle group should be vertical. */
     private _vertical;
-    /** Whether the toggle group is disabled. */
-    disabled: boolean;
     /** Whether the toggle group is vertical. */
     vertical: boolean;
 }
@@ -126,9 +127,8 @@ export declare class MdButtonToggle implements OnInit {
     /** Whether the button is disabled. */
     disabled: boolean;
     /** Event emitted when the group value changes. */
-    private _change;
-    readonly change: Observable<MdButtonToggleChange>;
-    constructor(toggleGroup: MdButtonToggleGroup, toggleGroupMultiple: MdButtonToggleGroupMultiple, _buttonToggleDispatcher: UniqueSelectionDispatcher, _renderer: Renderer, _elementRef: ElementRef, _focusOriginMonitor: FocusOriginMonitor);
+    change: EventEmitter<MdButtonToggleChange>;
+    constructor(toggleGroup: MdButtonToggleGroup, toggleGroupMultiple: MdButtonToggleGroupMultiple, _buttonToggleDispatcher: UniqueSelectionDispatcher, _renderer: Renderer2, _elementRef: ElementRef, _focusOriginMonitor: FocusOriginMonitor);
     ngOnInit(): void;
     /** Focuses the button. */
     focus(): void;

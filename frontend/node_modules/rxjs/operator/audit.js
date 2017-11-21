@@ -40,7 +40,7 @@ var subscribeToResult_1 = require('../util/subscribeToResult');
  * @see {@link sample}
  * @see {@link throttle}
  *
- * @param {function(value: T): Observable|Promise} durationSelector A function
+ * @param {function(value: T): SubscribableOrPromise} durationSelector A function
  * that receives a value from the source Observable, for computing the silencing
  * duration, returned as an Observable or a Promise.
  * @return {Observable<T>} An Observable that performs rate-limiting of
@@ -82,7 +82,13 @@ var AuditSubscriber = (function (_super) {
                 this.destination.error(errorObject_1.errorObject.e);
             }
             else {
-                this.add(this.throttled = subscribeToResult_1.subscribeToResult(this, duration));
+                var innerSubscription = subscribeToResult_1.subscribeToResult(this, duration);
+                if (innerSubscription.closed) {
+                    this.clearThrottle();
+                }
+                else {
+                    this.add(this.throttled = innerSubscription);
+                }
             }
         }
     };

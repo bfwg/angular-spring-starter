@@ -1,21 +1,11 @@
-import { ModuleWithProviders } from '@angular/core';
 export { Dir, LayoutDirection, RtlModule } from './rtl/dir';
 export { ObserveContentModule, ObserveContent } from './observe-content/observe-content';
-export { MdOptionModule, MdOption } from './option/option';
+export * from './option/index';
 export { Portal, PortalHost, BasePortalHost, ComponentPortal, TemplatePortal } from './portal/portal';
 export { PortalHostDirective, TemplatePortalDirective, PortalModule } from './portal/portal-directives';
 export { DomPortalHost } from './portal/dom-portal-host';
 export * from './platform/index';
-export { Overlay, OVERLAY_PROVIDERS } from './overlay/overlay';
-export { OverlayContainer } from './overlay/overlay-container';
-export { FullscreenOverlayContainer } from './overlay/fullscreen-overlay-container';
-export { OverlayRef } from './overlay/overlay-ref';
-export { OverlayState } from './overlay/overlay-state';
-export { ConnectedOverlayDirective, OverlayOrigin, OverlayModule } from './overlay/overlay-directives';
-export * from './overlay/position/global-position-strategy';
-export * from './overlay/position/connected-position-strategy';
-export * from './overlay/position/connected-position';
-export { ScrollDispatcher } from './overlay/scroll/scroll-dispatcher';
+export * from './overlay/index';
 export { GestureConfig } from './gestures/gesture-config';
 export { HammerInput, HammerManager } from './gestures/gesture-annotations';
 export * from './ripple/index';
@@ -28,7 +18,6 @@ export { A11yModule } from './a11y/index';
 export { UniqueSelectionDispatcher, UniqueSelectionDispatcherListener, UNIQUE_SELECTION_DISPATCHER_PROVIDER } from './coordination/unique-selection-dispatcher';
 export { MdLineModule, MdLine, MdLineSetter } from './line/line';
 export * from './style/index';
-export { MdError } from './errors/error';
 export { ComponentType } from './overlay/generic-component-type';
 export * from './keyboard/keycodes';
 export * from './compatibility/compatibility';
@@ -37,7 +26,8 @@ export * from './selection/index';
 export { coerceBooleanProperty } from './coercion/boolean-property';
 export { coerceNumberProperty } from './coercion/number-property';
 export { CompatibilityModule, NoConflictStyleCompatibilityMode } from './compatibility/compatibility';
+export { MdCommonModule, MATERIAL_SANITY_CHECKS } from './common-behaviors/common-module';
+export * from './datetime/index';
+export { FloatPlaceholderType, PlaceholderOptions, MD_PLACEHOLDER_GLOBAL_OPTIONS } from './placeholder/placeholder-options';
 export declare class MdCoreModule {
-    /** @deprecated */
-    static forRoot(): ModuleWithProviders;
 }

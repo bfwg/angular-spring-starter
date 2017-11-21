@@ -1,4 +1,11 @@
-import { AfterContentChecked, OnInit, QueryList, Renderer, ElementRef } from '@angular/core';
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { AfterContentChecked, OnInit, QueryList, Renderer2, ElementRef } from '@angular/core';
 import { MdGridTile } from './grid-tile';
 import { Dir } from '../core';
 export declare class MdGridList implements OnInit, AfterContentChecked {
@@ -20,7 +27,7 @@ export declare class MdGridList implements OnInit, AfterContentChecked {
     private _tileStyler;
     /** Query list of tiles that are being rendered. */
     _tiles: QueryList<MdGridTile>;
-    constructor(_renderer: Renderer, _element: ElementRef, _dir: Dir);
+    constructor(_renderer: Renderer2, _element: ElementRef, _dir: Dir);
     /** Amount of columns in the grid list. */
     cols: any;
     /** Size of the grid list's gutter in pixels. */

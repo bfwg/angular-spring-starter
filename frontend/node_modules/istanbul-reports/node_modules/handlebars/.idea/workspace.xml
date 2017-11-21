@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b292870-df0f-40ed-8ad0-3637ddba5dd2" name="Default" comment="" />
+    <list default="true" id="4b292870-df0f-40ed-8ad0-3637ddba5dd2" name="Default" comment="Update (C) year in the LICENSE file&#10;&#10;Welcome to 2017!&#10;&#10;(cherry picked from commit 33773c2)" />
     <ignored path="handlebars.js.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -21,81 +21,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="compiler.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/handlebars/compiler/compiler.js">
+      <file leaf-file-name="precompiler.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/precompiler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="488" column="3" lean-forward="false" selection-start-line="488" selection-start-column="3" selection-end-line="488" selection-end-column="3" />
+            <state relative-caret-position="2960">
+              <caret line="209" column="4" lean-forward="false" selection-start-line="209" selection-start-column="4" selection-end-line="209" selection-end-column="4" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#30#67#0" expanded="true" />
+                <marker date="1508271609846" expanded="true" signature="67:11680" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="7950:8111" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="8152:8324" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="8368:11676" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="8428:8593" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="8494:8585" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="8663:8901" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="8772:8893" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="8973:9312" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="9089:9304" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="9398:9573" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="9502:9565" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="9619:9866" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="9784:9858" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="9924:10190" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="10083:10182" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="10247:10469" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="10338:10461" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="10531:10878" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="10655:10870" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="10932:11200" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="11250:11466" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="11344:11458" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="11535:11670" ph="{...}" />
+                <marker date="1508271609846" expanded="true" signature="11593:11662" ph="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/handlebars/utils.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="79" column="20" lean-forward="false" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Changes" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/mustache/Changes">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="release-notes.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/release-notes.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="126">
-                <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CONTRIBUTING.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CONTRIBUTING.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="208">
-                <caret line="86" column="17" lean-forward="false" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="compiler.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/compiler.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1476">
-              <caret line="82" column="6" lean-forward="false" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -103,29 +61,44 @@
       <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/env/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="1160">
+              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="print-script" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/print-script">
+      <file leaf-file-name="runnable.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/mocha/lib/runnable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="3680">
+              <caret line="184" column="4" lean-forward="false" selection-start-line="184" selection-start-column="4" selection-end-line="184" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="precompiler.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/precompiler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-24">
-              <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="100">
+              <caret line="232" column="18" lean-forward="false" selection-start-line="232" selection-start-column="18" selection-end-line="232" selection-end-column="18" />
+              <folding>
+                <element signature="e#32#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CONTRIBUTING.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CONTRIBUTING.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-273">
+                <caret line="65" column="136" lean-forward="false" selection-start-line="65" selection-start-column="136" selection-end-line="65" selection-end-column="136" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -134,60 +107,60 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>publish</find>
-      <find>grunt</find>
-      <find>test'</find>
-      <find>istanbul</find>
-      <find>bin</find>
-      <find>cl</find>
-      <find>istanbu</find>
-      <find>error</find>
-      <find>bin/</find>
-      <find>os.type</find>
-      <find>master</find>
-      <find>branch</find>
-      <find>test:</find>
-      <find>test</find>
-      <find>compile</find>
-      <find>copile</find>
-      <find>PathExpression</find>
-      <find>lodash</find>
-      <find>undest</find>
-      <find>equal</find>
-      <find>options</find>
-      <find>this.options.blockParams</find>
-      <find>this.options</find>
-      <find>blockParams</find>
-      <find>new</find>
-      <find>parse</find>
-      <find>Object.assig</find>
-      <find>forEach</find>
-      <find>webpack</find>
-      <find>object.a</find>
+      <find>ugf</find>
+      <find>pre</find>
+      <find>mocha</find>
+      <find>const</find>
+      <find>logFunction</find>
+      <find>it.onl</find>
+      <find>should output minimi</find>
+      <find>opts.min</find>
+      <find>origError</find>
+      <find>toArray</find>
+      <find>throw</find>
+      <find>delete</find>
+      <find>beforeEach</find>
+      <find>shouldThrow</find>
+      <find>requireHook</find>
+      <find>Module</find>
+      <find>Mock Error</find>
+      <find>errorLogFunc</find>
+      <find>logFunc</find>
+      <find>minif</find>
+      <find>le</find>
+      <find>var</find>
+      <find>min</find>
+      <find>let</find>
+      <find>require</find>
+      <find>in</find>
+      <find>resolveFile</find>
+      <find>requireFu</find>
+      <find>_resolve</find>
+      <find>opts</find>
     </findStrings>
     <replaceStrings>
       <replace>this.param</replace>
       <replace>([@$1](https://github.com/$1))</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/lib/handlebars</dir>
       <dir>$PROJECT_DIR$/lib</dir>
       <dir>$PROJECT_DIR$/lib/handlebars/compiler</dir>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/node_modules</dir>
+      <dir>$PROJECT_DIR$/lib/handlebars</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Rebase.Settings">
-    <option name="ONTO" value="wycats/4.x" />
+    <option name="ONTO" value="refs/heads/4.x" />
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Luiz Américo &lt;luizamericop@gmail.com&gt;" />
         <option value="Nils Knappmeier &lt;github@knappi.org&gt;" />
+        <option value="Marcos Marado &lt;mindboosternoori@gmail.com&gt;" />
+        <option value="Luiz Américo &lt;luizamericop@gmail.com&gt;" />
         <option value="Tobias Bieniek &lt;tobias.bieniek@gmail.com&gt;" />
         <option value="Joonas Lahtinen &lt;joonas.lahtinen@iki.fi&gt;" />
-        <option value="Marcos Marado &lt;mindboosternoori@gmail.com&gt;" />
         <option value="Travis Nelson &lt;travis.o.nelson@gmail.com&gt;" />
       </list>
     </option>
@@ -196,7 +169,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fix-object-assign-bug" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RESET_MODE" value="HARD" />
@@ -231,7 +204,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.js" />
         <option value="$PROJECT_DIR$/lib/handlebars/compiler/ast.js" />
         <option value="$PROJECT_DIR$/lib/handlebars/compiler/code-gen.js" />
-        <option value="$PROJECT_DIR$/dist/cjs/precompiler.js" />
         <option value="$PROJECT_DIR$/.istanbul.yml" />
         <option value="$PROJECT_DIR$/src/parser-suffix.js" />
         <option value="$PROJECT_DIR$/src/parser-prefix.js" />
@@ -240,16 +212,11 @@
         <option value="$PROJECT_DIR$/.eslintrc" />
         <option value="$PROJECT_DIR$/lib/handlebars/compiler/javascript-compiler.js" />
         <option value="$PROJECT_DIR$/dist/handlebars.js" />
-        <option value="$PROJECT_DIR$/lib/handlebars/runtime.js" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/tasks/publish.js" />
         <option value="$PROJECT_DIR$/spec/artifacts/example_1.handlebars" />
-        <option value="$PROJECT_DIR$/src/handlebars.l" />
         <option value="$PROJECT_DIR$/src/handlebars.yy" />
         <option value="$PROJECT_DIR$/.appveyor.yml" />
-        <option value="$PROJECT_DIR$/appveyor.yml" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
-        <option value="$PROJECT_DIR$/tasks/test.js" />
         <option value="$PROJECT_DIR$/.gitattributes" />
         <option value="$PROJECT_DIR$/spec/regressions.js" />
         <option value="$PROJECT_DIR$/spec/env/common.js" />
@@ -257,6 +224,22 @@
         <option value="$PROJECT_DIR$/release-notes.md" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/lib/handlebars/compiler/compiler.js" />
+        <option value="$PROJECT_DIR$/CONTRIBUTING.md" />
+        <option value="$PROJECT_DIR$/lib/handlebars/runtime.js" />
+        <option value="$PROJECT_DIR$/spec/parser.js" />
+        <option value="$PROJECT_DIR$/src/handlebars.l" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/tasks/test.js" />
+        <option value="$PROJECT_DIR$/appveyor.yml" />
+        <option value="$PROJECT_DIR$/spec/env/browser.js" />
+        <option value="$PROJECT_DIR$/spec/env/runner.js" />
+        <option value="$PROJECT_DIR$/README.markdown" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_8.js" />
+        <option value="/JavaScript Fragment (compiler-api.md:8232).js" />
+        <option value="$PROJECT_DIR$/docs/compiler-api.md" />
+        <option value="$PROJECT_DIR$/dist/cjs/precompiler.js" />
+        <option value="$PROJECT_DIR$/spec/precompiler.js" />
+        <option value="$PROJECT_DIR$/lib/precompiler.js" />
       </list>
     </option>
   </component>
@@ -361,10 +344,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1303" />
-    <option name="height" value="780" />
+    <option name="x" value="1680" />
+    <option name="y" value="-4" />
+    <option name="width" value="1920" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -384,9 +367,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -409,12 +389,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlebars.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlebars.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="docs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -424,10 +421,9 @@
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v6.9.2/bin/node" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/versions/node/v6.9.2/bin/node" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="$PROJECT_DIR$/node_modules/grunt-cli" />
     <property name="SearchEverywhereHistoryKey" value="invokepartial&#9;null&#9;null" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="JavaScript&#10;TEXT" />
@@ -439,6 +435,126 @@
     <property name="node.js.selected.package.jscs" value="" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="add_unversioned_files" value="true" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.standard" value="$PROJECT_DIR$/node_modules/eslint" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/LICENSE</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/docs/compiler-api.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/lib/precompiler.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/spec/precompiler.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -630,6 +746,40 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
+      <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
+      <module name="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <method />
+    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -732,6 +882,37 @@
       <setting name="params" value="" />
       <setting name="workDir" value="file://$PROJECT_DIR$" />
       <setting name="debug" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JRubyCucumberRunConfigurationType" factoryName="JRuby Cucumber">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" value="-Dforce.jruby.jit=true -Djruby.debug.fullTrace=true" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -909,6 +1090,33 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest">
+      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
+      <module name="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method />
+    </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -1037,7 +1245,7 @@
       <node-interpreter value="project" />
       <gruntfile value="$PROJECT_DIR$/Gruntfile.js" />
       <tasks>
-        <task value="test" />
+        <task value="travis" />
       </tasks>
       <envs />
       <method />
@@ -1167,175 +1375,24 @@
       <workItem from="1495053555370" duration="4670000" />
       <workItem from="1495130336652" duration="4706000" />
       <workItem from="1495365578159" duration="18000" />
-      <workItem from="1495365778333" duration="2870000" />
-    </task>
-    <task id="LOCAL-00005" summary="Test-case for #1252: Using @partial-block twice in a template not possible">
-      <created>1483140723041</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1483140723041</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Possible fix for #1252: Refactoring for nested partial-block calls&#10;&#10;This fix treats partial-blocks more like closures and uses the closure-context of &#10;the &quot;invokePartial&quot;-function to store the @partial-block for the partial.">
-      <created>1483256759300</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1483256759300</updated>
-    </task>
-    <task id="LOCAL-00007" summary="require('sys') is deprecated, using 'util' instead&#10;&#10;(node:30288) DeprecationWarning: sys is deprecated. Use util instead.&#10;&#10;(cherry picked from commit 9a36966 by @travnels)">
-      <created>1483300079132</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1483300079132</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Fix istanbul dev dependency&#10;&#10;According to npm's documentation[1], dependencies on github&#10;repositories are declared with the following syntax:&#10;    &quot;module&quot;: &quot;person/module&quot;&#10;&#10;This commit changes the package.json syntax on istanbul's dependency,&#10;to follow the documentation.&#10;&#10;[1] https://docs.npmjs.com/files/package.json#github-urls&#10;&#10;(cherry picked from commit 2b7ed7e)">
-      <created>1483301376054</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1483301376054</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Add more tests for different scenarios of using partial-blocks&#10;&#10;- Multiple partial-blocks at different nesting levels&#10;- Calling partial-blocks twice with nested partial-blocks&#10;- Calling the partial-block from within the #each-helper&#10;">
-      <created>1483347921572</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1483347921572</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Added tests for multiple partial-block calls with inline partials&#10;&#10;- nested inline partials with partial-blocks on different nesting levels&#10;- nested inline partials (twice at each level)">
-      <created>1483348429705</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1483348429705</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Added &quot;.editorconfig&quot;-file that specifies the indent for javascript-files&#10; &#10;- see http://editorconfig.org/&#10;- This file only includes very basic settings. It may be expanded in the future">
-      <created>1483348953848</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1483348953848</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Added node v6 to travis-ci&#10;&#10;(cherry picked from commit f784e6c)">
-      <created>1483689696115</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1483689696115</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Node 5 is out-of-support Node 6 is the current LTS version">
-      <created>1483689921473</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1483689921473</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Replace Node 5 by Node 6 in .travis-ci.yml&#10;&#10;Node 5 is not officially supported anymore and Node 6 is the active LTS.&#10;That's why builds are now performed with Node 6">
-      <created>1483691689373</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1483691689373</updated>
-    </task>
-    <task id="LOCAL-00015" summary="add more machine-readable data about the license&#10;&#10;This small change is meant to make LibreJS happy.&#10;&#10;Closes: #1273&#10;&#10;(cherry picked from commit 1f2d293)">
-      <created>1483696373690</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1483696373690</updated>
-    </task>
-    <task id="LOCAL-00016" summary="add more machine-readable data about the license&#10;&#10;This small change is meant to make LibreJS happy.&#10;&#10;Closes: #1273&#10;&#10;(cherry picked from commit 1f2d293)">
-      <created>1483696482161</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1483696482161</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Avoid duplicate &quot;sourceMappingURL=&quot; lines.&#10;&#10;Avoid duplicate // sourceMappingURL=... lines when minifying AND&#10;generating a map. UglifyJS2 will write the line when minifying.&#10;&#10;(cherry picked from commit 660a117)">
-      <created>1487106073949</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1487106073949</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Merge branch '4.x'&#10;&#10;# Conflicts:&#10;#&#9;Gruntfile.js&#10;#&#9;lib/handlebars/exception.js&#10;#&#9;spec/partials.js&#10;#&#9;spec/regressions.js&#10;">
-      <created>1487110202236</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1487110202236</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Parser: Change suffix to use ES6 default module export&#10;&#10;- This export will be transpiled by Babel for the cjs distribution,&#10;  but will enable others to  use a pure ES6 module distribution&#10;- Instanbul: Ignore &quot;parser.js&quot; for coverage reporting. This file was ignored before&#10;  via annotation, but this has no effect anymore due to the above change&#10;- Remove istanbul annotation from `parser-prefix` (@nknapp)&#10;&#10;Squashed by @nknapp&#10;">
-      <created>1487921331134</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1487921331134</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Parser: Change suffix to use ES6 default module export&#10;&#10;- This export will be transpiled by Babel for the cjs distribution,&#10;  but will enable others to  use a pure ES6 module distribution&#10;- Instanbul: Ignore &quot;parser.js&quot; for coverage reporting. This file was ignored before&#10;  via annotation, but this has no effect anymore due to the above change&#10;- Remove istanbul annotation from `parser-prefix` (@nknapp)&#10;&#10;Squashed by @nknapp&#10;&#10;(cherry picked from commit 508347e)">
-      <created>1487921748952</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1487921748952</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Fix depths for null contexts.&#10;&#10;Fixes #1319&#10;&#10;">
-      <created>1489090672392</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1489090672392</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Fix context-stack when calling block-helpers on null values&#10;&#10;Fixes #1319&#10;&#10;Original behaviour:&#10;- When a block-helper was called on a null-context, an empty object was used&#10;  as context instead. (#1093)&#10;- The runtime verifies that whether the current context equals the&#10;  last context and adds the current context to the stack, if it is not.&#10;  This is done, so that inside a block-helper, the &quot;..&quot; path can be used&#10;  to go back to the parent element.&#10;- If the helper is called on a &quot;null&quot; element, the context was added, even&#10;  though it shouldn't be, because the &quot;null != {}&quot;&#10;&#10;Fix:&#10;- The commit replaces &quot;null&quot; by the identifiable &quot;container.nullContext&quot;&#10;  instead of &quot;{}&quot;. &quot;nullContext&quot; is a sealed empty object.&#10;- An additional check in the runtime verifies that the context is&#10;  only added to the stack, if it is not the nullContext.&#10;">
-      <created>1489093925059</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1489093925059</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Fix context-stack when calling block-helpers on null values&#10;&#10;Fixes #1319&#10;&#10;Original behaviour:&#10;- When a block-helper was called on a null-context, an empty object was used&#10;  as context instead. (#1093)&#10;- The runtime verifies that whether the current context equals the&#10;  last context and adds the current context to the stack, if it is not.&#10;  This is done, so that inside a block-helper, the &quot;..&quot; path can be used&#10;  to go back to the parent element.&#10;- If the helper is called on a &quot;null&quot; element, the context was added, even&#10;  though it shouldn't be, because the &quot;null != {}&quot;&#10;&#10;Fix:&#10;- The commit replaces &quot;null&quot; by the identifiable &quot;container.nullContext&quot;&#10;  instead of &quot;{}&quot;. &quot;nullContext&quot; is a sealed empty object.&#10;- An additional check in the runtime verifies that the context is&#10;  only added to the stack, if it is not the nullContext.&#10;">
-      <created>1489094013632</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1489094013632</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Fix context-stack when calling block-helpers on null values&#10;&#10;Fixes #1319&#10;&#10;Original behaviour:&#10;- When a block-helper was called on a null-context, an empty object was used&#10;  as context instead. (#1093)&#10;- The runtime verifies that whether the current context equals the&#10;  last context and adds the current context to the stack, if it is not.&#10;  This is done, so that inside a block-helper, the &quot;..&quot; path can be used&#10;  to go back to the parent element.&#10;- If the helper is called on a &quot;null&quot; element, the context was added, even&#10;  though it shouldn't be, because the &quot;null != {}&quot;&#10;&#10;Fix:&#10;- The commit replaces &quot;null&quot; by the identifiable &quot;container.nullContext&quot;&#10;  instead of &quot;{}&quot;. &quot;nullContext&quot; is a sealed empty object.&#10;- An additional check in the runtime verifies that the context is&#10;  only added to the stack, if it is not the nullContext.&#10;&#10;Backwards compatibility within 4.0.x-versions:&#10;- This commit changes the compiler and compiled templates would not work &#10;  with runtime-versions 4.0.0 - 4.0.6, because of the &quot;nullContext&quot; &#10;  property. That's way, the compiled code reads &#10;  &quot;(container.nullContext || {})&quot; so that the behavior will degrade&#10;  gracefully with older runtime versions: Everything else will work&#10;  fine, but GH-1319 will still be broken, if you use a newer compiler&#10;  with a pre 4.0.7 runtime.">
-      <created>1490449600429</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1490449600429</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Update release-notes for 4.0.7">
-      <created>1493498682485</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1493498682485</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Update release-notes for 4.0.7">
-      <created>1493498859434</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1493498859434</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Bump version in master-branch to 5.0-alpha.1&#10;&#10;This is in order to make sure that the master-branch version is not &#10;confused with the stable 4.x">
-      <created>1493573409057</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1493573409057</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Allow partial-blocks to be executed without &quot;options&quot;&#10;&#10;Closes #1342&#10;&#10;If the @partial-block is called as parameter of a helper (like in&#10;{{#if @partial-block}}...{{/if}}, the partialBlockWrapper is executed&#10;without &quot;options&quot;-parameter. It should still work in without an error&#10;in such a case.">
-      <created>1493757059485</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1493757059485</updated>
+      <workItem from="1495365778333" duration="4161000" />
+      <workItem from="1495373225554" duration="82000" />
+      <workItem from="1501709079468" duration="742000" />
+      <workItem from="1502743657203" duration="1374000" />
+      <workItem from="1502747149122" duration="1621000" />
+      <workItem from="1502828523435" duration="37000" />
+      <workItem from="1502911253520" duration="12000" />
+      <workItem from="1503084781737" duration="1207000" />
+      <workItem from="1503086017960" duration="245000" />
+      <workItem from="1503123531573" duration="180000" />
+      <workItem from="1503173168101" duration="37000" />
+      <workItem from="1503430613988" duration="5249000" />
+      <workItem from="1503514221854" duration="5861000" />
+      <workItem from="1503603654468" duration="2376000" />
+      <workItem from="1507917974113" duration="15307000" />
+      <workItem from="1508098334739" duration="3080000" />
+      <workItem from="1508180203201" duration="4360000" />
+      <workItem from="1508270223336" duration="2018000" />
     </task>
     <task id="LOCAL-00029" summary="Publish valid semver task independently of the branch">
       <created>1494627797109</created>
@@ -1512,11 +1569,179 @@
       <option name="project" value="LOCAL" />
       <updated>1495368155138</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Update jsfiddle-link to 4.0.10">
+      <created>1495368939581</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1495368939581</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Fix running test:bin on Windows">
+      <created>1503431540543</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1503431540546</updated>
+    </task>
+    <task id="LOCAL-00056" summary="fixup (code-style)">
+      <created>1503431687959</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1503431687959</updated>
+    </task>
+    <task id="LOCAL-00057" summary="fixup (clone submodule)">
+      <created>1503432053905</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1503432053905</updated>
+    </task>
+    <task id="LOCAL-00058" summary="fixup (add coverage report as build artifact)">
+      <created>1503432754307</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1503432754308</updated>
+    </task>
+    <task id="LOCAL-00059" summary="fixup (try again)">
+      <created>1503433475843</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1503433475844</updated>
+    </task>
+    <task id="LOCAL-00060" summary="fixup (push artifact by script)">
+      <created>1503434349838</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1503434349838</updated>
+    </task>
+    <task id="LOCAL-00061" summary="fixup (use grunt --stack travis for appveyor)">
+      <created>1503434675595</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1503434675595</updated>
+    </task>
+    <task id="LOCAL-00062" summary="fixup (try to fix browser.js)">
+      <created>1503515495082</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1503515495083</updated>
+    </task>
+    <task id="LOCAL-00063" summary="fixup (try to fix browser.js (2))">
+      <created>1503516199705</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1503516199705</updated>
+    </task>
+    <task id="LOCAL-00064" summary="fixup (try to fix browser.js (3))">
+      <created>1503516375760</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1503516375760</updated>
+    </task>
+    <task id="LOCAL-00065" summary="fixup (try to fix browser.js (4))">
+      <created>1503517908123</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1503517908124</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Add appveyor-badge">
+      <created>1503519043797</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1503519043797</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Extend compiler-api example by replacing child-compiler&#10;&#10;closes #1376">
+      <created>1503605781398</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1503605781401</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Gracefully handle missing uglify&#10;&#10;closes #1391&#10;&#10;uglify-js is an optional dependency and should be treated as such.&#10;This commit gracefully handle MODULE_NOT_FOUND errors while loading&#10;uglify.">
+      <created>1507931693246</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1507931693247</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Gracefully handle missing uglify-js dependency&#10;&#10;closes #1391&#10;&#10;uglify-js is an optional dependency and should be treated as such.&#10;This commit gracefully handles MODULE_NOT_FOUND errors while loading&#10;uglify.">
+      <created>1507931958561</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1507931958561</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Gracefully handle missing uglify-js dependency&#10;&#10;closes #1391&#10;&#10;uglify-js is an optional dependency and should be treated as such.&#10;This commit gracefully handles MODULE_NOT_FOUND errors while loading&#10;uglify.">
+      <created>1507932200558</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1507932200558</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Gracefully handle missing uglify-js dependency&#10;&#10;closes #1391&#10;&#10;uglify-js is an optional dependency and should be treated as such.&#10;This commit gracefully handles MODULE_NOT_FOUND errors while loading&#10;uglify.">
+      <created>1507932436814</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1507932436814</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Several refactorings&#10;&#10;- Check for existing uglify-js (and load uglify-js) only if minification&#10;  was activated&#10;- Use &quot;require.resolve&quot; to check if uglify exists. Otherwise, a missing&#10;  dependency of uglify-js would cause the same behavior as missing &#10;  uglify-js. (Only a warning, no error)&#10;- Refactor tests to mock Module._resolveFilename, because mocking only &#10;  Module.prototype.resolve() does not affect 'require.resolve'&#10;- Some cleanups (remove obsolete comments and empty lines)">
+      <created>1508100950944</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1508100950944</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Put minification into a single function. &#10;&#10;The code is better to read like this, with all minification-lines being together.">
+      <created>1508183324209</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1508183324209</updated>
+    </task>
+    <task id="LOCAL-00074" summary="fixup">
+      <created>1508270251471</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1508270251472</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Gracefully handle missing uglify-js dependency&#10;&#10;closes #1391&#10;&#10;uglify-js is an optional dependency and should be treated as such.&#10;This commit gracefully handles MODULE_NOT_FOUND errors while loading&#10;uglify.&#10;&#10;- Check for existing uglify-js (and load uglify-js) only if minification&#10;  was activated&#10;- Use &quot;require.resolve&quot; to check if uglify exists. Otherwise, a missing&#10;  dependency of uglify-js would cause the same behavior as missing&#10;  uglify-js. (Only a warning, no error)&#10;- The code to load and run uglify is put into a single for readability&#10;  purposes&#10;- Tests use a mockup Module._resolveFilename to simulate the missing module.&#10;  This function is used by both &quot;require&quot; and &quot;require.resolve&quot;, so both&#10;  are mocked equally.&#10;&#10;(cherry picked from commit d5caa56)">
+      <created>1508271536483</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1508271536483</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Update (C) year in the LICENSE file&#10;&#10;Welcome to 2017!&#10;&#10;(cherry picked from commit 33773c2)">
+      <created>1508271701222</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1508271701222</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Extend compiler-api example by replacing child-compiler&#10;&#10;closes #1376&#10;&#10;(cherry picked from commit ce3cd8a)">
+      <created>1508272231851</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1508272231851</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169752000" />
+    <option name="totallyTimeSpent" value="214831000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1528,7 +1753,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <frame x="1680" y="-4" width="1920" height="1084" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.49786553" order="7" side_tool="false" content_ui="tabs" />
@@ -1536,23 +1761,23 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45469254" sideWeight="0.77211154" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48387095" sideWeight="0.44503736" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6201299" sideWeight="0.2565737" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.23346613" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48387095" sideWeight="0.67129135" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56333333" sideWeight="0.6112173" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6201299" sideWeight="0.7434263" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48387095" sideWeight="0.32870865" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.225498" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17022412" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38311687" sideWeight="0.43346614" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48333332" sideWeight="0.4270236" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1578,7 +1803,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38311687" sideWeight="0.43346614" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35591397" sideWeight="0.4316969" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.49786553" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1586,10 +1811,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36363637" sideWeight="0.5466136" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32954547" sideWeight="0.23346613" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32954547" sideWeight="0.76653385" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.225498" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41747573" sideWeight="0.23984064" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6763754" sideWeight="0.28525898" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41747573" sideWeight="0.7601594" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17051792" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18344156" sideWeight="0.6151394" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1675,6 +1900,25 @@
                   </UserGroup>
                 </collection>
               </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="4.x" />
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="text">
+                    <value>
+                      <list>
+                        <option value="" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
               <option name="COLUMN_WIDTH">
                 <map>
                   <entry key="2" value="81" />
@@ -1702,43 +1946,48 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
-    <MESSAGE value="Parser: Change suffix to use ES6 default module export&#10;&#10;- This export will be transpiled by Babel for the cjs distribution,&#10;  but will enable others to  use a pure ES6 module distribution&#10;- Instanbul: Ignore &quot;parser.js&quot; for coverage reporting. This file was ignored before&#10;  via annotation, but this has no effect anymore due to the above change&#10;- Remove istanbul annotation from `parser-prefix` (@nknapp)&#10;&#10;Squashed by @nknapp&#10;&#10;(cherry picked from commit 508347e)" />
-    <MESSAGE value="Fix depths for null contexts.&#10;&#10;Fixes #1319&#10;&#10;" />
-    <MESSAGE value="Fix context-stack when calling block-helpers on null values&#10;&#10;Fixes #1319&#10;&#10;Original behaviour:&#10;- When a block-helper was called on a null-context, an empty object was used&#10;  as context instead. (#1093)&#10;- The runtime verifies that whether the current context equals the&#10;  last context and adds the current context to the stack, if it is not.&#10;  This is done, so that inside a block-helper, the &quot;..&quot; path can be used&#10;  to go back to the parent element.&#10;- If the helper is called on a &quot;null&quot; element, the context was added, even&#10;  though it shouldn't be, because the &quot;null != {}&quot;&#10;&#10;Fix:&#10;- The commit replaces &quot;null&quot; by the identifiable &quot;container.nullContext&quot;&#10;  instead of &quot;{}&quot;. &quot;nullContext&quot; is a sealed empty object.&#10;- An additional check in the runtime verifies that the context is&#10;  only added to the stack, if it is not the nullContext.&#10;" />
-    <MESSAGE value="Fix context-stack when calling block-helpers on null values&#10;&#10;Fixes #1319&#10;&#10;Original behaviour:&#10;- When a block-helper was called on a null-context, an empty object was used&#10;  as context instead. (#1093)&#10;- The runtime verifies that whether the current context equals the&#10;  last context and adds the current context to the stack, if it is not.&#10;  This is done, so that inside a block-helper, the &quot;..&quot; path can be used&#10;  to go back to the parent element.&#10;- If the helper is called on a &quot;null&quot; element, the context was added, even&#10;  though it shouldn't be, because the &quot;null != {}&quot;&#10;&#10;Fix:&#10;- The commit replaces &quot;null&quot; by the identifiable &quot;container.nullContext&quot;&#10;  instead of &quot;{}&quot;. &quot;nullContext&quot; is a sealed empty object.&#10;- An additional check in the runtime verifies that the context is&#10;  only added to the stack, if it is not the nullContext.&#10;&#10;Backwards compatibility within 4.0.x-versions:&#10;- This commit changes the compiler and compiled templates would not work &#10;  with runtime-versions 4.0.0 - 4.0.6, because of the &quot;nullContext&quot; &#10;  property. That's way, the compiled code reads &#10;  &quot;(container.nullContext || {})&quot; so that the behavior will degrade&#10;  gracefully with older runtime versions: Everything else will work&#10;  fine, but GH-1319 will still be broken, if you use a newer compiler&#10;  with a pre 4.0.7 runtime." />
-    <MESSAGE value="Update release-notes for 4.0.7" />
-    <MESSAGE value="Bump version in master-branch to 5.0-alpha.1&#10;&#10;This is in order to make sure that the master-branch version is not &#10;confused with the stable 4.x" />
-    <MESSAGE value="Allow partial-blocks to be executed without &quot;options&quot;&#10;&#10;Closes #1342&#10;&#10;If the @partial-block is called as parameter of a helper (like in&#10;{{#if @partial-block}}...{{/if}}, the partialBlockWrapper is executed&#10;without &quot;options&quot;-parameter. It should still work in without an error&#10;in such a case." />
-    <MESSAGE value="Test ci" />
-    <MESSAGE value="Publish valid semver task independently of the branch" />
-    <MESSAGE value="Use istanbul/lib/cli.js instead of node_modules/.bin/istanbul&#10;&#10;Fixes #1331&#10;&#10;Due to the way, &quot;bin&quot;-files are distributed into the node_modules/.bin&#10;directory on Windows, the task &quot;test:cov&quot; did not work on Windows.&#10;This commit uses the node-script directly." />
-    <MESSAGE value="Force LF line-endings for spec/artifacts&#10;&#10;Fixes #1331" />
-    <MESSAGE value="abc" />
-    <MESSAGE value="test" />
-    <MESSAGE value="Try appveyor" />
-    <MESSAGE value="Try appveyor 2" />
-    <MESSAGE value="Ensure LF line-edings in lexer-files (*.l)&#10;&#10;Related to #1233" />
-    <MESSAGE value="Run integration test with `node handlebars -a ...` (works on Windows)&#10;&#10;Fixes #1233" />
-    <MESSAGE value="Run integration test with `node handlebars -a ...` on Windows&#10;&#10;Fixes #1233&#10;&#10;NodeJS files cannot be executed directly on Windows." />
-    <MESSAGE value="Add appveyor-integration" />
-    <MESSAGE value="Add missing semicolon" />
-    <MESSAGE value="Appveyor" />
-    <MESSAGE value="Ensure LF line-edings in handlebars-template fixtures (*.hbs)" />
     <MESSAGE value="Fix build in windows&#10;&#10;(cherry picked from commit 275ab37)" />
     <MESSAGE value="Handlebars.compile() does not modify &quot;options&quot; anymore&#10;&#10;Fixes #1327&#10;&#10;- This commit creates a shallow copy of the &quot;options&quot; passed to&#10;  Handlebars.compile() in order to prevent modifications&#10;- Note that &quot;new Handlebars.Compiler().compile(..., options)&quot; still&#10;  modify the options object. This might change in the future, if &#10;  anybody needs a fix for that." />
     <MESSAGE value="Replace &quot;Object.assign&quot; (not support in IE) by &quot;util/extend&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Replace &quot;Object.assign&quot; (not support in IE) by &quot;util/extend&quot;" />
+    <MESSAGE value="Update jsfiddle-link to 4.0.10" />
+    <MESSAGE value="Fix running test:bin on Windows" />
+    <MESSAGE value="fixup (code-style)" />
+    <MESSAGE value="fixup (clone submodule)" />
+    <MESSAGE value="fixup (add coverage report as build artifact)" />
+    <MESSAGE value="fixup (try again)" />
+    <MESSAGE value="fixup (push artifact by script)" />
+    <MESSAGE value="fixup (use grunt --stack travis for appveyor)" />
+    <MESSAGE value="fixup (try to fix browser.js)" />
+    <MESSAGE value="fixup (try to fix browser.js (2))" />
+    <MESSAGE value="fixup (try to fix browser.js (3))" />
+    <MESSAGE value="fixup (try to fix browser.js (4))" />
+    <MESSAGE value="Add appveyor-badge" />
+    <MESSAGE value="Extend compiler-api example by replacing child-compiler&#10;&#10;closes #1376" />
+    <MESSAGE value="Gracefully handle missing uglify&#10;&#10;closes #1391&#10;&#10;uglify-js is an optional dependency and should be treated as such.&#10;This commit gracefully handle MODULE_NOT_FOUND errors while loading&#10;uglify." />
+    <MESSAGE value="Gracefully handle missing uglify-js dependency&#10;&#10;closes #1391&#10;&#10;uglify-js is an optional dependency and should be treated as such.&#10;This commit gracefully handles MODULE_NOT_FOUND errors while loading&#10;uglify." />
+    <MESSAGE value="Several refactorings&#10;&#10;- Check for existing uglify-js (and load uglify-js) only if minification&#10;  was activated&#10;- Use &quot;require.resolve&quot; to check if uglify exists. Otherwise, a missing&#10;  dependency of uglify-js would cause the same behavior as missing &#10;  uglify-js. (Only a warning, no error)&#10;- Refactor tests to mock Module._resolveFilename, because mocking only &#10;  Module.prototype.resolve() does not affect 'require.resolve'&#10;- Some cleanups (remove obsolete comments and empty lines)" />
+    <MESSAGE value="Put minification into a single function. &#10;&#10;The code is better to read like this, with all minification-lines being together." />
+    <MESSAGE value="fixup" />
+    <MESSAGE value="Gracefully handle missing uglify-js dependency&#10;&#10;closes #1391&#10;&#10;uglify-js is an optional dependency and should be treated as such.&#10;This commit gracefully handles MODULE_NOT_FOUND errors while loading&#10;uglify.&#10;&#10;- Check for existing uglify-js (and load uglify-js) only if minification&#10;  was activated&#10;- Use &quot;require.resolve&quot; to check if uglify exists. Otherwise, a missing&#10;  dependency of uglify-js would cause the same behavior as missing&#10;  uglify-js. (Only a warning, no error)&#10;- The code to load and run uglify is put into a single for readability&#10;  purposes&#10;- Tests use a mockup Module._resolveFilename to simulate the missing module.&#10;  This function is used by both &quot;require&quot; and &quot;require.resolve&quot;, so both&#10;  are mocked equally.&#10;&#10;(cherry picked from commit d5caa56)" />
+    <MESSAGE value="Update (C) year in the LICENSE file&#10;&#10;Welcome to 2017!&#10;&#10;(cherry picked from commit 33773c2)" />
+    <MESSAGE value="Extend compiler-api example by replacing child-compiler&#10;&#10;closes #1376&#10;&#10;(cherry picked from commit ce3cd8a)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Extend compiler-api example by replacing child-compiler&#10;&#10;closes #1376&#10;&#10;(cherry picked from commit ce3cd8a)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/spec/compiler.js</url>
-          <line>79</line>
+          <line>87</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/spec/env/runner.js</url>
+          <line>43</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="24" />
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1747,255 +1996,133 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/handlebars/decorators/inline.js">
+    <entry file="file://$PROJECT_DIR$/lib/precompiler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/partials.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="172" column="58" lean-forward="false" selection-start-line="172" selection-start-column="58" selection-end-line="172" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/handlebars/compiler/parser.js" />
-    <entry file="file://$PROJECT_DIR$/lib/handlebars/compiler/code-gen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/istanbul/lib/cli.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/webpack-dev-server/client/web_modules/jquery/jquery-1.8.1.js" />
-    <entry file="file://$PROJECT_DIR$/dist/cjs/handlebars/runtime.js" />
-    <entry file="file://$PROJECT_DIR$/dist/handlebars.runtime.js" />
-    <entry file="file://$PROJECT_DIR$/spec/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="22" column="17" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/aws-sdk/lib/util.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/webpack/lib/UmdMainTemplatePlugin.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/grunt-webpack/README.md" />
-    <entry file="file://$PROJECT_DIR$/.generator-release" />
-    <entry file="file://$PROJECT_DIR$/dist/handlebars.js" />
-    <entry file="file://$PROJECT_DIR$/lib/handlebars/runtime.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3582">
-          <caret line="201" column="20" lean-forward="false" selection-start-line="201" selection-start-column="20" selection-end-line="201" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/istanbul/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/istanbul/LICENSE">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/istanbul/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="51" column="6" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasks/publish.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="50" column="7" lean-forward="false" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasks/util/git.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1674">
-          <caret line="93" column="35" lean-forward="false" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/artifacts/example_1.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.eslintrc" />
-    <entry file="file://$PROJECT_DIR$/appveyor.yml" />
-    <entry file="file://$PROJECT_DIR$/tasks/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/parser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3582">
-          <caret line="199" column="5" lean-forward="false" selection-start-line="199" selection-start-column="5" selection-end-line="199" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/handlebars.l">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/handlebars.yy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitmodules">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/expected/empty.amd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/handlebars/helpers/each.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/handlebars.runtime.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/handlebars/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/handlebars/compiler/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        <state relative-caret-position="160">
+          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#32#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/handlebars.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/regressions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5274">
-          <caret line="293" column="0" lean-forward="false" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/runtime.js">
+    <entry file="file://$PROJECT_DIR$/spec/precompiler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1508271609846" expanded="true" signature="67:11680" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="7950:8111" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="8152:8324" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="8368:11676" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="8428:8593" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="8494:8585" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="8663:8901" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="8772:8893" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="8973:9312" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="9089:9304" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="9398:9573" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="9502:9565" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="9619:9866" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="9784:9858" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="9924:10190" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="10083:10182" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="10247:10469" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="10338:10461" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="10531:10878" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="10655:10870" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="10932:11200" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="11250:11466" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="11344:11458" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="11535:11670" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="11593:11662" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/handlebars/compiler/javascript-compiler.js">
+    <entry file="file://$PROJECT_DIR$/lib/precompiler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16470">
-          <caret line="918" column="6" lean-forward="false" selection-start-line="918" selection-start-column="6" selection-end-line="918" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="220">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          <folding>
+            <element signature="e#32#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/mustache/Changes">
+    <entry file="file://$PROJECT_DIR$/tasks/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="660">
+          <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/env/runner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/release-notes.md">
+    <entry file="file://$PROJECT_DIR$/spec/mustache/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="126">
-            <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-            <folding />
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CONTRIBUTING.md">
+    <entry file="file://$PROJECT_DIR$/README.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_8.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="81" lean-forward="false" selection-start-line="5" selection-start-column="81" selection-end-line="5" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/handlebars/compiler/compiler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8900">
+          <caret line="447" column="5" lean-forward="true" selection-start-line="447" selection-start-column="5" selection-end-line="447" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2120">
+          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/env/browser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/env/node.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/compiler-api.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="208">
-            <caret line="86" column="17" lean-forward="false" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
-            <folding />
+          <first_editor relative-caret-position="6400">
+            <caret line="320" column="1" lean-forward="true" selection-start-line="320" selection-start-column="1" selection-end-line="320" selection-end-column="1" />
           </first_editor>
           <second_editor />
         </state>
@@ -2003,60 +2130,318 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="79" column="20" lean-forward="false" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+        <state relative-caret-position="2420">
+          <caret line="121" column="17" lean-forward="false" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasks/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/env/runner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/print-script">
+    <entry file="file://$PROJECT_DIR$/spec/mustache/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2120">
+          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/istanbul/lib/cli.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/env/browser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/env/node.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3300">
+          <caret line="165" column="17" lean-forward="false" selection-start-line="165" selection-start-column="17" selection-end-line="165" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasks/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="55" column="29" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appveyor.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="24" column="22" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/env/browser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/handlebars/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2000">
+          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/aws-sdk/lib/model/operation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appveyor.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="24" column="22" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/istanbul/lib/cli.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasks/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/env/browser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/mustache/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2220">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="230" column="96" lean-forward="false" selection-start-line="230" selection-start-column="91" selection-end-line="230" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/env/node.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/cjs/precompiler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-474">
+          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_8.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="81" lean-forward="false" selection-start-line="5" selection-start-column="81" selection-end-line="5" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/env/runner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
-          <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding />
+    <entry file="file://$PROJECT_DIR$/docs/compiler-api.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="797">
+            <caret line="316" column="0" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/compiler.js">
+    <entry file="file://$PROJECT_DIR$/lib/handlebars/compiler/compiler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1476">
-          <caret line="82" column="6" lean-forward="false" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
+        <state relative-caret-position="10180">
+          <caret line="511" column="5" lean-forward="false" selection-start-line="511" selection-start-column="5" selection-end-line="511" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/precompiler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#32#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mocha/lib/runnable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3680">
+          <caret line="184" column="4" lean-forward="false" selection-start-line="184" selection-start-column="4" selection-end-line="184" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/env/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state relative-caret-position="1160">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/handlebars/utils.js">
+    <entry file="file://$PROJECT_DIR$/spec/precompiler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/handlebars/compiler/compiler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="488" column="3" lean-forward="false" selection-start-line="488" selection-start-column="3" selection-end-line="488" selection-end-column="3" />
+        <state relative-caret-position="2960">
+          <caret line="209" column="4" lean-forward="false" selection-start-line="209" selection-start-column="4" selection-end-line="209" selection-end-column="4" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#30#67#0" expanded="true" />
+            <marker date="1508271609846" expanded="true" signature="67:11680" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="7950:8111" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="8152:8324" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="8368:11676" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="8428:8593" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="8494:8585" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="8663:8901" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="8772:8893" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="8973:9312" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="9089:9304" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="9398:9573" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="9502:9565" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="9619:9866" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="9784:9858" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="9924:10190" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="10083:10182" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="10247:10469" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="10338:10461" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="10531:10878" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="10655:10870" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="10932:11200" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="11250:11466" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="11344:11458" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="11535:11670" ph="{...}" />
+            <marker date="1508271609846" expanded="true" signature="11593:11662" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/precompiler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="232" column="18" lean-forward="false" selection-start-line="232" selection-start-column="18" selection-end-line="232" selection-end-column="18" />
+          <folding>
+            <element signature="e#32#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CONTRIBUTING.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-273">
+            <caret line="65" column="136" lean-forward="false" selection-start-line="65" selection-start-column="136" selection-end-line="65" selection-end-column="136" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

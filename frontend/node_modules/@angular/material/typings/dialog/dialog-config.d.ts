@@ -1,4 +1,12 @@
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 import { ViewContainerRef } from '@angular/core';
+import { LayoutDirection } from '../core';
 /** Valid ARIA roles for a dialog element. */
 export declare type DialogRole = 'dialog' | 'alertdialog';
 /** Possible overrides for a dialog's position. */
@@ -21,6 +29,12 @@ export declare class MdDialogConfig {
     viewContainerRef?: ViewContainerRef;
     /** The ARIA role of the dialog element. */
     role?: DialogRole;
+    /** Custom class for the overlay pane. */
+    panelClass?: string;
+    /** Whether the dialog has a backdrop. */
+    hasBackdrop?: boolean;
+    /** Custom class for the backdrop, */
+    backdropClass?: string;
     /** Whether the user can use escape or clicking outside to close a modal. */
     disableClose?: boolean;
     /** Width of the dialog. */
@@ -31,4 +45,6 @@ export declare class MdDialogConfig {
     position?: DialogPosition;
     /** Data being injected into the child component. */
     data?: any;
+    /** Layout direction for the dialog's content. */
+    direction?: LayoutDirection;
 }

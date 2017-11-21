@@ -34,7 +34,7 @@ var ErrorObservable = (function (_super) {
      * var result = Rx.Observable.throw(new Error('oops!')).startWith(7);
      * result.subscribe(x => console.log(x), e => console.error(e));
      *
-     * @example <caption>Map and flattens numbers to the sequence 'a', 'b', 'c', but throw an error for 13</caption>
+     * @example <caption>Map and flatten numbers to the sequence 'a', 'b', 'c', but throw an error for 13</caption>
      * var interval = Rx.Observable.interval(1000);
      * var result = interval.mergeMap(x =>
      *   x === 13 ?
@@ -67,6 +67,7 @@ var ErrorObservable = (function (_super) {
     ErrorObservable.prototype._subscribe = function (subscriber) {
         var error = this.error;
         var scheduler = this.scheduler;
+        subscriber.syncErrorThrowable = true;
         if (scheduler) {
             return scheduler.schedule(ErrorObservable.dispatch, 0, {
                 error: error, subscriber: subscriber

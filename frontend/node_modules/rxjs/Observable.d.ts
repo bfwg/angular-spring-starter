@@ -44,17 +44,6 @@ export declare class Observable<T> implements Subscribable<T> {
      * @return {Observable} a new observable with the Operator applied
      */
     lift<R>(operator: Operator<T, R>): Observable<R>;
-    /**
-     * Registers handlers for handling emitted values, error and completions from the observable, and
-     *  executes the observable's subscriber function, which will take action to set up the underlying data stream
-     * @method subscribe
-     * @param {PartialObserver|Function} observerOrNext (optional) either an observer defining all functions to be called,
-     *  or the first of three possible handlers, which is the handler for each value emitted from the observable.
-     * @param {Function} error (optional) a handler for a terminal event resulting from an error. If no error handler is provided,
-     *  the error will be thrown as unhandled
-     * @param {Function} complete (optional) a handler for a terminal event resulting from successful completion.
-     * @return {ISubscription} a subscription reference to the registered handlers
-     */
     subscribe(): Subscription;
     subscribe(observer: PartialObserver<T>): Subscription;
     subscribe(next?: (value: T) => void, error?: (error: any) => void, complete?: () => void): Subscription;

@@ -1,4 +1,14 @@
 
+2.6.9 / 2017-09-22
+==================
+
+  * remove ReDoS regexp in %o formatter (#504)
+
+2.6.8 / 2017-05-18
+==================
+
+  * Fix: Check for undefined on browser globals (#462, @marbemac)
+
 2.6.7 / 2017-05-16
 ==================
 

@@ -1,16 +1,24 @@
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 import { Injector, TemplateRef } from '@angular/core';
+import { Location } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { Overlay, ComponentType } from '../core';
 import { MdDialogConfig } from './dialog-config';
 import { MdDialogRef } from './dialog-ref';
-import 'rxjs/add/operator/first';
 /**
  * Service to open Material Design modal dialogs.
  */
 export declare class MdDialog {
     private _overlay;
     private _injector;
+    private _location;
     private _parentDialog;
     private _openDialogsAtThisLevel;
     private _afterAllClosedAtThisLevel;
@@ -26,7 +34,7 @@ export declare class MdDialog {
     afterOpen: Observable<MdDialogRef<any>>;
     /** Gets an observable that is notified when all open dialog have finished closing. */
     afterAllClosed: Observable<void>;
-    constructor(_overlay: Overlay, _injector: Injector, _parentDialog: MdDialog);
+    constructor(_overlay: Overlay, _injector: Injector, _location: Location, _parentDialog: MdDialog);
     /**
      * Opens a modal dialog containing the given component.
      * @param componentOrTemplateRef Type of the component to load into the dialog,

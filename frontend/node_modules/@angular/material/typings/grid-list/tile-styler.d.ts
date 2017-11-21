@@ -1,3 +1,10 @@
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 import { MdGridTile } from './grid-tile';
 import { TileCoordinator } from './tile-coordinator';
 /**
@@ -5,7 +12,7 @@ import { TileCoordinator } from './tile-coordinator';
  * Tile Coordinator.
  * @docs-private
  */
-export declare class TileStyler {
+export declare abstract class TileStyler {
     _gutterSize: string;
     _rows: number;
     _rowspan: number;
@@ -66,10 +73,10 @@ export declare class TileStyler {
      * This method will be implemented by each type of TileStyler.
      * @docs-private
      */
-    setRowStyles(tile: MdGridTile, rowIndex: number, percentWidth: number, gutterWidth: number): void;
+    abstract setRowStyles(tile: MdGridTile, rowIndex: number, percentWidth: number, gutterWidth: number): any;
     /**
      * Calculates the computed height and returns the correct style property to set.
-     * This method will be implemented by each type of TileStyler.
+     * This method can be implemented by each type of TileStyler.
      * @docs-private
      */
     getComputedHeight(): [string, string];
@@ -83,7 +90,7 @@ export declare class FixedTileStyler extends TileStyler {
     fixedRowHeight: string;
     constructor(fixedRowHeight: string);
     init(gutterSize: string, tracker: TileCoordinator, cols: number, direction: string): void;
-    setRowStyles(tile: MdGridTile, rowIndex: number, percentWidth: number, gutterWidth: number): void;
+    setRowStyles(tile: MdGridTile, rowIndex: number): void;
     getComputedHeight(): [string, string];
 }
 /**
@@ -108,5 +115,5 @@ export declare class RatioTileStyler extends TileStyler {
  * @docs-private
  */
 export declare class FitTileStyler extends TileStyler {
-    setRowStyles(tile: MdGridTile, rowIndex: number, percentWidth: number, gutterWidth: number): void;
+    setRowStyles(tile: MdGridTile, rowIndex: number): void;
 }

@@ -1,15 +1,25 @@
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 import { OverlayRef } from '../core';
 import { DialogPosition } from './dialog-config';
 import { Observable } from 'rxjs/Observable';
 import { MdDialogContainer } from './dialog-container';
+import 'rxjs/add/operator/filter';
 /**
  * Reference to a dialog opened via the MdDialog service.
  */
 export declare class MdDialogRef<T> {
     private _overlayRef;
-    _containerInstance: MdDialogContainer;
+    private _containerInstance;
     /** The instance of component opened into the dialog. */
     componentInstance: T;
+    /** Whether the user is allowed to close the dialog. */
+    disableClose: boolean;
     /** Subject for notifying the user that the dialog has finished closing. */
     private _afterClosed;
     /** Result to be passed to afterClosed. */

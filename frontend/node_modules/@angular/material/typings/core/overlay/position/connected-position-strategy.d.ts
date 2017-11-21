@@ -1,3 +1,10 @@
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 import { PositionStrategy } from './position-strategy';
 import { ElementRef } from '@angular/core';
 import { ViewportRuler } from './viewport-ruler';
@@ -5,17 +12,6 @@ import { ConnectionPositionPair, OriginConnectionPosition, OverlayConnectionPosi
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Scrollable } from '../scroll/scrollable';
-/**
- * Container to hold the bounding positions of a particular element with respect to the viewport,
- * where top and bottom are the y-axis coordinates of the bounding rectangle and left and right are
- * the x-axis coordinates.
- */
-export declare type ElementBoundingPositions = {
-    top: number;
-    right: number;
-    bottom: number;
-    left: number;
-};
 /**
  * A strategy for positioning overlays. Using this strategy, an overlay is given an
  * implicit position relative some origin element. The relative position is defined in terms of
@@ -128,12 +124,8 @@ export declare class ConnectedPositionStrategy implements PositionStrategy {
     private isElementOutsideView(elementBounds, containersBounds);
     /** Whether the element is clipped by any of the containers. */
     private isElementClipped(elementBounds, containersBounds);
-    /**
-     * Physically positions the overlay element to the given coordinate.
-     * @param element
-     * @param overlayPoint
-     */
-    private _setElementPosition(element, overlayPoint);
+    /** Physically positions the overlay element to the given coordinate. */
+    private _setElementPosition(element, overlayRect, overlayPoint, pos);
     /** Returns the bounding positions of the provided element with respect to the viewport. */
     private _getElementBounds(element);
     /**

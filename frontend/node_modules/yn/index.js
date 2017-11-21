@@ -1,16 +1,15 @@
 'use strict';
-var objectAssign = require('object-assign');
-var lenient = require('./lenient');
+const lenient = require('./lenient');
 
-module.exports = function (val, opts) {
+module.exports = (val, opts) => {
 	val = String(val).trim();
-	opts = objectAssign({
+	opts = Object.assign({
 		lenient: false,
 		default: null
 	}, opts);
 
 	if (opts.default !== null && typeof opts.default !== 'boolean') {
-		throw new TypeError('Expected the `default` option to be of type `boolean`, got `' + (typeof opts.default) + '`');
+		throw new TypeError(`Expected the \`default\` option to be of type \`boolean\`, got \`${typeof opts.default}\``);
 	}
 
 	if (/^(?:y|yes|true|1)$/i.test(val)) {

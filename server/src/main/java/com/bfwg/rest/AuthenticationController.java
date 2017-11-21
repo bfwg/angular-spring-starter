@@ -2,10 +2,13 @@ package com.bfwg.rest;
 
 import com.bfwg.model.UserTokenState;
 import com.bfwg.security.TokenHelper;
+import com.bfwg.service.impl.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,14 +16,19 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by fan.jin on 2017-05-10.
  */
 
 @RestController
-@RequestMapping( value = "/auth", produces = MediaType.APPLICATION_JSON_VALUE )
+@RequestMapping( value = "/api", produces = MediaType.APPLICATION_JSON_VALUE )
 public class AuthenticationController {
+
+    @Autowired
+    private CustomUserDetailsService userDetailsService;
 
     @Autowired
     TokenHelper tokenHelper;
@@ -53,4 +61,19 @@ public class AuthenticationController {
            return ResponseEntity.accepted().body(userTokenState);
         }
     }
+
+    @RequestMapping(value = "/changePassword", method = RequestMethod.POST)
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> changePassword(@RequestBody PasswordChanger passwordChanger) {
+        userDetailsService.changePassword(passwordChanger.oldPassword, passwordChanger.newPassword);
+        Map<String, String> result = new HashMap<>();
+        result.put( "result", "success" );
+        return ResponseEntity.accepted().body(result);
+    }
+
+    static class PasswordChanger {
+        public String oldPassword;
+        public String newPassword;
+    }
+
 }

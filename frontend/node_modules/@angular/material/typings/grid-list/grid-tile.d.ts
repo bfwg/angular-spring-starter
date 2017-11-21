@@ -1,11 +1,18 @@
-import { Renderer, ElementRef, QueryList, AfterContentInit } from '@angular/core';
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { Renderer2, ElementRef, QueryList, AfterContentInit } from '@angular/core';
 import { MdLine, MdLineSetter } from '../core';
 export declare class MdGridTile {
     private _renderer;
     private _element;
     _rowspan: number;
     _colspan: number;
-    constructor(_renderer: Renderer, _element: ElementRef);
+    constructor(_renderer: Renderer2, _element: ElementRef);
     /** Amount of rows that the grid tile takes up. */
     rowspan: number;
     /** Amount of columns that the grid tile takes up. */
@@ -25,7 +32,7 @@ export declare class MdGridTileText implements AfterContentInit {
      */
     _lineSetter: MdLineSetter;
     _lines: QueryList<MdLine>;
-    constructor(_renderer: Renderer, _element: ElementRef);
+    constructor(_renderer: Renderer2, _element: ElementRef);
     ngAfterContentInit(): void;
 }
 /**

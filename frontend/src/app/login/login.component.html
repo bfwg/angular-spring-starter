@@ -3,7 +3,7 @@
     <md-card elevation="5" fxFlex>
 
       <md-card-subtitle>
-        <h2>Angular2 Spring Boot JWT Starter</h2>
+        <h2>Angular Spring Starter</h2>
       </md-card-subtitle>
 
       <md-card-title>
@@ -11,6 +11,8 @@
       </md-card-title>
 
       <md-card-content>
+
+        <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
 
         <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
           <md-input-container>
@@ -21,11 +23,12 @@
           </md-input-container>
           <button type="submit" [disabled]="!loginForm.form.valid" md-raised-button color="primary">Login</button>
         </form>
+        <br>
+        <div *ngIf="!submitted" >
+          <button mdTooltip="Reset password if someone has changed it already!" (click)="onResetCredentials()" md-raised-button color="accent">Reset Credentials</button>
+        </div>
 
         <md-spinner *ngIf="submitted" mode="indeterminate"></md-spinner>
-
-        <p class="error" *ngIf="errorDiagnostic">{{errorDiagnostic}}</p>
-
         <br>
         <hr>
 

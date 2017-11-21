@@ -11,6 +11,8 @@ npm install matcher-collection
 ## Examples
 
 ```js
+const MatcherCollection = require('matcher-collection')
+
 let m = new MatcherCollection([
   'tests/',
   '**/*.js',

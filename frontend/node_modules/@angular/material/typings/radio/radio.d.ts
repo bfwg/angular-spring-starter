@@ -1,6 +1,15 @@
-import { AfterContentInit, ElementRef, Renderer, EventEmitter, OnInit, QueryList, OnDestroy, AfterViewInit } from '@angular/core';
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { AfterContentInit, ChangeDetectorRef, ElementRef, Renderer2, EventEmitter, OnInit, QueryList, OnDestroy, AfterViewInit } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { UniqueSelectionDispatcher, MdRipple, FocusOriginMonitor } from '../core';
+import { CanDisable } from '../core/common-behaviors/disabled';
+import { CanColor } from '../core/common-behaviors/color';
 /**
  * Provider Expression that allows md-radio-group to register as a ControlValueAccessor. This
  * allows it to support [(ngModel)] and ngControl.
@@ -14,10 +23,14 @@ export declare class MdRadioChange {
     /** The value of the MdRadioButton. */
     value: any;
 }
+export declare class MdRadioGroupBase {
+}
+export declare const _MdRadioGroupMixinBase: (new (...args: any[]) => CanDisable) & typeof MdRadioGroupBase;
 /**
  * A group of radio buttons. May contain one or more `<md-radio-button>` elements.
  */
-export declare class MdRadioGroup implements AfterContentInit, ControlValueAccessor {
+export declare class MdRadioGroup extends _MdRadioGroupMixinBase implements AfterContentInit, ControlValueAccessor, CanDisable {
+    private _changeDetector;
     /**
      * Selected value for group. Should equal the value of the selected radio button if there *is*
      * a corresponding radio button with a matching value. If there is *not* such a corresponding
@@ -27,12 +40,14 @@ export declare class MdRadioGroup implements AfterContentInit, ControlValueAcces
     private _value;
     /** The HTML name attribute applied to radio buttons in this group. */
     private _name;
-    /** Disables all individual radio buttons assigned to this group. */
-    private _disabled;
     /** The currently selected radio button. Should match value. */
     private _selected;
     /** Whether the `value` has been set to its initial value. */
     private _isInitialized;
+    /** Whether the labels should appear after or before the radio-buttons. Defaults to 'after' */
+    private _labelPosition;
+    /** Whether the radio group is disabled. */
+    private _disabled;
     /** The method to be called in order to update ngModel */
     _controlValueAccessorChangeFn: (value: any) => void;
     /**
@@ -56,14 +71,15 @@ export declare class MdRadioGroup implements AfterContentInit, ControlValueAcces
      */
     align: 'start' | 'end';
     /** Whether the labels should appear after or before the radio-buttons. Defaults to 'after' */
-    labelPosition: 'before' | 'after';
-    /** Whether the radio button is disabled. */
-    disabled: boolean;
+    labelPosition: "before" | "after";
     /** Value of the radio button. */
     value: any;
     _checkSelectedRadioButton(): void;
     /** Whether the radio button is selected. */
     selected: MdRadioButton;
+    /** Whether the radio group is diabled */
+    disabled: boolean;
+    constructor(_changeDetector: ChangeDetectorRef);
     /**
      * Initialize properties once content children are available.
      * This allows us to propagate relevant attributes to associated buttons.
@@ -79,6 +95,7 @@ export declare class MdRadioGroup implements AfterContentInit, ControlValueAcces
     private _updateSelectedRadioFromValue();
     /** Dispatch change event with current selection and group value. */
     _emitChangeEvent(): void;
+    _markRadiosForCheck(): void;
     /**
      * Sets the model value. Implemented as part of ControlValueAccessor.
      * @param value
@@ -102,12 +119,17 @@ export declare class MdRadioGroup implements AfterContentInit, ControlValueAcces
      */
     setDisabledState(isDisabled: boolean): void;
 }
+export declare class MdRadioButtonBase {
+    _renderer: Renderer2;
+    _elementRef: ElementRef;
+    constructor(_renderer: Renderer2, _elementRef: ElementRef);
+}
+export declare const _MdRadioButtonMixinBase: (new (...args: any[]) => CanColor) & typeof MdRadioButtonBase;
 /**
  * A radio-button. May be inside of
  */
-export declare class MdRadioButton implements OnInit, AfterViewInit, OnDestroy {
-    private _elementRef;
-    private _renderer;
+export declare class MdRadioButton extends _MdRadioButtonMixinBase implements OnInit, AfterViewInit, OnDestroy, CanColor {
+    private _changeDetector;
     private _focusOriginMonitor;
     private _radioDispatcher;
     /** The unique ID for the radio button. */
@@ -154,26 +176,31 @@ export declare class MdRadioButton implements OnInit, AfterViewInit, OnDestroy {
     private _disableRipple;
     /** The child ripple instance. */
     _ripple: MdRipple;
-    /** Stream of focus event from the focus origin monitor. */
-    private _focusOriginMonitorSubscription;
     /** Reference to the current focus ripple. */
-    private _focusedRippleRef;
+    private _focusRipple;
     /** The native `<input type=radio>` element */
     _inputElement: ElementRef;
-    constructor(radioGroup: MdRadioGroup, _elementRef: ElementRef, _renderer: Renderer, _focusOriginMonitor: FocusOriginMonitor, _radioDispatcher: UniqueSelectionDispatcher);
+    constructor(radioGroup: MdRadioGroup, elementRef: ElementRef, renderer: Renderer2, _changeDetector: ChangeDetectorRef, _focusOriginMonitor: FocusOriginMonitor, _radioDispatcher: UniqueSelectionDispatcher);
     /** Focuses the radio button. */
     focus(): void;
+    /**
+     * Marks the radio button as needing checking for change detection.
+     * This method is exposed because the parent radio group will directly
+     * update bound properties of the radio button.
+     */
+    _markForCheck(): void;
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
     /** Dispatch change event with current value. */
     private _emitChangeEvent();
     _isRippleDisabled(): boolean;
-    _onInputBlur(): void;
     _onInputClick(event: Event): void;
     /**
      * Triggered when the radio button received a click or the input recognized any change.
      * Clicking on a label element, will trigger a change event on the associated input.
      */
     _onInputChange(event: Event): void;
+    /** Function is called whenever the focus changes for the input element. */
+    private _onInputFocusChange(focusOrigin);
 }

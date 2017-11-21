@@ -111,8 +111,10 @@ require('./add/operator/sampleTime');
 require('./add/operator/scan');
 require('./add/operator/sequenceEqual');
 require('./add/operator/share');
+require('./add/operator/shareReplay');
 require('./add/operator/single');
 require('./add/operator/skip');
+require('./add/operator/skipLast');
 require('./add/operator/skipUntil');
 require('./add/operator/skipWhile');
 require('./add/operator/startWith');
@@ -219,9 +221,9 @@ exports.Scheduler = Scheduler;
  * to retrieve an iterator from an object.
  */
 var Symbol = {
-    rxSubscriber: rxSubscriber_1.$$rxSubscriber,
-    observable: observable_1.$$observable,
-    iterator: iterator_1.$$iterator
+    rxSubscriber: rxSubscriber_1.rxSubscriber,
+    observable: observable_1.observable,
+    iterator: iterator_1.iterator
 };
 exports.Symbol = Symbol;
 //# sourceMappingURL=Rx.js.map

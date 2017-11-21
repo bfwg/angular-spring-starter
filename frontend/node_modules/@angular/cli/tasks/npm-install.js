@@ -12,9 +12,9 @@ exports.default = Task.extend({
         }
         return new Promise(function (resolve, reject) {
             ui.writeLine(chalk.green(`Installing packages for tooling via ${packageManager}.`));
-            let installCommand = `${packageManager} --quiet install`;
-            if (packageManager === 'yarn') {
-                installCommand = `${packageManager} install`;
+            let installCommand = `${packageManager} install`;
+            if (packageManager === 'npm') {
+                installCommand = `${packageManager} --quiet install`;
             }
             child_process_1.exec(installCommand, (err, _stdout, stderr) => {
                 if (err) {

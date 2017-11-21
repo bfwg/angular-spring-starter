@@ -9,15 +9,17 @@ import { InnerSubscriber } from '../InnerSubscriber';
 import { subscribeToResult } from '../util/subscribeToResult';
 
 /* tslint:disable:max-line-length */
+export function race<T>(this: Observable<T>, observables: Array<Observable<T>>): Observable<T>;
+export function race<T, R>(this: Observable<T>, observables: Array<Observable<T>>): Observable<R>;
 export function race<T>(this: Observable<T>, ...observables: Array<Observable<T> | Array<Observable<T>>>): Observable<T>;
-export function race<T, R>(this: Observable<T>, ...observables: Array<Observable<any> | Array<Observable<T>>>): Observable<R>;
-/* tslint:disable:max-line-length */
+export function race<T, R>(this: Observable<T>, ...observables: Array<Observable<any> | Array<Observable<any>>>): Observable<R>;
+/* tslint:enable:max-line-length */
 
 /**
  * Returns an Observable that mirrors the first source Observable to emit an item
- * from the combination of this Observable and supplied Observables
- * @param {...Observables} ...observables sources used to race for which Observable emits first.
- * @return {Observable} an Observable that mirrors the output of the first Observable to emit an item.
+ * from the combination of this Observable and supplied Observables.
+ * @param {...Observables} ...observables Sources used to race for which Observable emits first.
+ * @return {Observable} An Observable that mirrors the output of the first Observable to emit an item.
  * @method race
  * @owner Observable
  */
@@ -39,10 +41,12 @@ export function race<T>(this: Observable<T>, ...observables: Array<Observable<T>
  * @name race
  * @owner Observable
  */
+export function raceStatic<T>(observables: Array<Observable<T>>): Observable<T>;
+export function raceStatic<T>(observables: Array<Observable<any>>): Observable<T>;
 export function raceStatic<T>(...observables: Array<Observable<T> | Array<Observable<T>>>): Observable<T>;
 export function raceStatic<T>(...observables: Array<Observable<any> | Array<Observable<any>>>): Observable<T> {
   // if the only argument is an array, it was most likely called with
-  // `pair([obs1, obs2, ...])`
+  // `race([obs1, obs2, ...])`
   if (observables.length === 1) {
     if (isArray(observables[0])) {
       observables = <Array<Observable<any>>>observables[0];

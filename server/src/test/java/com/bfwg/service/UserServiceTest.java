@@ -47,7 +47,6 @@ public class UserServiceTest extends AbstractTest {
         userService.findById(1L);
     }
 
-
     @Test(expected = AccessDeniedException.class)
     public void testFindByUsernameWithoutUser() throws AccessDeniedException {
         userService.findByUsername("user");

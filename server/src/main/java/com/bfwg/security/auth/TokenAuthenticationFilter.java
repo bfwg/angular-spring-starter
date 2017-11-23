@@ -1,8 +1,8 @@
 package com.bfwg.security.auth;
 
 import com.bfwg.security.TokenHelper;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+//import org.apache.commons.logging.Log;
+//import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
  */
 public class TokenAuthenticationFilter extends OncePerRequestFilter {
 
-    private final Log logger = LogFactory.getLog(this.getClass());
+//    private final Log logger = LogFactory.getLog(this.getClass());
 
     @Autowired
     TokenHelper tokenHelper;
@@ -61,7 +61,6 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
     @Override
     public void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-
         String authToken = tokenHelper.getToken(request);
         if (authToken != null && !skipPathRequest(request, pathsToSkip)) {
             // get username from token
@@ -83,7 +82,7 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
         chain.doFilter(request, response);
     }
 
-    private boolean skipPathRequest(HttpServletRequest request, List<String> pathsToSkip ) {
+    private boolean skipPathRequest(HttpServletRequest request, List<String> pathsToSkip) {
         Assert.notNull(pathsToSkip, "path cannot be null.");
         List<RequestMatcher> m = pathsToSkip.stream().map(path -> new AntPathRequestMatcher(path)).collect(Collectors.toList());
         OrRequestMatcher matchers = new OrRequestMatcher(m);

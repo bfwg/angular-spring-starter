@@ -1,12 +1,15 @@
 package com.bfwg.security;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.SignatureException;
+import io.jsonwebtoken.UnsupportedJwtException;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 
@@ -14,12 +17,11 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.Map;
-
+import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  * Created by fan.jin on 2016-10-19.
  */
-
 @Component
 public class TokenHelper {
 
@@ -39,9 +41,9 @@ public class TokenHelper {
     private String AUTH_COOKIE;
 
     @Autowired
-    UserDetailsService userDetailsService;
+    protected UserDetailsService userDetailsService;
 
-    private SignatureAlgorithm SIGNATURE_ALGORITHM = SignatureAlgorithm.HS512;
+    private final SignatureAlgorithm SIGNATURE_ALGORITHM = SignatureAlgorithm.HS512;
 
     public String getUsernameFromToken(String token) {
         String username;
@@ -56,11 +58,11 @@ public class TokenHelper {
 
     public String generateToken(String username) {
         return Jwts.builder()
-                .setIssuer( APP_NAME )
+                .setIssuer(APP_NAME)
                 .setSubject(username)
                 .setIssuedAt(generateCurrentDate())
                 .setExpiration(generateExpirationDate())
-                .signWith( SIGNATURE_ALGORITHM, SECRET )
+                .signWith(SIGNATURE_ALGORITHM, SECRET)
                 .compact();
     }
 
@@ -71,7 +73,8 @@ public class TokenHelper {
                     .setSigningKey(this.SECRET)
                     .parseClaimsJws(token)
                     .getBody();
-        } catch (Exception e) {
+        } catch (ExpiredJwtException | MalformedJwtException | SignatureException | UnsupportedJwtException
+                | IllegalArgumentException e) {
             claims = null;
         }
         return claims;
@@ -81,7 +84,7 @@ public class TokenHelper {
         return Jwts.builder()
                 .setClaims(claims)
                 .setExpiration(generateExpirationDate())
-                .signWith( SIGNATURE_ALGORITHM, SECRET )
+                .signWith(SIGNATURE_ALGORITHM, SECRET)
                 .compact();
     }
 
@@ -121,20 +124,19 @@ public class TokenHelper {
         return new Date(getCurrentTimeMillis() + this.EXPIRES_IN * 1000);
     }
 
-    public String getToken( HttpServletRequest request ) {
+    public String getToken(HttpServletRequest request) {
         /**
-         *  Getting the token from Cookie store
+         * Getting the token from Cookie store
          */
-        Cookie authCookie = getCookieValueByName( request, AUTH_COOKIE );
-        if ( authCookie != null ) {
+        Cookie authCookie = getCookieValueByName(request, AUTH_COOKIE);
+        if (authCookie != null) {
             return authCookie.getValue();
         }
         /**
-         *  Getting the token from Authentication header
-         *  e.g Bearer your_token
+         * Getting the token from Authentication header e.g Bearer your_token
          */
         String authHeader = request.getHeader(AUTH_HEADER);
-        if ( authHeader != null && authHeader.startsWith("Bearer ")) {
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
             return authHeader.substring(7);
         }
 
@@ -144,19 +146,17 @@ public class TokenHelper {
     /**
      * Find a specific HTTP cookie in a request.
      *
-     * @param request
-     *            The HTTP request object.
-     * @param name
-     *            The cookie name to look for.
+     * @param request The HTTP request object.
+     * @param name The cookie name to look for.
      * @return The cookie, or <code>null</code> if not found.
      */
     public Cookie getCookieValueByName(HttpServletRequest request, String name) {
         if (request.getCookies() == null) {
             return null;
         }
-        for (int i = 0; i < request.getCookies().length; i++) {
-            if (request.getCookies()[i].getName().equals(name)) {
-                return request.getCookies()[i];
+        for (Cookie cookie : request.getCookies()) {
+            if (cookie.getName().equals(name)) {
+                return cookie;
             }
         }
         return null;

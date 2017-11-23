@@ -1,4 +1,6 @@
-FROM mhart/alpine-node
+# FROM mhart/alpine-node
+FROM node:alpine
+
 
 RUN addgroup -S app && adduser -S -g app app \
 && apk update && apk upgrade \

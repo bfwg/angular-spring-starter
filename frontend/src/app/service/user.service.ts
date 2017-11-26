@@ -14,7 +14,7 @@ export class UserService {
   ) { }
 
   initUser() {
-    const promise = this.apiService.anonGet(this.config.refresh_token_url).toPromise()
+    const promise = this.apiService.get(this.config.refresh_token_url).toPromise()
     .then(res => {
       if (res.access_token !== null) {
         return this.getMyInfo().toPromise()

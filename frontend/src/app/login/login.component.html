@@ -1,43 +1,43 @@
 <div class="content" fxLayout="row" fxLayoutAlign="center">
 
-    <md-card elevation="5" fxFlex>
+    <mat-card elevation="5" fxFlex>
 
-      <md-card-subtitle>
+      <mat-card-subtitle>
         <h2>Angular Spring Starter</h2>
-      </md-card-subtitle>
+      </mat-card-subtitle>
 
-      <md-card-title>
+      <mat-card-title>
         <h2>{{title}}</h2>
-      </md-card-title>
+      </mat-card-title>
 
-      <md-card-content>
+      <mat-card-content>
 
         <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
 
         <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
-          <md-input-container>
-            <input mdInput formControlName="username" required placeholder="user/admin">
-          </md-input-container>
-          <md-input-container>
-            <input mdInput formControlName="password" required type="password" placeholder="123">
-          </md-input-container>
-          <button type="submit" [disabled]="!loginForm.form.valid" md-raised-button color="primary">Login</button>
+          <mat-input-container>
+            <input matInput formControlName="username" required placeholder="user/admin">
+          </mat-input-container>
+          <mat-input-container>
+            <input matInput formControlName="password" required type="password" placeholder="123">
+          </mat-input-container>
+          <button type="submit" [disabled]="!loginForm.form.valid" mat-raised-button color="primary">Login</button>
         </form>
         <br>
         <div *ngIf="!submitted" >
-          <button mdTooltip="Reset password if someone has changed it already!" (click)="onResetCredentials()" md-raised-button color="accent">Reset Credentials</button>
+          <button matTooltip="Reset password if someone has changed it already!" (click)="onResetCredentials()" mat-raised-button color="accent">Reset Credentials</button>
         </div>
 
-        <md-spinner *ngIf="submitted" mode="indeterminate"></md-spinner>
+        <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
         <br>
         <hr>
 
         <p><i>Created by <a href="https://github.com/bfwg">Fan Jin</a></i></p>
         <p><i>Click below to go to repository</i></p>
-        <button (click)="repository()" md-raised-button color="accent">GitHub Repository</button>
+        <button (click)="repository()" mat-raised-button color="accent">GitHub Repository</button>
 
-      </md-card-content>
+      </mat-card-content>
 
-    </md-card>
+    </mat-card>
 
 </div>

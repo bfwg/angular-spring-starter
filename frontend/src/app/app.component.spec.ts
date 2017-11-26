@@ -15,8 +15,8 @@ import {
 } from './component';
 
 import {
-  MdToolbarModule,
-  MdIconRegistry
+  MatToolbarModule,
+  MatIconRegistry
 } from '@angular/material';
 
 
@@ -39,10 +39,10 @@ describe('AppComponent', () => {
       ],
       imports: [
         RouterTestingModule,
-        MdToolbarModule
+        MatToolbarModule
       ],
       providers: [
-        MdIconRegistry,
+        MatIconRegistry,
         {
           provide: ApiService,
           useClass: MockApiService

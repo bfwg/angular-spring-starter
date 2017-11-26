@@ -9,8 +9,8 @@ import {
   AuthService
 } from '../service';
 
-import { Observable, Subject } from 'rxjs';
-import 'rxjs/add/observable/interval';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/SUbject';
 
 @Component({
   selector: 'app-login',

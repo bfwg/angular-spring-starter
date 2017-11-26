@@ -1,35 +1,35 @@
-<md-toolbar color="primary" class="app-navbar">
-  <button md-button md-ripple routerLink="/">
+<mat-toolbar color="primary" class="app-navbar">
+  <button mat-button mat-ripple routerLink="/">
     <img alt="Angular-Spring-Starter" class="app-angular-logo" src="assets/image/angular-white-transparent.svg">
     <span>Angular-Spring-Starter</span>
   </button>
 
   <div class="right">
     <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="flex-end center">
-      <button *ngIf="!hasSignedIn()" routerLink="/login" md-button md-ripple>
+      <button *ngIf="!hasSignedIn()" routerLink="/login" mat-button mat-ripple>
         <span>Login</span>
       </button>
       <button
         class="greeting-button"
         *ngIf="hasSignedIn()"
-        md-button md-ripple
-        [mdMenuTriggerFor]="accountMenu">
+        mat-button mat-ripple
+        [matMenuTriggerFor]="accountMenu">
         <span>Aloha, {{userName()}}</span>
       </button>
       <button
         class="greeting-hamburger"
         *ngIf="hasSignedIn()"
-        md-icon-button md-ripple
-        [mdMenuTriggerFor]="accountMenu">
-        <md-icon>menu</md-icon>
+        mat-icon-button mat-ripple
+        [matMenuTriggerFor]="accountMenu">
+        <mat-icon>menu</mat-icon>
       </button>
-      <md-menu #accountMenu
+      <mat-menu #accountMenu
         class="app-header-accountMenu"
         yposition="below"
         [overlapTrigger]="false">
         <app-account-menu ></app-account-menu>
-      </md-menu>
+      </mat-menu>
     </div>
   </div>
-</md-toolbar>
+</mat-toolbar>
 

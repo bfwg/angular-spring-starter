@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-md-card {
+mat-card {
   max-width: 350px;
   text-align: center;
   animation: fadein 1s;
@@ -12,11 +12,11 @@ md-card {
 
 }
 
-md-input-container {
+mat-input-container {
   display: block;
 }
 
-md-spinner {
+mat-spinner {
   width: 25px;
   height: 25px;
   margin: 20px auto 0 auto;
@@ -43,7 +43,7 @@ button {
     display: block !important;
   }
 
-  md-card {
+  mat-card {
     /* https://github.com/angular/flex-layout/issues/295 */
     display: block !important;
     max-width: 999px;

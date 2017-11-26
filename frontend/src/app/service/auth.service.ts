@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers } from '@angular/http';
+import { HttpHeaders } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { UserService } from './user.service';
 import { ConfigService } from './config.service';
@@ -15,10 +15,14 @@ export class AuthService {
   ) { }
 
   login(user) {
+    const loginHeaders = new HttpHeaders({
+      'Accept': 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
     const body = `username=${user.username}&password=${user.password}`;
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    return this.apiService.post(this.config.login_url, body, headers);
+    return this.apiService.post(this.config.login_url, body, loginHeaders).map(() => {
+      this.userService.getMyInfo().subscribe();
+    });
   }
 
   logout() {

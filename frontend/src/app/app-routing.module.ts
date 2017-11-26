@@ -25,6 +25,11 @@ export const routes: Routes = [
     canActivate: [LoginGuard]
   },
   {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AdminGuard]
+  },
+  {
     path: '404',
     component: NotFoundComponent
   },

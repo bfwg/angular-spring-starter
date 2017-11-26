@@ -21,6 +21,7 @@ export class ApiCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.responseObj);
   }
 
   onButtonClick() {

@@ -2,17 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 // material
 import {
-  MdButtonModule,
-  MdMenuModule,
-  MdIconModule,
-  MdToolbarModule,
-  MdTooltipModule,
-  MdCardModule,
-  MdInputModule,
-  MdIconRegistry,
-  MdProgressSpinnerModule
+  MatButtonModule,
+  MatMenuModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatCardModule,
+  MatInputModule,
+  MatIconRegistry,
+  MatProgressSpinnerModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -62,15 +63,16 @@ export function initUserFactory(userService: UserService) {
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    HttpClientModule,
     AppRoutingModule,
-    MdMenuModule,
-    MdTooltipModule,
-    MdButtonModule,
-    MdIconModule,
-    MdInputModule,
-    MdToolbarModule,
-    MdCardModule,
-    MdProgressSpinnerModule,
+    MatMenuModule,
+    MatTooltipModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
     FlexLayoutModule
   ],
   providers: [
@@ -81,7 +83,7 @@ export function initUserFactory(userService: UserService) {
     ApiService,
     UserService,
     ConfigService,
-    MdIconRegistry,
+    MatIconRegistry,
     {
       'provide': APP_INITIALIZER,
       'useFactory': initUserFactory,

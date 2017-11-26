@@ -1,21 +1,26 @@
-<md-card>
-  <md-card-header>
-    <md-card-title><b>{{title}}</b></md-card-title>
-    <md-card-subtitle>{{subTitle}}</md-card-subtitle>
-  </md-card-header>
-  <img md-card-image [src]="imgUrl">
-  <md-card-content>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><b>{{title}}</b></mat-card-title>
+    <mat-card-subtitle>{{subTitle}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="imgUrl">
+  <mat-card-content>
     <p>
       {{content}}
     </p>
-  </md-card-content>
-  <md-card-actions>
-    <button md-raised-button color="primary" (click)="onButtonClick()">{{apiText}}</button>
-  </md-card-actions>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="onButtonClick()">
+      {{apiText}}
+    </button>
+  </mat-card-actions>
   <div [class]="responsePanelClass()">
     <pre>Path: {{responseObj.path}}</pre>
     <pre>Method: {{responseObj.method}}</pre>
     <pre>Status: {{responseObj.status}}</pre>
-    <pre>Body: {{responseObj.body}}</pre>
+    <pre>Message: {{responseObj.body || responseObj.message}} </pre>
   </div>
-</md-card>
+</mat-card>

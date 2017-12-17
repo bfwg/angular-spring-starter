@@ -21,7 +21,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
-import { LoginGuard, GuestGuard } from './guard';
+import { LoginGuard, GuestGuard, AdminGuard } from './guard';
 import { NotFoundComponent } from './not-found';
 import { AccountMenuComponent } from './component/header/account-menu/account-menu.component';
 import {
@@ -39,6 +39,8 @@ import {
   ConfigService
 } from './service';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { AdminComponent } from './admin/admin.component';
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -55,7 +57,9 @@ export function initUserFactory(userService: UserService) {
     LoginComponent,
     NotFoundComponent,
     AccountMenuComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ForbiddenComponent,
+    AdminComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -78,6 +82,7 @@ export function initUserFactory(userService: UserService) {
   providers: [
     LoginGuard,
     GuestGuard,
+    AdminGuard,
     FooService,
     AuthService,
     ApiService,

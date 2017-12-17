@@ -103,8 +103,8 @@ for more info, check out https://jwt.io/
 
 ### Importing the Project in IntelliJ IDEA
 1. Click "Import Project" on the launch screen
-2. Select the ```server``` folder, then select "Import project from external model" and choose "Maven"
-3. Tick the checkbox "Import Maven projects automatically"
+2. Select the projects root folder, then select "Import project from external model" and choose "Maven"
+3. Tick the checkboxes "Import Maven projects automatically" and "Import projects recursively"
 4. Continue the dialog until the IDE opens the project
 5. Open the "Project Structure" dialog
 6. On the left side, choose "Modules" and click the "Add" button

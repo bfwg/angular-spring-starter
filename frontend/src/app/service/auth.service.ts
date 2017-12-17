@@ -11,7 +11,7 @@ export class AuthService {
   constructor(
     private apiService: ApiService,
     private userService: UserService,
-    private config: ConfigService
+    private config: ConfigService,
   ) { }
 
   login(user) {

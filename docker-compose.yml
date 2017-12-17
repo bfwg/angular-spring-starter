@@ -1,4 +1,4 @@
-version: "3.1" # specify docker-compose version
+version: "3.2" # specify docker-compose version
 
 # Define the services/containers to be run
 services:
@@ -21,10 +21,10 @@ services:
 
   springboot: #name of the second service
     build: server # specify the directory of the Dockerfile
-    # ports:
-    # - "8080" #specify ports forewarding
-    expose:
-    - "8080"
+    ports:
+    - "8080" #specify ports forewarding
+    # expose:
+    # - "8080"
     networks:
     - angular-spring-network
     # hostname: backend

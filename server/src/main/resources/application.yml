@@ -7,6 +7,9 @@ jwt:
   secret: queenvictoria
   cookie: AUTH-TOKEN
 
+server:
+  port: 8081
+
 logging:
   level:
     org.springframework.web: ERROR

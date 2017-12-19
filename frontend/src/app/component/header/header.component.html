@@ -3,9 +3,14 @@
     <img alt="Angular-Spring-Starter" class="app-angular-logo" src="assets/image/angular-white-transparent.svg">
     <span>Angular-Spring-Starter</span>
   </button>
+  
+
 
   <div class="right">
     <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="flex-end center">
+      <button *ngIf="!hasSignedIn()" routerLink="/signup" mat-button mat-ripple>
+        <span>Sign up</span>
+      </button>
       <button *ngIf="!hasSignedIn()" routerLink="/login" mat-button mat-ripple>
         <span>Login</span>
       </button>

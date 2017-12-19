@@ -1,0 +1,56 @@
+<div class="content" fxLayout="row" fxLayoutAlign="center">
+
+  <mat-card elevation="5" fxFlex>
+
+    <mat-card-subtitle>
+      <h2>Angular Spring Starter</h2>
+    </mat-card-subtitle>
+
+    <mat-card-title>
+      <h2>{{ title }}</h2>
+    </mat-card-title>
+
+    <mat-card-content>
+
+      <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
+
+      <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #signupForm="ngForm">
+        <mat-input-container>
+          <label>Username: </label>
+          <input matInput formControlName="username" required>
+        </mat-input-container>
+        <mat-input-container>
+          <label>Password: </label>
+          <input matInput formControlName="password" required type="password">
+        </mat-input-container>
+        <mat-input-container>
+          <label>First Name: </label>
+          <input matInput formControlName="firstname">
+        </mat-input-container>
+        <mat-input-container>
+          <label>Last Name: </label>
+          <input matInput formControlName="lastname">
+        </mat-input-container>
+        <button type="submit" [disabled]="!signupForm.form.valid" mat-raised-button color="primary">Sign up</button>
+      </form>
+      <br>
+
+      <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+      <br>
+      <hr>
+
+      <p>
+        <i>Created by
+          <a href="https://github.com/bfwg">Fan Jin</a>
+        </i>
+      </p>
+      <p>
+        <i>Click below to go to repository</i>
+      </p>
+      <button (click)="repository()" mat-raised-button color="accent">GitHub Repository</button>
+
+    </mat-card-content>
+
+  </mat-card>
+
+</div>

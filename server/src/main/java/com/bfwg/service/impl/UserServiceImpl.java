@@ -7,8 +7,11 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import com.bfwg.model.Authority;
 import com.bfwg.model.User;
+import com.bfwg.model.UserRequest;
 import com.bfwg.repository.UserRepository;
+import com.bfwg.service.AuthorityService;
 import com.bfwg.service.UserService;
 
 /**
@@ -23,6 +26,9 @@ public class UserServiceImpl implements UserService {
 
   @Autowired
   private PasswordEncoder passwordEncoder;
+
+  @Autowired
+  private AuthorityService authService;
 
   public void resetCredentials() {
     List<User> users = userRepository.findAll();
@@ -52,9 +58,16 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public void save(User user) {
+  public User save(UserRequest userRequest) {
+    User user = new User();
+    user.setUsername(userRequest.getUsername());
+    user.setPassword(passwordEncoder.encode(userRequest.getPassword()));
+    user.setFirstname(userRequest.getFirstname());
+    user.setLastname(userRequest.getLastname());
+    List<Authority> auth = authService.findByname("ROLE_USER");
+    user.setAuthorities(auth);
     this.userRepository.save(user);
-
+    return user;
   }
 
 }

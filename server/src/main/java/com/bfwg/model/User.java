@@ -33,7 +33,7 @@ public class User implements UserDetails, Serializable {
   @Column(name = "username")
   private String username;
 
-  // @JsonIgnore
+  @JsonIgnore
   @Column(name = "password")
   private String password;
 

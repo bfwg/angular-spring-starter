@@ -12,16 +12,14 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 import com.bfwg.exception.ResourceConflictException;
-import com.bfwg.model.Authority;
 import com.bfwg.model.User;
-import com.bfwg.service.AuthorityService;
+import com.bfwg.model.UserRequest;
 import com.bfwg.service.UserService;
 
 /**
@@ -35,8 +33,6 @@ public class UserController {
   @Autowired
   private UserService userService;
 
-  @Autowired
-  private AuthorityService authService;
 
   @RequestMapping(method = GET, value = "/user/{userId}")
   public User loadById(@PathVariable Long userId) {
@@ -58,16 +54,14 @@ public class UserController {
 
 
   @RequestMapping(method = POST, value = "/signup")
-  public ResponseEntity<?> addUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
+  public ResponseEntity<?> addUser(@RequestBody UserRequest userRequest,
+      UriComponentsBuilder ucBuilder) {
 
-    User existUser = this.userService.findByUsername(user.getUsername());
+    User existUser = this.userService.findByUsername(userRequest.getUsername());
     if (existUser != null) {
-      throw new ResourceConflictException(user.getId(), "Username already exists");
+      throw new ResourceConflictException(userRequest.getId(), "Username already exists");
     }
-    List<Authority> auths = this.authService.findByname("ROLE_USER");
-    user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
-    user.setAuthorities(auths);
-    this.userService.save(user);
+    User user = this.userService.save(userRequest);
     HttpHeaders headers = new HttpHeaders();
     headers.setLocation(ucBuilder.path("/api/user/{userId}").buildAndExpand(user.getId()).toUri());
     return new ResponseEntity<User>(user, HttpStatus.CREATED);

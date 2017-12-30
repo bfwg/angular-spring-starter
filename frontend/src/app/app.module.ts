@@ -41,6 +41,7 @@ import {
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { AdminComponent } from './admin/admin.component';
+import { SignupComponent } from './signup/signup.component';
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -59,7 +60,8 @@ export function initUserFactory(userService: UserService) {
     AccountMenuComponent,
     ChangePasswordComponent,
     ForbiddenComponent,
-    AdminComponent
+    AdminComponent,
+    SignupComponent
   ],
   imports: [
     BrowserAnimationsModule,

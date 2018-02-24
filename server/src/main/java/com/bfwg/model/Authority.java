@@ -8,17 +8,16 @@ import javax.persistence.*;
 /**
  * Created by fan.jin on 2016-11-03.
  */
-
 @Entity
-@Table(name="Authority")
+@Table(name = "Authority")
 public class Authority implements GrantedAuthority {
 
     @Id
-    @Column(name="id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(name="name")
+    @Column(name = "name")
     String name;
 
     @Override

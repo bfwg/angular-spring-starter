@@ -1,0 +1,33 @@
+version: "3.2" # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  angular: # name of the first service
+    build: frontend # specify the directory of the Dockerfile
+    # volumes:
+    # - .:/home/app
+    # - /home/app/node_modules
+    ports:
+    - "80:4200"
+    networks:
+    - angular-spring-network
+    depends_on:
+    - springboot
+    links:
+      - springboot
+    #  - springboot:springboot
+    # hostname: frontend
+    # container_name: frontend
+
+  springboot: #name of the second service
+    build: server # specify the directory of the Dockerfile
+    ports:
+    - "8080" #specify ports forewarding
+    # expose:
+    # - "8080"
+    networks:
+    - angular-spring-network
+    # hostname: backend
+  # https://success.docker.com/Architecture/Docker_Reference_Architecture%3A_Designing_Scalable%2C_Portable_Docker_Container_Networks  
+networks:
+  angular-spring-network:

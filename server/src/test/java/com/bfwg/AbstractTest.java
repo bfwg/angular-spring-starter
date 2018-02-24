@@ -20,39 +20,38 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-
-@RunWith( SpringRunner.class )
-@SpringBootTest(classes = { Application.class })
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = {Application.class})
 public abstract class AbstractTest {
 
-	@Autowired
-	protected UserRepository userRepository;
+    @Autowired
+    protected UserRepository userRepository;
 
-	@Autowired
-	protected ObjectMapper objectMapper;
+    @Autowired
+    protected ObjectMapper objectMapper;
 
-	@Before
-	public final void beforeAbstractTest() {
-		securityContext = Mockito.mock( SecurityContext.class );
-		SecurityContextHolder.setContext( securityContext );
-		Mockito.when( securityContext.getAuthentication() ).thenReturn( new AnonAuthentication() );
-	}
+    @Before
+    public final void beforeAbstractTest() {
+        securityContext = Mockito.mock(SecurityContext.class);
+        SecurityContextHolder.setContext(securityContext);
+        Mockito.when(securityContext.getAuthentication()).thenReturn(new AnonAuthentication());
+    }
 
-	@After
-	public final void afterAbstractTest() {
-		SecurityContextHolder.clearContext();
-	}
+    @After
+    public final void afterAbstractTest() {
+        SecurityContextHolder.clearContext();
+    }
 
-	protected SecurityContext securityContext;
+    protected SecurityContext securityContext;
 
-	protected void mockAuthenticatedUser( User user ) {
-		mockAuthentication( new TokenBasedAuthentication( user ) );
-	}
+    protected void mockAuthenticatedUser(User user) {
+        mockAuthentication(new TokenBasedAuthentication(user));
+    }
 
-	private void mockAuthentication( TokenBasedAuthentication auth ) {
-		auth.setAuthenticated( true );
-		Mockito.when( securityContext.getAuthentication() ).thenReturn( auth );
-	}
+    private void mockAuthentication(TokenBasedAuthentication auth) {
+        auth.setAuthenticated(true);
+        Mockito.when(securityContext.getAuthentication()).thenReturn(auth);
+    }
 
     protected User buildTestAnonUser() {
         User user = new User();
@@ -60,18 +59,17 @@ public abstract class AbstractTest {
         return user;
     }
 
-	protected User buildTestUser() {
+    protected User buildTestUser() {
 
-		User user = new User();
-		Authority userAuthority = new Authority();
-		userAuthority.setName("ROLE_USER");
-		List<Authority> userAuthorities = new ArrayList<>();
-		userAuthorities.add(userAuthority);
-		user.setUsername("user");
-		user.setAuthorities(userAuthorities);
-		return user;
-	}
-
+        User user = new User();
+        Authority userAuthority = new Authority();
+        userAuthority.setName("ROLE_USER");
+        List<Authority> userAuthorities = new ArrayList<>();
+        userAuthorities.add(userAuthority);
+        user.setUsername("user");
+        user.setAuthorities(userAuthorities);
+        return user;
+    }
 
     protected User buildTestAdmin() {
         Authority userAuthority = new Authority();
@@ -86,6 +84,5 @@ public abstract class AbstractTest {
         admin.setAuthorities(adminAuthorities);
         return admin;
     }
-
 
 }

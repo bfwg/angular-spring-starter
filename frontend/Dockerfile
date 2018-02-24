@@ -1,6 +1,4 @@
-# FROM mhart/alpine-node
 FROM node:alpine
-
 
 RUN addgroup -S app && adduser -S -g app app \
 && apk update && apk upgrade \
@@ -14,7 +12,8 @@ COPY . $WORKDIR
 
 USER app
 
-RUN npm install
+# RUN npm install
+RUN yarn
 
 EXPOSE 4200
 

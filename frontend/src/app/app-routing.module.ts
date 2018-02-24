@@ -9,12 +9,19 @@ import { GuestGuard, AdminGuard } from './guard';
 import { NotFoundComponent } from './not-found';
 import { ChangePasswordComponent } from './change-password';
 import { ForbiddenComponent } from './forbidden';
-
+import { SignupComponent } from './signup';
+ 
 export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
     pathMatch: 'full'
+  },
+  {
+    path:'signup',
+    component: SignupComponent,
+    canActivate: [GuestGuard],
+    pathMatch:'full'
   },
   {
     path: 'login',

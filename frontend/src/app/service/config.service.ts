@@ -23,6 +23,8 @@ export class ConfigService {
   private _reset_credentials_url = this._user_url + '/reset-credentials';
 
   private _foo_url = this._api_url + '/foo';
+  
+  private _signup_url = this._api_url + '/signup';
 
   get reset_credentials_url(): string {
       return this._reset_credentials_url;
@@ -54,6 +56,10 @@ export class ConfigService {
 
   get foo_url(): string {
       return this._foo_url;
+  }
+
+  get signup_url():string {
+      return this._signup_url;
   }
 
 }

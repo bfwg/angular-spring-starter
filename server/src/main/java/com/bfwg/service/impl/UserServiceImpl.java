@@ -29,6 +29,7 @@ public class UserServiceImpl implements UserService {
   @Autowired
   private AuthorityService authService;
 
+  @Override
   public void resetCredentials() {
     List<User> users = userRepository.findAll();
     for (User user : users) {

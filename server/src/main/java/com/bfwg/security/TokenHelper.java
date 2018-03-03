@@ -74,7 +74,7 @@ public class TokenHelper {
                     .parseClaimsJws(token)
                     .getBody();
         } catch (ExpiredJwtException | MalformedJwtException | SignatureException | UnsupportedJwtException
-                | IllegalArgumentException e) {
+         | IllegalArgumentException e) {
             claims = null;
         }
         return claims;

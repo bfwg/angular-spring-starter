@@ -29,10 +29,10 @@ public class AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccess
     private String TOKEN_COOKIE;
 
     @Autowired
-    TokenHelper tokenHelper;
+    private TokenHelper tokenHelper;
 
     @Autowired
-    ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,

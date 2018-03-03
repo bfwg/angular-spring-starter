@@ -30,7 +30,7 @@ public class AuthenticationController {
     private CustomUserDetailsService userDetailsService;
 
     @Autowired
-    TokenHelper tokenHelper;
+    private TokenHelper tokenHelper;
 
     @Value("${jwt.expires_in}")
     private int EXPIRES_IN;

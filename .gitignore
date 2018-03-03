@@ -70,3 +70,4 @@ target/
 ### frontend ###
 npm-debug.*
 src/main/resources/static/
+/frontend/nbproject/private/

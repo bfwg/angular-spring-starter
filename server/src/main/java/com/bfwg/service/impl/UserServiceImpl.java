@@ -46,12 +46,14 @@ public class UserServiceImpl implements UserService {
   }
 
   @PreAuthorize("hasRole('ADMIN')")
+  @Override
   public User findById(Long id) throws AccessDeniedException {
     User u = userRepository.findOne(id);
     return u;
   }
 
   @PreAuthorize("hasRole('ADMIN')")
+  @Override
   public List<User> findAll() throws AccessDeniedException {
     List<User> result = userRepository.findAll();
     return result;

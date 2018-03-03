@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.Map;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 /**
  * Created by fan.jin on 2016-10-19.
@@ -94,7 +95,7 @@ public class TokenHelper {
             String username = getUsernameFromToken(token);
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
             return expirationDate.compareTo(generateCurrentDate()) > 0;
-        } catch (Exception e) {
+        } catch (UsernameNotFoundException e) {
             return false;
         }
     }

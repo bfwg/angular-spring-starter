@@ -12,6 +12,8 @@ import javax.persistence.*;
 @Table(name = "Authority")
 public class Authority implements GrantedAuthority {
 
+    private static final long serialVersionUID = -6173672801831223096L;
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

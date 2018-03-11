@@ -20,15 +20,15 @@ import java.util.Map;
 public class LogoutSuccess implements LogoutSuccessHandler {
 
     @Autowired
-    ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 
     @Override
     public void onLogoutSuccess(HttpServletRequest httpServletRequest, HttpServletResponse response, Authentication authentication)
             throws IOException, ServletException {
         Map<String, String> result = new HashMap<>();
-        result.put( "result", "success" );
-		response.setContentType("application/json");
-		response.getWriter().write( objectMapper.writeValueAsString( result ) );
+        result.put("result", "success");
+        response.setContentType("application/json");
+        response.getWriter().write(objectMapper.writeValueAsString(result));
         response.setStatus(HttpServletResponse.SC_OK);
 
     }

@@ -17,7 +17,6 @@ import com.bfwg.service.UserService;
 /**
  * Created by fan.jin on 2016-10-15.
  */
-
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -30,6 +29,7 @@ public class UserServiceImpl implements UserService {
   @Autowired
   private AuthorityService authService;
 
+  @Override
   public void resetCredentials() {
     List<User> users = userRepository.findAll();
     for (User user : users) {
@@ -46,12 +46,14 @@ public class UserServiceImpl implements UserService {
   }
 
   @PreAuthorize("hasRole('ADMIN')")
+  @Override
   public User findById(Long id) throws AccessDeniedException {
     User u = userRepository.findOne(id);
     return u;
   }
 
   @PreAuthorize("hasRole('ADMIN')")
+  @Override
   public List<User> findAll() throws AccessDeniedException {
     List<User> result = userRepository.findAll();
     return result;

@@ -1,6 +1,5 @@
 package com.bfwg.security;
 
-
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import org.joda.time.DateTimeUtils;
@@ -23,12 +22,12 @@ public class TokenHelperTest {
         ReflectionTestUtils.setField(tokenHelper, "SECRET", "mySecret");
     }
 
-    @Test(expected=ExpiredJwtException.class)
+    @Test(expected = ExpiredJwtException.class)
     public void testGenerateTokenExpired() {
         String token = tokenHelper.generateToken("fanjin");
         Jwts.parser()
-            .setSigningKey("mySecret")
-            .parseClaimsJws(token)
-            .getBody();
+                .setSigningKey("mySecret")
+                .parseClaimsJws(token)
+                .getBody();
     }
 }

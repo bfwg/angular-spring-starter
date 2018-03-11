@@ -15,6 +15,7 @@ target/
 *.ipr
 
 ### NetBeans ###
+nb-configuration.xml
 nbproject/private/
 build/
 nbbuild/

@@ -12,13 +12,12 @@ import java.io.IOException;
 /**
  * Created by fan.jin on 2016-11-07.
  */
-
 @Component
 public class AuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
-                                        AuthenticationException exception) throws IOException, ServletException {
+            AuthenticationException exception) throws IOException, ServletException {
 
         super.onAuthenticationFailure(request, response, exception);
     }

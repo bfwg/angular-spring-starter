@@ -9,7 +9,7 @@ public class ResourceConflictException extends RuntimeException {
 
   public ResourceConflictException(Long resourceId, String message) {
     super(message);
-    this.setResourceId(resourceId);
+    this.resourceId = resourceId;
   }
 
   public Long getResourceId() {

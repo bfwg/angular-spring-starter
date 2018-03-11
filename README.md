@@ -16,7 +16,6 @@
 [Services](https://gist.github.com/gdi2290/634101fec1671ee12b3e#_follow_@AngularClass_on_twitter),
 [Spring boot](https://projects.spring.io/spring-boot/),
 [JSON Web Token](https://jwt.io/)
-
 > If you're looking for using Angular 1.x for frontend implementation, please check out [springboot-jwt-starter](https://github.com/bfwg/springboot-jwt-starter)
 > A Spring Boot token-based security starter kit featuring [AngularJS](https://angularjs.org/) and [Spring Boot](https://projects.spring.io/spring-boot/) ([JSON Web Token](https://jwt.io/))
 ### [Live Demo](http://angular-spring-starter.fanjin.io)
@@ -27,6 +26,7 @@
 ## Quick start
 **Make sure you have Maven and Java 1.7 or greater**
 **Make sure you also have NPM 3.1, Node 6.9.5 and angular-cli@1.0.0 globally installed**
+
 ```bash
 # clone our repo
 # --depth 1 removes all but one .git commit history
@@ -51,16 +51,18 @@ mvn install
 # start the backend server
 mvn spring-boot:run
 
-# the fronend angular app will be running on port 4200
+# the frontend angular app will be running on port 4200
 # the spring-boot server will be running on port 8080
 ```
 
 There are two user accounts present to demonstrate the different levels of access to the endpoints in
 the API and the different authorization exceptions:
-```
+
+```bash
 Admin - admin:123
 User - user:123
 ```
+
 For more detailed configuration/documentation, please check out the [frontend][frontend-doc] and [server][server-doc] folder.
 
 ## Deployment
@@ -94,14 +96,15 @@ mvn spring-boot:run
 For more deployment related info checkout here: [DEPLOYMENT DOC](https://angular.io/docs/ts/latest/guide/deployment.html)
 
 ### JSON Web Token
+
 > JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
 for more info, check out https://jwt.io/
-
 > Token authentication is a more modern approach and is designed solve problems session IDs stored server-side can’t. Using tokens in place of session IDs can lower your server load, streamline permission management, and provide better tools for supporting a distributed or cloud-based infrastructure.
 >
 > -- <cite>Stormpath</cite>
 
 ### Importing the Project in IntelliJ IDEA
+
 1. Click "Import Project" on the launch screen
 2. Select the projects root folder, then select "Import project from external model" and choose "Maven"
 3. Tick the checkboxes "Import Maven projects automatically" and "Import projects recursively"
@@ -113,21 +116,20 @@ for more info, check out https://jwt.io/
 9. You should now see both (frontend and backend) modules in the Project view
 
 ### Contributing
+
 I'll accept pretty much everything so feel free to open a Pull-Request
 
 This project is inspired by
+
 - [Stormpath](https://stormpath.com/blog/token-auth-spa)
 - [Cerberus](https://github.com/brahalla/Cerberus)
 - [jwt-spring-security-demo](https://github.com/szerhusenBC/jwt-spring-security-demo)
 
-___
-
 ## License
- [MIT](/LICENSE)
 
+ [MIT](/LICENSE)
 
 [frontend-doc]: https://github.com/bfwg/angular-spring-jwt-starter/tree/master/frontend
 [server-doc]: https://github.com/bfwg/angular-spring-jwt-starter/tree/master/server
 [status-image]: https://img.shields.io/badge/status-maintained-brightgreen.svg
 [status-url]: https://github.com/bfwg/angular-spring-jwt-starter
-

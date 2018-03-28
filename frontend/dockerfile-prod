@@ -17,4 +17,5 @@ RUN yarn
 
 EXPOSE 4200
 
-CMD ["npm", "start"]
+CMD ["yarn", "run", "start"]
+# CMD ["npm", "start"]

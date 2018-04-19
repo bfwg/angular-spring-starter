@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.bfwg.model.Authority;
 import com.bfwg.repository.AuthorityRepository;
 import com.bfwg.service.AuthorityService;
+import java.util.Optional;
 
 @Service
 public class AuthorityServiceImpl implements AuthorityService {
@@ -16,16 +17,15 @@ public class AuthorityServiceImpl implements AuthorityService {
 
     @Override
     public List<Authority> findById(Long id) {
-        Authority auth = this.authorityRepository.findOne(id);
+        Optional<Authority> optauth = authorityRepository.findById(id);
         List<Authority> auths = new ArrayList<>();
-        auths.add(auth);
+        auths.add(optauth.get());
         return auths;
     }
 
     @Override
     public List<Authority> findByname(String name) {
-        // TODO Auto-generated method stub
-        Authority auth = this.authorityRepository.findByName(name);
+        Authority auth = authorityRepository.findByName(name);
         List<Authority> auths = new ArrayList<>();
         auths.add(auth);
         return auths;

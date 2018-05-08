@@ -10,7 +10,7 @@ import {
 } from '../service';
 
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/SUbject';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'app-login',

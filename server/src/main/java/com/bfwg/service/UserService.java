@@ -8,13 +8,14 @@ import com.bfwg.model.UserRequest;
  * Created by fan.jin on 2016-10-15.
  */
 public interface UserService {
-  void resetCredentials();
 
-  User findById(Long id);
+    public void resetCredentials();
 
-  User findByUsername(String username);
+    public User findById(Long id);
 
-  List<User> findAll();
+    public User findByUsername(String username);
 
-  User save(UserRequest user);
+    public List<User> findAll();
+
+    public User save(UserRequest user);
 }

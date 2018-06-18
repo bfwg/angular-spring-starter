@@ -30,7 +30,7 @@ public class MockMvcConfig {
     @Autowired
     private Environment env;
 
-    private int port = 8080;
+    private final int port = 8080;
 
     public RequestBuilder mockRequestBuilder() {
         return null;

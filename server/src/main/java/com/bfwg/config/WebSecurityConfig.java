@@ -25,7 +25,6 @@ import com.bfwg.service.impl.CustomUserDetailsService;
 /**
  * Created by fan.jin on 2016-10-19.
  */
-
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {

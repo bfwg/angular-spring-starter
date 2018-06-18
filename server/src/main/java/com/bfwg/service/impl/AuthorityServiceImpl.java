@@ -7,30 +7,28 @@ import org.springframework.stereotype.Service;
 import com.bfwg.model.Authority;
 import com.bfwg.repository.AuthorityRepository;
 import com.bfwg.service.AuthorityService;
+import java.util.Optional;
 
 @Service
 public class AuthorityServiceImpl implements AuthorityService {
 
-  @Autowired
-  private AuthorityRepository authorityRepository;
+    @Autowired
+    private AuthorityRepository authorityRepository;
 
-  @Override
-  public List<Authority> findById(Long id) {
-    // TODO Auto-generated method stub
+    @Override
+    public List<Authority> findById(Long id) {
+        Optional<Authority> optauth = authorityRepository.findById(id);
+        List<Authority> auths = new ArrayList<>();
+        auths.add(optauth.get());
+        return auths;
+    }
 
-    Authority auth = this.authorityRepository.findOne(id);
-    List<Authority> auths = new ArrayList<>();
-    auths.add(auth);
-    return auths;
-  }
-
-  @Override
-  public List<Authority> findByname(String name) {
-    // TODO Auto-generated method stub
-    Authority auth = this.authorityRepository.findByName(name);
-    List<Authority> auths = new ArrayList<>();
-    auths.add(auth);
-    return auths;
-  }
+    @Override
+    public List<Authority> findByname(String name) {
+        Authority auth = authorityRepository.findByName(name);
+        List<Authority> auths = new ArrayList<>();
+        auths.add(auth);
+        return auths;
+    }
 
 }

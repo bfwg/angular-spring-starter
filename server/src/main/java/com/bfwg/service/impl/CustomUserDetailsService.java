@@ -18,7 +18,6 @@ import org.springframework.stereotype.Service;
 /**
  * Created by fan.jin on 2016-10-31.
  */
-
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
@@ -49,7 +48,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         String username = currentUser.getName();
 
         if (authenticationManager != null) {
-            LOGGER.debug("Re-authenticating user '"+ username + "' for password change request.");
+            LOGGER.debug("Re-authenticating user '" + username + "' for password change request.");
 
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, oldPassword));
         } else {
@@ -58,7 +57,7 @@ public class CustomUserDetailsService implements UserDetailsService {
             return;
         }
 
-        LOGGER.debug("Changing password for user '"+ username + "'");
+        LOGGER.debug("Changing password for user '" + username + "'");
 
         User user = (User) loadUserByUsername(username);
 

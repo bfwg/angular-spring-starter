@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>angular-spring-starter</name>
-	<description>The backend server for Angular2 Spring Boot JWT Starter</description>
+	<description>The backend server for Angular7 Spring Boot JWT Starter</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

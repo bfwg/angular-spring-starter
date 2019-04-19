@@ -11,6 +11,7 @@ import {
 
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
   selector: 'app-signup',
@@ -50,7 +51,7 @@ export class SignupComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.route.params
-    .takeUntil(this.ngUnsubscribe)
+    .pipe(takeUntil(this.ngUnsubscribe))
     .subscribe((params: DisplayMessage) => {
       this.notification = params;
     });
@@ -81,8 +82,6 @@ export class SignupComponent implements OnInit, OnDestroy {
     this.submitted = true;
 
     this.authService.signup(this.form.value)
-    // show me the animation
-    .delay(1000)
     .subscribe(data => {
       console.log(data);
       this.authService.login(this.form.value).subscribe(data =>{

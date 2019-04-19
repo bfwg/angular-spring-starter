@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Headers } from '@angular/http';
 import { ApiService } from './api.service';
 import { ConfigService } from './config.service';
+import {map} from 'rxjs/operators';
 
 @Injectable()
 export class UserService {
@@ -32,7 +33,8 @@ export class UserService {
   }
 
   getMyInfo() {
-    return this.apiService.get(this.config.whoami_url).map(user => this.currentUser = user);
+    return this.apiService.get(this.config.whoami_url)
+      .pipe(map(user => this.currentUser = user));
   }
 
   getAll() {

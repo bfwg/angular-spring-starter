@@ -15,12 +15,12 @@
         <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
 
         <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
-          <mat-input-container>
+          <mat-form-field>
             <input matInput formControlName="username" required placeholder="user/admin">
-          </mat-input-container>
-          <mat-input-container>
+          </mat-form-field>
+          <mat-form-field>
             <input matInput formControlName="password" required type="password" placeholder="123">
-          </mat-input-container>
+          </mat-form-field>
           <button type="submit" [disabled]="!loginForm.form.valid" mat-raised-button color="primary">Login</button>
         </form>
         <br>

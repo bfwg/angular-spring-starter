@@ -14,11 +14,13 @@ export enum RequestMethod {
   Patch = 'PATCH'
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ApiService {
 
   headers = new HttpHeaders({
-    Accept: 'application/json',
+    'Accept': 'application/json',
     'Content-Type': 'application/json'
   });
 

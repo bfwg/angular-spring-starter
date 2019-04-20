@@ -1,18 +1,10 @@
-import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RouterTestingModule } from '@angular/router/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {RouterTestingModule} from '@angular/router/testing';
 
-import {
-  AuthService,
-  ConfigService,
-  ApiService,
-  UserService
-} from '../../../service';
-import {
-  MockUserService,
-  MockApiService
-} from '../../../service/mocks';
-import { AccountMenuComponent } from './account-menu.component';
+import {ApiService, AuthService, ConfigService, UserService} from '../../../service';
+import {MockApiService, MockUserService} from '../../../service/mocks';
+import {AccountMenuComponent} from './account-menu.component';
 
 describe('AccountMenuComponent', () => {
   let component: AccountMenuComponent;
@@ -38,7 +30,7 @@ describe('AccountMenuComponent', () => {
       declarations: [AccountMenuComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

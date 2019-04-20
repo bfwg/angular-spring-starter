@@ -23,9 +23,9 @@ export class AuthService {
     const body = `username=${user.username}&password=${user.password}`;
     return this.apiService.post(this.config.login_url, body, loginHeaders)
       .pipe(map(() => {
-      console.log('Login success');
-      this.userService.getMyInfo().subscribe();
-    }));
+        console.log('Login success');
+        this.userService.getMyInfo().subscribe();
+      }));
   }
 
   signup(user) {
@@ -35,8 +35,8 @@ export class AuthService {
     });
     return this.apiService.post(this.config.signup_url, JSON.stringify(user), signupHeaders)
       .pipe(map(() => {
-      console.log('Sign up success');
-    }));
+        console.log('Sign up success');
+      }));
   }
 
   logout() {

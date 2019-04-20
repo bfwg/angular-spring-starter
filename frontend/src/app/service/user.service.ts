@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Headers } from '@angular/http';
-import { ApiService } from './api.service';
-import { ConfigService } from './config.service';
+import {Injectable} from '@angular/core';
+import {ApiService} from './api.service';
+import {ConfigService} from './config.service';
 import {map} from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class UserService {
 
   currentUser;
@@ -12,19 +13,20 @@ export class UserService {
   constructor(
     private apiService: ApiService,
     private config: ConfigService
-  ) { }
+  ) {
+  }
 
   initUser() {
     const promise = this.apiService.get(this.config.refresh_token_url).toPromise()
-    .then(res => {
-      if (res.access_token !== null) {
-        return this.getMyInfo().toPromise()
-        .then(user => {
-          this.currentUser = user;
-        });
-      }
-    })
-    .catch(() => null);
+      .then(res => {
+        if (res.access_token !== null) {
+          return this.getMyInfo().toPromise()
+            .then(user => {
+              this.currentUser = user;
+            });
+        }
+      })
+      .catch(() => null);
     return promise;
   }
 

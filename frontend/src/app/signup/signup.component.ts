@@ -1,16 +1,9 @@
-import { Inject } from '@angular/core';
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
-import { DisplayMessage } from '../shared/models/display-message';
-import { Subscription } from 'rxjs/Subscription';
-import {
-  UserService,
-  AuthService
-} from '../service';
-
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
+import {DisplayMessage} from '../shared/models/display-message';
+import {AuthService, UserService} from '../service';
+import {Subject} from 'rxjs/Subject';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
@@ -51,16 +44,16 @@ export class SignupComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.route.params
-    .pipe(takeUntil(this.ngUnsubscribe))
-    .subscribe((params: DisplayMessage) => {
-      this.notification = params;
-    });
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe((params: DisplayMessage) => {
+        this.notification = params;
+      });
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     this.form = this.formBuilder.group({
       username: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(64)])],
       password: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(32)])],
-      firstname:[''],
+      firstname: [''],
       lastname: ['']
     });
   }
@@ -82,18 +75,18 @@ export class SignupComponent implements OnInit, OnDestroy {
     this.submitted = true;
 
     this.authService.signup(this.form.value)
-    .subscribe(data => {
-      console.log(data);
-      this.authService.login(this.form.value).subscribe(data =>{
-        this.userService.getMyInfo().subscribe();
-      })
-      this.router.navigate([this.returnUrl]);
-    },
-    error => {
-      this.submitted = false;
-      console.log("Sign up error" + JSON.stringify(error));
-      this.notification = { msgType: 'error', msgBody: error['error'].errorMessage };
-    });
+      .subscribe(data => {
+          console.log(data);
+          this.authService.login(this.form.value).subscribe(() => {
+            this.userService.getMyInfo().subscribe();
+          });
+          this.router.navigate([this.returnUrl]);
+        },
+        error => {
+          this.submitted = false;
+          console.log('Sign up error' + JSON.stringify(error));
+          this.notification = {msgType: 'error', msgBody: error['error'].errorMessage};
+        });
 
   }
 

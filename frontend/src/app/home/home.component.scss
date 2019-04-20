@@ -1,5 +1,6 @@
 app-api-card {
   margin: 0 50px 0 0;
+
   &.last {
     margin: 0 0 0 0;
   }
@@ -12,6 +13,7 @@ app-github {
 @media screen and (min-width: 600px) and (max-width: 1279px) {
   app-api-card {
     margin: 0 4px 0 0;
+
     &.last {
       margin: 0 0 0 0;
     }

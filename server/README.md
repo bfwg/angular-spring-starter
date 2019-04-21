@@ -1,7 +1,7 @@
 # Angular7 Spring Boot JWT Starter
 This sub-project is the backend server portion of the project.
 
-**Make sure you have Maven and Java 1.7 or greater**
+**Make sure you have Maven and Java 1.8 or greater**
 
 ```bash
 # change directory to server

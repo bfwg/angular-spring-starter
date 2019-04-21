@@ -1,7 +1,7 @@
-# Angular4 Spring Boot JWT Starter
-This sub-project is the frontend UI portion of the project and it was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+# Angular7 Spring Boot JWT Starter
+This sub-project is the frontend UI portion of the project and it was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
-**Make sure you also have NPM 3.1, Node 6.9.5 and angular-cli@1.0.0 globally installed**
+**Make sure you also have NPM 6.9.0, Node 10.15.3 and angular-cli@7.3.8 globally installed**
 
 ## File Structure
 ```

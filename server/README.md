@@ -58,7 +58,7 @@ angular-spring-starter/server
  │   │   │   │   └──UserService.java
  │   │   │   └──Application.java                                * Application main enterance
  │   │   └──recources
- │   │       ├──static                                          * Angular2 frontend code will get built and served from here.
+ │   │       ├──static                                          * Angular7 frontend code will get built and served from here.
  │   │       ├──application.yml                                 * application variables are configured here
  │   │       ├──banner.txt                                      * application banner :^)
  │   │       └──import.sql                                      * h2 database query(table creation)

@@ -50,7 +50,7 @@ export class ChangePasswordComponent implements OnInit {
     this.notification = undefined;
     this.submitted = true;
 
-    this.authService.changePassowrd(this.form.value)
+    this.authService.changePassword(this.form.value)
       .pipe(mergeMap(() => this.authService.logout()))
       .subscribe(() => {
         this.router.navigate(['/login', {msgType: 'success', msgBody: 'Success! Please sign in with your new password.'}]);

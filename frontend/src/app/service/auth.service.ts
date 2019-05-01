@@ -46,7 +46,7 @@ export class AuthService {
       }));
   }
 
-  changePassword(passwordChanger) {
+  changePassowrd(passwordChanger) {
     return this.apiService.post(this.config.change_password_url, passwordChanger);
   }
 

@@ -14,7 +14,7 @@ services:
     depends_on:
     - springboot
     links:
-      - springboot
+    - springboot
     #  - springboot:springboot
     # hostname: frontend
     # container_name: frontend

@@ -32,7 +32,7 @@
 }
 
 
-/deep/ {
+::ng-deep {
   .app-header-accountMenu.mat-menu-panel {
     border-radius: 3px;
     max-width: initial;

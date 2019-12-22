@@ -11,8 +11,12 @@ import com.bfwg.service.AuthorityService;
 @Service
 public class AuthorityServiceImpl implements AuthorityService {
 
+  private final AuthorityRepository authorityRepository;
+
   @Autowired
-  private AuthorityRepository authorityRepository;
+  public AuthorityServiceImpl(AuthorityRepository authorityRepository) {
+    this.authorityRepository = authorityRepository;
+  }
 
   @Override
   public List<Authority> findById(Long id) {

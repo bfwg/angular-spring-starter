@@ -21,14 +21,18 @@ import com.bfwg.service.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 
-  @Autowired
-  private UserRepository userRepository;
+  private final UserRepository userRepository;
+
+  private final PasswordEncoder passwordEncoder;
+
+  private final AuthorityService authService;
 
   @Autowired
-  private PasswordEncoder passwordEncoder;
-
-  @Autowired
-  private AuthorityService authService;
+  public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthorityService authService) {
+    this.userRepository = userRepository;
+    this.passwordEncoder = passwordEncoder;
+    this.authService = authService;
+  }
 
   public void resetCredentials() {
     List<User> users = userRepository.findAll();

@@ -24,14 +24,18 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     protected final Log LOGGER = LogFactory.getLog(getClass());
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+
+    private final PasswordEncoder passwordEncoder;
+
+    private final AuthenticationManager authenticationManager;
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    @Autowired
-    private AuthenticationManager authenticationManager;
+    public CustomUserDetailsService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.authenticationManager = authenticationManager;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -49,7 +53,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         String username = currentUser.getName();
 
         if (authenticationManager != null) {
-            LOGGER.debug("Re-authenticating user '"+ username + "' for password change request.");
+            LOGGER.debug("Re-authenticating user '" + username + "' for password change request.");
 
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, oldPassword));
         } else {
@@ -58,7 +62,7 @@ public class CustomUserDetailsService implements UserDetailsService {
             return;
         }
 
-        LOGGER.debug("Changing password for user '"+ username + "'");
+        LOGGER.debug("Changing password for user '" + username + "'");
 
         User user = (User) loadUserByUsername(username);
 

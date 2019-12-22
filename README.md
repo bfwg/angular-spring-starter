@@ -10,8 +10,8 @@
   </a>
 </p>
 
-# Angular5 Spring Boot JWT Starter
-> An Angular full stack starter kit featuring [Angular 4](https://angular.io), [Router](https://angular.io/docs/ts/latest/guide/router.html), [Forms](https://angular.io/docs/ts/latest/guide/forms.html),
+# Angular 8 Spring Boot JWT Starter
+> An Angular full stack starter kit featuring [Angular 8](https://angular.io), [Router](https://angular.io/docs/ts/latest/guide/router.html), [Forms](https://angular.io/docs/ts/latest/guide/forms.html),
 [Http](https://angular.io/docs/ts/latest/guide/server-communication.html),
 [Services](https://gist.github.com/gdi2290/634101fec1671ee12b3e#_follow_@AngularClass_on_twitter),
 [Spring boot](https://projects.spring.io/spring-boot/),
@@ -25,8 +25,8 @@
 </p>
 
 ## Quick start
-**Make sure you have Maven and Java 1.7 or greater**
-**Make sure you also have NPM 3.1, Node 6.9.5 and angular-cli@1.0.0 globally installed**
+**Make sure you have Maven and Java 1.8 or greater**
+**Make sure you also have NPM 6.12.0, Node 12.13.0 and angular-cli@8.3.21 globally installed**
 ```bash
 # clone our repo
 # --depth 1 removes all but one .git commit history

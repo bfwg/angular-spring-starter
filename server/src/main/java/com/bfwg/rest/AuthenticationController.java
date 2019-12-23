@@ -24,14 +24,12 @@ import java.util.Map;
  */
 
 @RestController
-@RequestMapping( value = "/api", produces = MediaType.APPLICATION_JSON_VALUE )
+@RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticationController {
 
-    @Autowired
-    private CustomUserDetailsService userDetailsService;
+    private final TokenHelper tokenHelper;
 
-    @Autowired
-    TokenHelper tokenHelper;
+    private final CustomUserDetailsService userDetailsService;
 
     @Value("${jwt.expires_in}")
     private int EXPIRES_IN;
@@ -39,26 +37,32 @@ public class AuthenticationController {
     @Value("${jwt.cookie}")
     private String TOKEN_COOKIE;
 
+    @Autowired
+    public AuthenticationController(CustomUserDetailsService userDetailsService, TokenHelper tokenHelper) {
+        this.userDetailsService = userDetailsService;
+        this.tokenHelper = tokenHelper;
+    }
+
     @RequestMapping(value = "/refresh", method = RequestMethod.GET)
     public ResponseEntity<?> refreshAuthenticationToken(HttpServletRequest request, HttpServletResponse response) {
 
-        String authToken = tokenHelper.getToken( request );
+        String authToken = tokenHelper.getToken(request);
         if (authToken != null && tokenHelper.canTokenBeRefreshed(authToken)) {
             // TODO check user password last update
             String refreshedToken = tokenHelper.refreshToken(authToken);
 
-            Cookie authCookie = new Cookie( TOKEN_COOKIE, ( refreshedToken ) );
-            authCookie.setPath( "/" );
-            authCookie.setHttpOnly( true );
-            authCookie.setMaxAge( EXPIRES_IN );
+            Cookie authCookie = new Cookie(TOKEN_COOKIE, (refreshedToken));
+            authCookie.setPath("/");
+            authCookie.setHttpOnly(true);
+            authCookie.setMaxAge(EXPIRES_IN);
             // Add cookie to response
-            response.addCookie( authCookie );
+            response.addCookie(authCookie);
 
             UserTokenState userTokenState = new UserTokenState(refreshedToken, EXPIRES_IN);
             return ResponseEntity.ok(userTokenState);
         } else {
             UserTokenState userTokenState = new UserTokenState();
-           return ResponseEntity.accepted().body(userTokenState);
+            return ResponseEntity.accepted().body(userTokenState);
         }
     }
 
@@ -67,7 +71,7 @@ public class AuthenticationController {
     public ResponseEntity<?> changePassword(@RequestBody PasswordChanger passwordChanger) {
         userDetailsService.changePassword(passwordChanger.oldPassword, passwordChanger.newPassword);
         Map<String, String> result = new HashMap<>();
-        result.put( "result", "success" );
+        result.put("result", "success");
         return ResponseEntity.accepted().body(result);
     }
 

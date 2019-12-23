@@ -1,5 +1,5 @@
 app:
-  name: anuglar2-spring-jwt
+  name: angular2-spring-jwt
 
 jwt:
   header: Authorization

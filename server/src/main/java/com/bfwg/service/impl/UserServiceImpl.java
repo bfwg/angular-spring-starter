@@ -22,54 +22,54 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-  private final UserRepository userRepository;
+    private final UserRepository userRepository;
 
-  private final PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
-  private final AuthorityService authService;
+    private final AuthorityService authService;
 
-  @Autowired
-  public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthorityService authService) {
-    this.userRepository = userRepository;
-    this.passwordEncoder = passwordEncoder;
-    this.authService = authService;
-  }
-
-  public void resetCredentials() {
-    List<User> users = userRepository.findAll();
-    for (User user : users) {
-      user.setPassword(passwordEncoder.encode("123"));
-      userRepository.save(user);
+    @Autowired
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthorityService authService) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.authService = authService;
     }
-  }
 
-  @Override
-  // @PreAuthorize("hasRole('USER')")
-  public User findByUsername(String username) throws UsernameNotFoundException {
-      return userRepository.findByUsername(username);
-  }
+    public void resetCredentials() {
+        List<User> users = userRepository.findAll();
+        for (User user : users) {
+            user.setPassword(passwordEncoder.encode("123"));
+            userRepository.save(user);
+        }
+    }
 
-  @PreAuthorize("hasRole('ADMIN')")
-  public User findById(Long id) throws AccessDeniedException {
-      return userRepository.getOne(id);
-  }
+    @Override
+    // @PreAuthorize("hasRole('USER')")
+    public User findByUsername(String username) throws UsernameNotFoundException {
+        return userRepository.findByUsername(username);
+    }
 
-  @PreAuthorize("hasRole('ADMIN')")
-  public List<User> findAll() throws AccessDeniedException {
-      return userRepository.findAll();
-  }
+    @PreAuthorize("hasRole('ADMIN')")
+    public User findById(Long id) throws AccessDeniedException {
+        return userRepository.getOne(id);
+    }
 
-  @Override
-  public User save(UserRequest userRequest) {
-    User user = new User();
-    user.setUsername(userRequest.getUsername());
-    user.setPassword(passwordEncoder.encode(userRequest.getPassword()));
-    user.setFirstname(userRequest.getFirstname());
-    user.setLastname(userRequest.getLastname());
-    List<Authority> auth = authService.findByName("ROLE_USER");
-    user.setAuthorities(auth);
-    this.userRepository.save(user);
-    return user;
-  }
+    @PreAuthorize("hasRole('ADMIN')")
+    public List<User> findAll() throws AccessDeniedException {
+        return userRepository.findAll();
+    }
+
+    @Override
+    public User save(UserRequest userRequest) {
+        User user = new User();
+        user.setUsername(userRequest.getUsername());
+        user.setPassword(passwordEncoder.encode(userRequest.getPassword()));
+        user.setFirstname(userRequest.getFirstname());
+        user.setLastname(userRequest.getLastname());
+        List<Authority> auth = authService.findByName("ROLE_USER");
+        user.setAuthorities(auth);
+        this.userRepository.save(user);
+        return user;
+    }
 
 }

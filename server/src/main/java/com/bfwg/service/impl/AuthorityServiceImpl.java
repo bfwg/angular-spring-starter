@@ -12,22 +12,22 @@ import java.util.List;
 @Service
 public class AuthorityServiceImpl implements AuthorityService {
 
-  private final AuthorityRepository authorityRepository;
+    private final AuthorityRepository authorityRepository;
 
-  @Autowired
-  public AuthorityServiceImpl(AuthorityRepository authorityRepository) {
-    this.authorityRepository = authorityRepository;
-  }
+    @Autowired
+    public AuthorityServiceImpl(AuthorityRepository authorityRepository) {
+        this.authorityRepository = authorityRepository;
+    }
 
-  @Override
-  public List<Authority> findById(Long id) {
-    // TODO Auto-generated method stub
+    @Override
+    public List<Authority> findById(Long id) {
+        // TODO Auto-generated method stub
 
-    Authority auth = this.authorityRepository.getOne(id);
-    List<Authority> auths = new ArrayList<>();
-    auths.add(auth);
-    return auths;
-  }
+        Authority auth = this.authorityRepository.getOne(id);
+        List<Authority> auths = new ArrayList<>();
+        auths.add(auth);
+        return auths;
+    }
 
     @Override
     public List<Authority> findByName(String name) {

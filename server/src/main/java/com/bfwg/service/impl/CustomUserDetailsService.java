@@ -25,13 +25,13 @@ public class CustomUserDetailsService implements UserDetailsService {
     protected final Log LOGGER = LogFactory.getLog(getClass());
 
     private final UserRepository userRepository;
-
     private final PasswordEncoder passwordEncoder;
-
     private final AuthenticationManager authenticationManager;
 
     @Autowired
-    public CustomUserDetailsService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager) {
+    public CustomUserDetailsService(UserRepository userRepository,
+                                    PasswordEncoder passwordEncoder,
+                                    AuthenticationManager authenticationManager) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.authenticationManager = authenticationManager;

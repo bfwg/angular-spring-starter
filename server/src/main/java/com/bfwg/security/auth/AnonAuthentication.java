@@ -9,7 +9,7 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
 public class AnonAuthentication extends AbstractAuthenticationToken {
 
     public AnonAuthentication() {
-        super( null );
+        super(null);
     }
 
     @Override
@@ -33,11 +33,11 @@ public class AnonAuthentication extends AbstractAuthenticationToken {
     }
 
     @Override
-    public boolean equals( Object obj ) {
-        if ( this == obj ) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        if ( obj == null ) {
+        if (obj == null) {
             return false;
         }
         return getClass() == obj.getClass();

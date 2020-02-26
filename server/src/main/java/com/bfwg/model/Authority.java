@@ -1,5 +1,6 @@
 package com.bfwg.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
@@ -9,16 +10,16 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name="AUTHORITY")
+@Table(name = "AUTHORITY")
 public class Authority implements GrantedAuthority {
 
     @Id
-    @Column(name="id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Enumerated( EnumType.STRING)
-    @Column(name="name")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "name")
     UserRoleName name;
 
     @Override
@@ -26,13 +27,13 @@ public class Authority implements GrantedAuthority {
         return name.name();
     }
 
-    public void setName(UserRoleName name) {
-        this.name = name;
-    }
-
     @JsonIgnore
     public UserRoleName getName() {
         return name;
+    }
+
+    public void setName(UserRoleName name) {
+        this.name = name;
     }
 
     @JsonIgnore

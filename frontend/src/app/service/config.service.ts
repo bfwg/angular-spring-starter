@@ -5,61 +5,61 @@ import {Injectable} from '@angular/core';
 })
 export class ConfigService {
 
-  private _api_url = '/api';
-  private _user_url = this._api_url + '/user';
+  private apiUrl = '/api';
+  private userUrl = this.apiUrl + '/user';
 
-  private _refresh_token_url = this._api_url + '/refresh';
+  private _refreshTokenUrl = this.apiUrl + '/refresh';
 
-  get refresh_token_url(): string {
-    return this._refresh_token_url;
+  get refreshTokenUrl(): string {
+    return this._refreshTokenUrl;
   }
 
-  private _login_url = this._api_url + '/login';
+  private _loginUrl = this.apiUrl + '/login';
 
-  get login_url(): string {
-    return this._login_url;
+  get loginUrl(): string {
+    return this._loginUrl;
   }
 
-  private _logout_url = this._api_url + '/logout';
+  private _logoutUrl = this.apiUrl + '/logout';
 
-  get logout_url(): string {
-    return this._logout_url;
+  get logoutUrl(): string {
+    return this._logoutUrl;
   }
 
-  private _change_password_url = this._api_url + '/changePassword';
+  private _changePasswordUrl = this.apiUrl + '/changePassword';
 
-  get change_password_url(): string {
-    return this._change_password_url;
+  get changePasswordUrl(): string {
+    return this._changePasswordUrl;
   }
 
-  private _whoami_url = this._api_url + '/whoami';
+  private _whoamiUrl = this.apiUrl + '/whoami';
 
-  get whoami_url(): string {
-    return this._whoami_url;
+  get whoamiUrl(): string {
+    return this._whoamiUrl;
   }
 
-  private _users_url = this._user_url + '/all';
+  private _usersUrl = this.userUrl + '/all';
 
-  get users_url(): string {
-    return this._users_url;
+  get usersUrl(): string {
+    return this._usersUrl;
   }
 
-  private _reset_credentials_url = this._user_url + '/reset-credentials';
+  private _resetCredentialsUrl = this.userUrl + '/reset-credentials';
 
-  get reset_credentials_url(): string {
-    return this._reset_credentials_url;
+  get resetCredentialsUrl(): string {
+    return this._resetCredentialsUrl;
   }
 
-  private _foo_url = this._api_url + '/foo';
+  private _fooUrl = this.apiUrl + '/foo';
 
-  get foo_url(): string {
-    return this._foo_url;
+  get fooUrl(): string {
+    return this._fooUrl;
   }
 
-  private _signup_url = this._api_url + '/signup';
+  private _signupUrl = this.apiUrl + '/signup';
 
-  get signup_url(): string {
-    return this._signup_url;
+  get signupUrl(): string {
+    return this._signupUrl;
   }
 
 }

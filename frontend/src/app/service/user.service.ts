@@ -17,7 +17,7 @@ export class UserService {
   }
 
   initUser() {
-    const promise = this.apiService.get(this.config.refresh_token_url).toPromise()
+    const promise = this.apiService.get(this.config.refreshTokenUrl).toPromise()
       .then(res => {
         if (res.access_token !== null) {
           return this.getMyInfo().toPromise()
@@ -31,16 +31,16 @@ export class UserService {
   }
 
   resetCredentials() {
-    return this.apiService.get(this.config.reset_credentials_url);
+    return this.apiService.get(this.config.resetCredentialsUrl);
   }
 
   getMyInfo() {
-    return this.apiService.get(this.config.whoami_url)
+    return this.apiService.get(this.config.whoamiUrl)
       .pipe(map(user => this.currentUser = user));
   }
 
   getAll() {
-    return this.apiService.get(this.config.users_url);
+    return this.apiService.get(this.config.usersUrl);
   }
 
 }

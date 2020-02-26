@@ -17,11 +17,11 @@ export class AuthService {
 
   login(user) {
     const loginHeaders = new HttpHeaders({
-      'Accept': 'application/json',
+      Accept: 'application/json',
       'Content-Type': 'application/x-www-form-urlencoded'
     });
     const body = `username=${user.username}&password=${user.password}`;
-    return this.apiService.post(this.config.login_url, body, loginHeaders)
+    return this.apiService.post(this.config.loginUrl, body, loginHeaders)
       .pipe(map(() => {
         console.log('Login success');
         this.userService.getMyInfo().subscribe();
@@ -30,24 +30,24 @@ export class AuthService {
 
   signup(user) {
     const signupHeaders = new HttpHeaders({
-      'Accept': 'application/json',
+      Accept: 'application/json',
       'Content-Type': 'application/json'
     });
-    return this.apiService.post(this.config.signup_url, JSON.stringify(user), signupHeaders)
+    return this.apiService.post(this.config.signupUrl, JSON.stringify(user), signupHeaders)
       .pipe(map(() => {
         console.log('Sign up success');
       }));
   }
 
   logout() {
-    return this.apiService.post(this.config.logout_url, {})
+    return this.apiService.post(this.config.logoutUrl, {})
       .pipe(map(() => {
         this.userService.currentUser = null;
       }));
   }
 
   changePassowrd(passwordChanger) {
-    return this.apiService.post(this.config.change_password_url, passwordChanger);
+    return this.apiService.post(this.config.changePasswordUrl, passwordChanger);
   }
 
 }

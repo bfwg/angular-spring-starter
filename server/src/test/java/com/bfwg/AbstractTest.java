@@ -21,7 +21,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Created by fan.jin on 2016-11-07.
+ */
 @RunWith( SpringRunner.class )
 @SpringBootTest(classes = { Application.class })
 public abstract class AbstractTest {

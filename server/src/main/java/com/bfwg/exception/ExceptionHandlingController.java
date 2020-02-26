@@ -13,6 +13,6 @@ public class ExceptionHandlingController {
     ExceptionResponse response = new ExceptionResponse();
     response.setErrorCode("Conflict");
     response.setErrorMessage(ex.getMessage());
-    return new ResponseEntity<ExceptionResponse>(response, HttpStatus.CONFLICT);
+    return new ResponseEntity<>(response, HttpStatus.CONFLICT);
   }
 }

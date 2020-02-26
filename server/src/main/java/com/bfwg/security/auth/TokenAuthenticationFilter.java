@@ -1,8 +1,6 @@
 package com.bfwg.security.auth;
 
 import com.bfwg.security.TokenHelper;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -47,7 +45,7 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
     public static final String LOGIN_MATCHER = "/auth/login";
     public static final String LOGOUT_MATCHER = "/auth/logout";
 
-    private List<String> pathsToSkip = Arrays.asList(
+    private final List<String> pathsToSkip = Arrays.asList(
             ROOT_MATCHER,
             HTML_MATCHER,
             FAVICON_MATCHER,
@@ -85,7 +83,7 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
 
     private boolean skipPathRequest(HttpServletRequest request, List<String> pathsToSkip ) {
         Assert.notNull(pathsToSkip, "path cannot be null.");
-        List<RequestMatcher> m = pathsToSkip.stream().map(path -> new AntPathRequestMatcher(path)).collect(Collectors.toList());
+        List<RequestMatcher> m = pathsToSkip.stream().map(AntPathRequestMatcher::new).collect(Collectors.toList());
         OrRequestMatcher matchers = new OrRequestMatcher(m);
         return matchers.matches(request);
     }

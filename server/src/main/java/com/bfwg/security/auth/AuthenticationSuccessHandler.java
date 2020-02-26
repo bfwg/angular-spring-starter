@@ -1,9 +1,5 @@
 package com.bfwg.security.auth;
 
-/**
- * Created by fan.jin on 2016-11-07.
- */
-
 import com.bfwg.model.User;
 import com.bfwg.model.UserTokenState;
 import com.bfwg.security.TokenHelper;
@@ -14,12 +10,14 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Created by fan.jin on 2016-11-07.
+ */
 @Component
 public class AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
@@ -38,7 +36,7 @@ public class AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccess
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
-                                        Authentication authentication) throws IOException, ServletException {
+                                        Authentication authentication) throws IOException {
         clearAuthenticationAttributes(request);
         User user = (User) authentication.getPrincipal();
 

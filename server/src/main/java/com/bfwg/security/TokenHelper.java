@@ -41,7 +41,7 @@ public class TokenHelper {
     @Autowired
     UserDetailsService userDetailsService;
 
-    private SignatureAlgorithm SIGNATURE_ALGORITHM = SignatureAlgorithm.HS512;
+    private final SignatureAlgorithm SIGNATURE_ALGORITHM = SignatureAlgorithm.HS512;
 
     public String getUsernameFromToken(String token) {
         String username;

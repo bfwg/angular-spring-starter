@@ -6,6 +6,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -18,16 +19,12 @@ import java.util.Map;
 @Component
 public class LogoutSuccess implements LogoutSuccessHandler {
 
-    private final ObjectMapper objectMapper;
-
     @Autowired
-    public LogoutSuccess(ObjectMapper objectMapper) {
-        this.objectMapper = objectMapper;
-    }
+    ObjectMapper objectMapper;
 
     @Override
     public void onLogoutSuccess(HttpServletRequest httpServletRequest, HttpServletResponse response, Authentication authentication)
-            throws IOException {
+            throws IOException, ServletException {
         Map<String, String> result = new HashMap<>();
         result.put("result", "success");
         response.setContentType("application/json");

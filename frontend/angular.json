@@ -133,5 +133,8 @@
       }
     }
   },
-  "defaultProject": "testAngular"
+  "defaultProject": "testAngular",
+  "cli": {
+    "analytics": false
+  }
 }

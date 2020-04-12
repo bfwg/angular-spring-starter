@@ -27,21 +27,16 @@ import java.util.Map;
 @RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticationController {
 
-    private final TokenHelper tokenHelper;
-
-    private final CustomUserDetailsService userDetailsService;
+    @Autowired
+    TokenHelper tokenHelper;
+    @Autowired
+    private CustomUserDetailsService userDetailsService;
 
     @Value("${jwt.expires_in}")
     private int EXPIRES_IN;
 
     @Value("${jwt.cookie}")
     private String TOKEN_COOKIE;
-
-    @Autowired
-    public AuthenticationController(CustomUserDetailsService userDetailsService, TokenHelper tokenHelper) {
-        this.userDetailsService = userDetailsService;
-        this.tokenHelper = tokenHelper;
-    }
 
     @RequestMapping(value = "/refresh", method = RequestMethod.GET)
     public ResponseEntity<?> refreshAuthenticationToken(HttpServletRequest request, HttpServletResponse response) {

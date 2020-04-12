@@ -9,8 +9,8 @@ import org.springframework.security.core.userdetails.UserDetails;
  */
 public class TokenBasedAuthentication extends AbstractAuthenticationToken {
 
-    private final UserDetails principle;
     private String token;
+    private final UserDetails principle;
 
     public TokenBasedAuthentication(UserDetails principle) {
         super(principle.getAuthorities());

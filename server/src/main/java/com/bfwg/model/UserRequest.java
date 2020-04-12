@@ -13,7 +13,6 @@ public class UserRequest {
 
     private String lastname;
 
-
     public String getUsername() {
         return username;
     }

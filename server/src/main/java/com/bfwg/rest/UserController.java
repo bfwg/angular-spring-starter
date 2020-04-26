@@ -32,9 +32,12 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping(method = GET, value = "/user/{userId}")
     public User loadById(@PathVariable Long userId) {

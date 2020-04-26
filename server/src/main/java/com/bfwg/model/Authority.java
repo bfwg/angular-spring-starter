@@ -16,11 +16,11 @@ public class Authority implements GrantedAuthority {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "name")
-    UserRoleName name;
+    private UserRoleName name;
 
     @Override
     public String getAuthority() {

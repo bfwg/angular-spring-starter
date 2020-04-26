@@ -10,30 +10,30 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name="AUTHORITY")
+@Table(name = "AUTHORITY")
 public class Authority implements GrantedAuthority {
 
     @Id
-    @Column(name="id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    @Enumerated( EnumType.STRING)
-    @Column(name="name")
-    UserRoleName name;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "name")
+    private UserRoleName name;
 
     @Override
     public String getAuthority() {
         return name.name();
     }
 
-    public void setName(UserRoleName name) {
-        this.name = name;
-    }
-
     @JsonIgnore
     public UserRoleName getName() {
         return name;
+    }
+
+    public void setName(UserRoleName name) {
+        this.name = name;
     }
 
     @JsonIgnore

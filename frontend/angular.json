@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "testAngular": {
+    "angular-spring-starter": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/testAngular",
+            "outputPath": "dist/angular-spring-starter",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "testAngular:build"
+            "browserTarget": "angular-spring-starter:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "testAngular:build:production"
+              "browserTarget": "angular-spring-starter:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "testAngular:build"
+            "browserTarget": "angular-spring-starter:build"
           }
         },
         "test": {
@@ -104,7 +104,7 @@
         }
       }
     },
-    "testAngular-e2e": {
+    "angular-spring-starter-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -113,11 +113,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "testAngular:serve"
+            "devServerTarget": "angular-spring-starter:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "testAngular:serve:production"
+              "devServerTarget": "angular-spring-starter:serve:production"
             }
           }
         },
@@ -133,5 +133,8 @@
       }
     }
   },
-  "defaultProject": "testAngular"
+  "defaultProject": "angular-spring-starter",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -20,7 +20,7 @@ export enum RequestMethod {
 export class ApiService {
 
   headers = new HttpHeaders({
-    'Accept': 'application/json',
+    Accept: 'application/json',
     'Content-Type': 'application/json'
   });
 
@@ -30,11 +30,12 @@ export class ApiService {
   get(path: string, args?: any): Observable<any> {
     const options = {
       headers: this.headers,
-      withCredentials: true
+      withCredentials: true,
+      params: undefined
     };
 
     if (args) {
-      options['params'] = serialize(args);
+      options.params = serialize(args);
     }
 
     return this.http.get(path, options)

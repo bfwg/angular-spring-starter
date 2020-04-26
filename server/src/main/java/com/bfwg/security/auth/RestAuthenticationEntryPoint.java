@@ -1,9 +1,5 @@
 package com.bfwg.security.auth;
 
-/**
- * Created by fan.jin on 2016-11-12.
- */
-
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;

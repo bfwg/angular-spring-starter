@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DisplayMessage} from '../shared/models/display-message';
 import {AuthService, UserService} from '../service';
-import {Subject} from 'rxjs/Subject';
+import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
@@ -49,7 +49,7 @@ export class SignupComponent implements OnInit, OnDestroy {
         this.notification = params;
       });
     // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
     this.form = this.formBuilder.group({
       username: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(64)])],
       password: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(32)])],
@@ -85,7 +85,7 @@ export class SignupComponent implements OnInit, OnDestroy {
         error => {
           this.submitted = false;
           console.log('Sign up error' + JSON.stringify(error));
-          this.notification = {msgType: 'error', msgBody: error['error'].errorMessage};
+          this.notification = {msgType: 'error', msgBody: error.error.errorMessage};
         });
 
   }

@@ -1,4 +1,4 @@
-import { WebUiPage } from './app.po';
+import {WebUiPage} from './app.po';
 
 describe('web-ui App', () => {
   let page: WebUiPage;

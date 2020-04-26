@@ -5,6 +5,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -23,25 +24,20 @@ import java.util.Map;
 @Component
 public class TokenHelper {
 
+    private final SignatureAlgorithm SIGNATURE_ALGORITHM = SignatureAlgorithm.HS512;
+    @Autowired
+    @Qualifier("customUserDetailsService")
+    private UserDetailsService userDetailsService;
     @Value("${app.name}")
     private String APP_NAME;
-
     @Value("${jwt.secret}")
     private String SECRET;
-
     @Value("${jwt.expires_in}")
     private int EXPIRES_IN;
-
     @Value("${jwt.header}")
     private String AUTH_HEADER;
-
     @Value("${jwt.cookie}")
     private String AUTH_COOKIE;
-
-    @Autowired
-    UserDetailsService userDetailsService;
-
-    private SignatureAlgorithm SIGNATURE_ALGORITHM = SignatureAlgorithm.HS512;
 
     public String getUsernameFromToken(String token) {
         String username;
@@ -56,11 +52,11 @@ public class TokenHelper {
 
     public String generateToken(String username) {
         return Jwts.builder()
-                .setIssuer( APP_NAME )
+                .setIssuer(APP_NAME)
                 .setSubject(username)
                 .setIssuedAt(generateCurrentDate())
                 .setExpiration(generateExpirationDate())
-                .signWith( SIGNATURE_ALGORITHM, SECRET )
+                .signWith(SIGNATURE_ALGORITHM, SECRET)
                 .compact();
     }
 
@@ -81,7 +77,7 @@ public class TokenHelper {
         return Jwts.builder()
                 .setClaims(claims)
                 .setExpiration(generateExpirationDate())
-                .signWith( SIGNATURE_ALGORITHM, SECRET )
+                .signWith(SIGNATURE_ALGORITHM, SECRET)
                 .compact();
     }
 
@@ -121,12 +117,12 @@ public class TokenHelper {
         return new Date(getCurrentTimeMillis() + this.EXPIRES_IN * 1000);
     }
 
-    public String getToken( HttpServletRequest request ) {
+    public String getToken(HttpServletRequest request) {
         /**
          *  Getting the token from Cookie store
          */
-        Cookie authCookie = getCookieValueByName( request, AUTH_COOKIE );
-        if ( authCookie != null ) {
+        Cookie authCookie = getCookieValueByName(request, AUTH_COOKIE);
+        if (authCookie != null) {
             return authCookie.getValue();
         }
         /**
@@ -134,7 +130,7 @@ public class TokenHelper {
          *  e.g Bearer your_token
          */
         String authHeader = request.getHeader(AUTH_HEADER);
-        if ( authHeader != null && authHeader.startsWith("Bearer ")) {
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
             return authHeader.substring(7);
         }
 
@@ -144,10 +140,8 @@ public class TokenHelper {
     /**
      * Find a specific HTTP cookie in a request.
      *
-     * @param request
-     *            The HTTP request object.
-     * @param name
-     *            The cookie name to look for.
+     * @param request The HTTP request object.
+     * @param name    The cookie name to look for.
      * @return The cookie, or <code>null</code> if not found.
      */
     public Cookie getCookieValueByName(HttpServletRequest request, String name) {

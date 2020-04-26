@@ -3,9 +3,10 @@ import {HomeComponent} from './home.component';
 import {ApiCardComponent, GithubComponent} from '../component';
 import {MockApiService} from '../service/mocks/api.service.mock';
 
-import {MatButtonModule, MatCardModule} from '@angular/material';
 
 import {ApiService, AuthService, ConfigService, FooService, UserService} from '../service';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;

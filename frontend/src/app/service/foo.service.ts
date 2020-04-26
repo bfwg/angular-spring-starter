@@ -12,7 +12,7 @@ export class FooService {
   }
 
   getFoo() {
-    return this.apiService.get(this.config.foo_url);
+    return this.apiService.get(this.config.fooUrl);
   }
 
 }

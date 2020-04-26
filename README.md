@@ -10,14 +10,14 @@
   </a>
 </p>
 
-# Angular5 Spring Boot JWT Starter
-> An Angular full stack starter kit featuring [Angular 4](https://angular.io), [Router](https://angular.io/docs/ts/latest/guide/router.html), [Forms](https://angular.io/docs/ts/latest/guide/forms.html),
+# Angular Spring Boot JWT Starter
+> An Angular full stack starter kit featuring [Angular](https://angular.io), [Router](https://angular.io/docs/ts/latest/guide/router.html), [Forms](https://angular.io/docs/ts/latest/guide/forms.html),
 [Http](https://angular.io/docs/ts/latest/guide/server-communication.html),
 [Services](https://gist.github.com/gdi2290/634101fec1671ee12b3e#_follow_@AngularClass_on_twitter),
 [Spring boot](https://projects.spring.io/spring-boot/),
 [JSON Web Token](https://jwt.io/)
 
-> If you're looking for using Angular 1.x for frontend implementation, please check out [springboot-jwt-starter](https://github.com/bfwg/springboot-jwt-starter)
+> If you're looking to use Angular as your frontend implementation, please check out [springboot-jwt-starter](https://github.com/bfwg/springboot-jwt-starter)
 > A Spring Boot token-based security starter kit featuring [AngularJS](https://angularjs.org/) and [Spring Boot](https://projects.spring.io/spring-boot/) ([JSON Web Token](https://jwt.io/))
 ### [Live Demo](http://angular-spring-starter.fanjin.io)
 <p align="center">
@@ -25,8 +25,8 @@
 </p>
 
 ## Quick start
-**Make sure you have Maven and Java 1.7 or greater**
-**Make sure you also have NPM 3.1, Node 6.9.5 and angular-cli@1.0.0 globally installed**
+**Make sure you have Maven and Java 11 or greater**
+**Make sure you also have NPM 6.12.0, Node 12.13.0 and angular-cli@9.1.3 globally installed**
 ```bash
 # clone our repo
 # --depth 1 removes all but one .git commit history
@@ -36,7 +36,7 @@ git clone --depth 1 https://github.com/bfwg/angular-spring-starter.git
 cd angular-spring-starter/frontend
 
 # install the frontend dependencies with npm
-# npm install @angular/cli@1.0.0 -g
+# npm install @angular/cli@9.1.3 -g
 npm install
 
 # start the frontend app
@@ -74,7 +74,7 @@ git clone --depth 1 https://github.com/bfwg/angular-spring-starter.git
 cd angular-spring-starter/frontend
 
 # install the frontend dependencies with npm
-# npm install @angular/cli@1.0.0 -g
+# npm install @angular/cli@9.1.3 -g
 npm install
 
 # build frontend project to /server/src/main/resources/static folder

@@ -31,23 +31,6 @@
   display: none;
 }
 
-
-/deep/ {
-  .app-header-accountMenu.mat-menu-panel {
-    border-radius: 3px;
-    max-width: initial;
-    overflow: visible;
-
-    .mat-menu-content {
-      max-width: initial;
-      padding: 0;
-      overflow: hidden;
-      display: inline-block;
-      margin-bottom: -6px;
-    }
-  }
-}
-
 @media screen and (max-width: 600px) {
   .greeting-hamburger {
     display: block;

@@ -4,6 +4,7 @@ import com.bfwg.security.TokenHelper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -30,10 +31,11 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
     private final Log logger = LogFactory.getLog(this.getClass());
 
     @Autowired
-    TokenHelper tokenHelper;
+    private TokenHelper tokenHelper;
 
     @Autowired
-    UserDetailsService userDetailsService;
+    @Qualifier("customUserDetailsService")
+    private UserDetailsService userDetailsService;
 
     /*
      * The below paths will get ignored by the filter
@@ -47,7 +49,7 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
     public static final String LOGIN_MATCHER = "/auth/login";
     public static final String LOGOUT_MATCHER = "/auth/logout";
 
-    private List<String> pathsToSkip = Arrays.asList(
+    private final List<String> pathsToSkip = Arrays.asList(
             ROOT_MATCHER,
             HTML_MATCHER,
             FAVICON_MATCHER,
@@ -83,7 +85,7 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
         chain.doFilter(request, response);
     }
 
-    private boolean skipPathRequest(HttpServletRequest request, List<String> pathsToSkip ) {
+    private boolean skipPathRequest(HttpServletRequest request, List<String> pathsToSkip) {
         Assert.notNull(pathsToSkip, "path cannot be null.");
         List<RequestMatcher> m = pathsToSkip.stream().map(path -> new AntPathRequestMatcher(path)).collect(Collectors.toList());
         OrRequestMatcher matchers = new OrRequestMatcher(m);

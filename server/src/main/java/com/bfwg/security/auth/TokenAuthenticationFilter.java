@@ -4,6 +4,7 @@ import com.bfwg.security.TokenHelper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -30,10 +31,11 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
     private final Log logger = LogFactory.getLog(this.getClass());
 
     @Autowired
-    TokenHelper tokenHelper;
+    private TokenHelper tokenHelper;
 
     @Autowired
-    UserDetailsService userDetailsService;
+    @Qualifier("customUserDetailsService")
+    private UserDetailsService userDetailsService;
 
     /*
      * The below paths will get ignored by the filter

@@ -78,7 +78,6 @@ public class User implements UserDetails, Serializable {
     }
 
     public void setLastname(String lastname) {
-
         this.lastname = lastname;
     }
 

@@ -22,17 +22,18 @@ import java.io.IOException;
 @Component
 public class AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
+    private final TokenHelper tokenHelper;
+    private final ObjectMapper objectMapper;
     @Value("${jwt.expires_in}")
     private int EXPIRES_IN;
-
     @Value("${jwt.cookie}")
     private String TOKEN_COOKIE;
 
     @Autowired
-    TokenHelper tokenHelper;
-
-    @Autowired
-    ObjectMapper objectMapper;
+    public AuthenticationSuccessHandler(TokenHelper tokenHelper, ObjectMapper objectMapper) {
+        this.tokenHelper = tokenHelper;
+        this.objectMapper = objectMapper;
+    }
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,

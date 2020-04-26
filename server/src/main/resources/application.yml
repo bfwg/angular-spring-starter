@@ -11,3 +11,15 @@ logging:
   level:
     org.springframework.web: ERROR
     com.bfwg: DEBUG
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: root
+    password: password
+    initialization-mode: always
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.H2Dialect

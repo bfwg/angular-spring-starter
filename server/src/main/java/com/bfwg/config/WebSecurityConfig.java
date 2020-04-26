@@ -26,18 +26,22 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+  private final CustomUserDetailsService jwtUserDetailsService;
+  private final RestAuthenticationEntryPoint restAuthenticationEntryPoint;
+  private final LogoutSuccess logoutSuccess;
+  private final AuthenticationSuccessHandler authenticationSuccessHandler;
+  private final AuthenticationFailureHandler authenticationFailureHandler;
   @Value("${jwt.cookie}")
   private String TOKEN_COOKIE;
+
   @Autowired
-  private CustomUserDetailsService jwtUserDetailsService;
-  @Autowired
-  private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
-  @Autowired
-  private LogoutSuccess logoutSuccess;
-  @Autowired
-  private AuthenticationSuccessHandler authenticationSuccessHandler;
-  @Autowired
-  private AuthenticationFailureHandler authenticationFailureHandler;
+  public WebSecurityConfig(CustomUserDetailsService jwtUserDetailsService, RestAuthenticationEntryPoint restAuthenticationEntryPoint, LogoutSuccess logoutSuccess, AuthenticationSuccessHandler authenticationSuccessHandler, AuthenticationFailureHandler authenticationFailureHandler) {
+    this.jwtUserDetailsService = jwtUserDetailsService;
+    this.restAuthenticationEntryPoint = restAuthenticationEntryPoint;
+    this.logoutSuccess = logoutSuccess;
+    this.authenticationSuccessHandler = authenticationSuccessHandler;
+    this.authenticationFailureHandler = authenticationFailureHandler;
+  }
 
   @Bean
   public TokenAuthenticationFilter jwtAuthenticationTokenFilter() throws Exception {

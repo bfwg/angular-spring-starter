@@ -3,6 +3,7 @@ package com.bfwg.service.impl;
 import com.bfwg.model.Authority;
 import com.bfwg.model.User;
 import com.bfwg.model.UserRequest;
+import com.bfwg.model.UserRoleName;
 import com.bfwg.repository.UserRepository;
 import com.bfwg.service.AuthorityService;
 import com.bfwg.service.UserService;
@@ -63,7 +64,7 @@ public class UserServiceImpl implements UserService {
         user.setPassword(getBCryptPasswordEncoder().encode(userRequest.getPassword()));
         user.setFirstname(userRequest.getFirstname());
         user.setLastname(userRequest.getLastname());
-        List<Authority> auth = authService.findByName("ROLE_USER");
+        List<Authority> auth = authService.findByName(UserRoleName.ROLE_USER);
         user.setAuthorities(auth);
         return userRepository.save(user);
     }

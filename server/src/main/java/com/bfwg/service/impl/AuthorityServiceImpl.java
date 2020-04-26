@@ -1,6 +1,7 @@
 package com.bfwg.service.impl;
 
 import com.bfwg.model.Authority;
+import com.bfwg.model.UserRoleName;
 import com.bfwg.repository.AuthorityRepository;
 import com.bfwg.service.AuthorityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class AuthorityServiceImpl implements AuthorityService {
     }
 
     @Override
-    public List<Authority> findByName(String name) {
+    public List<Authority> findByName(UserRoleName name) {
         // TODO Auto-generated method stub
         Authority auth = this.authorityRepository.findByName(name);
         List<Authority> auths = new ArrayList<>();

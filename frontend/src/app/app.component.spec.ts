@@ -7,7 +7,6 @@ import {ApiCardComponent, FooterComponent, GithubComponent, HeaderComponent} fro
 
 
 import {ApiService, AuthService, ConfigService, FooService, UserService} from './service';
-import {MatIconRegistry} from '@angular/material';
 import {AngularMaterialModule} from './angular-material/angular-material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
@@ -20,6 +19,7 @@ import {ChangePasswordComponent} from './change-password';
 import {ForbiddenComponent} from './forbidden';
 import {AdminComponent} from './admin';
 import {SignupComponent} from './signup';
+import {MatIconRegistry} from '@angular/material/icon';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

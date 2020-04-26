@@ -14,7 +14,7 @@ logging:
 
 spring:
   datasource:
-    url: jdbc:h2:mem:mydb
+    url: jdbc:h2:mem:angular-spring-jwtdb
     username: root
     password: password
     initialization-mode: always

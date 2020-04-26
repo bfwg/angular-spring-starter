@@ -43,20 +43,17 @@ public class UserServiceImpl implements UserService {
     @Override
     // @PreAuthorize("hasRole('USER')")
     public User findByUsername(String username) throws UsernameNotFoundException {
-        User u = userRepository.findByUsername(username);
-        return u;
+        return userRepository.findByUsername(username).orElse(null);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
     public User findById(Long id) throws AccessDeniedException {
-        User u = userRepository.getOne(id);
-        return u;
+        return userRepository.getOne(id);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
     public List<User> findAll() throws AccessDeniedException {
-        List<User> result = userRepository.findAll();
-        return result;
+        return userRepository.findAll();
     }
 
     @Override
@@ -68,8 +65,7 @@ public class UserServiceImpl implements UserService {
         user.setLastname(userRequest.getLastname());
         List<Authority> auth = authService.findByName("ROLE_USER");
         user.setAuthorities(auth);
-        this.userRepository.save(user);
-        return user;
+        return userRepository.save(user);
     }
 
     private BCryptPasswordEncoder getBCryptPasswordEncoder() {

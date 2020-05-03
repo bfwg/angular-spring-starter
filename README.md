@@ -10,7 +10,7 @@
   </a>
 </p>
 
-# Angular4 Spring Boot JWT Starter
+# Angular5 Spring Boot JWT Starter
 > An Angular full stack starter kit featuring [Angular 4](https://angular.io), [Router](https://angular.io/docs/ts/latest/guide/router.html), [Forms](https://angular.io/docs/ts/latest/guide/forms.html),
 [Http](https://angular.io/docs/ts/latest/guide/server-communication.html),
 [Services](https://gist.github.com/gdi2290/634101fec1671ee12b3e#_follow_@AngularClass_on_twitter),

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'app/service';
-import { Router } from '@angular/router';
-import { DisplayMessage } from '../shared/models/display-message';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {DisplayMessage} from '../shared/models/display-message';
+import {AuthService} from '../service';
+import {mergeMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-change-password',
@@ -50,15 +51,13 @@ export class ChangePasswordComponent implements OnInit {
     this.submitted = true;
 
     this.authService.changePassowrd(this.form.value)
-    // show me the animation
-    .delay(1000)
-    .mergeMap(() => this.authService.logout())
-    .subscribe(() => {
-      this.router.navigate(['/login', { msgType: 'success', msgBody: 'Success! Please sign in with your new password.'}]);
-    }, error => {
-      this.submitted = false;
-      this.notification = { msgType: 'error', msgBody: 'Invalid old password.'};
-    });
+      .pipe(mergeMap(() => this.authService.logout()))
+      .subscribe(() => {
+        this.router.navigate(['/login', {msgType: 'success', msgBody: 'Success! Please sign in with your new password.'}]);
+      }, error => {
+        this.submitted = false;
+        this.notification = {msgType: 'error', msgBody: 'Invalid old password.'};
+      });
 
   }
 

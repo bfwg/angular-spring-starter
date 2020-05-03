@@ -1,9 +1,8 @@
-import { HttpClient, HttpHeaders, HttpResponse, HttpRequest, HttpEventType, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/Rx';
-import 'rxjs/add/observable/throw';
-import { serialize } from 'app/shared/utilities/serialize';
+import {HttpClient, HttpHeaders, HttpRequest, HttpResponse} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {serialize} from '../shared/utilities/serialize';
+import {Observable} from 'rxjs';
+import {catchError, filter, map} from 'rxjs/operators';
 
 export enum RequestMethod {
   Get = 'GET',
@@ -15,28 +14,32 @@ export enum RequestMethod {
   Patch = 'PATCH'
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ApiService {
 
   headers = new HttpHeaders({
-    'Accept': 'application/json',
+    Accept: 'application/json',
     'Content-Type': 'application/json'
   });
 
-  constructor( private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   get(path: string, args?: any): Observable<any> {
     const options = {
       headers: this.headers,
-      withCredentials: true
+      withCredentials: true,
+      params: undefined
     };
 
     if (args) {
-      options['params'] = serialize(args);
+      options.params = serialize(args);
     }
 
     return this.http.get(path, options)
-      .catch(this.checkError.bind(this));
+      .pipe(catchError(this.checkError.bind(this)));
   }
 
   post(path: string, body: any, customHeaders?: HttpHeaders): Observable<any> {
@@ -57,10 +60,9 @@ export class ApiService {
       withCredentials: true
     });
 
-    return this.http.request(req)
-      .filter(response => response instanceof HttpResponse)
-      .map((response: HttpResponse<any>) => response.body)
-      .catch(error => this.checkError(error));
+    return this.http.request(req).pipe(filter(response => response instanceof HttpResponse))
+      .pipe(map((response: HttpResponse<any>) => response.body))
+      .pipe(catchError(error => this.checkError(error)));
   }
 
   // Display error if logged in, otherwise redirect to IDP

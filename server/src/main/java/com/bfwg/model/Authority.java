@@ -9,7 +9,7 @@ import javax.persistence.*;
  * Created by fan.jin on 2016-11-03.
  */
 @Entity
-@Table(name="AUTHORITY")
+@Table(name = "AUTHORITY")
 public class Authority implements GrantedAuthority {
 
     private static final long serialVersionUID = -6173672801831223096L;
@@ -17,24 +17,24 @@ public class Authority implements GrantedAuthority {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    @Enumerated( EnumType.STRING)
-    @Column(name="name")
-    UserRoleName name;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "name")
+    private UserRoleName name;
 
     @Override
     public String getAuthority() {
         return name.name();
     }
 
-    public void setName(UserRoleName name) {
-        this.name = name;
-    }
-
     @JsonIgnore
     public UserRoleName getName() {
         return name;
+    }
+
+    public void setName(UserRoleName name) {
+        this.name = name;
     }
 
     @JsonIgnore

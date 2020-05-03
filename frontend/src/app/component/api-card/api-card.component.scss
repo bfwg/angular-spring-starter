@@ -5,11 +5,13 @@
 
 mat-card {
   text-align: left;
+
   .response-success {
     background-color: #dff0d8;
     border-color: #d6e9c6;
     color: #3c763d;
   }
+
   .response-error {
     background-color: #f2dede;
     border-color: #ebccd1;
@@ -36,7 +38,7 @@ mat-card {
 
   mat-card-actions {
     margin-bottom: 0;
-    padding-bottom: 0;
+    padding-bottom: 8px;
   }
 
   pre {

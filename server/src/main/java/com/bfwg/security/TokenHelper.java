@@ -9,6 +9,7 @@ import io.jsonwebtoken.SignatureException;
 import io.jsonwebtoken.UnsupportedJwtException;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
@@ -26,25 +27,20 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 @Component
 public class TokenHelper {
 
+    private final SignatureAlgorithm SIGNATURE_ALGORITHM = SignatureAlgorithm.HS512;
+    @Autowired
+    @Qualifier("customUserDetailsService")
+    private UserDetailsService userDetailsService;
     @Value("${app.name}")
     private String APP_NAME;
-
     @Value("${jwt.secret}")
     private String SECRET;
-
     @Value("${jwt.expires_in}")
     private int EXPIRES_IN;
-
     @Value("${jwt.header}")
     private String AUTH_HEADER;
-
     @Value("${jwt.cookie}")
     private String AUTH_COOKIE;
-
-    @Autowired
-    protected UserDetailsService userDetailsService;
-
-    private final SignatureAlgorithm SIGNATURE_ALGORITHM = SignatureAlgorithm.HS512;
 
     public String getUsernameFromToken(String token) {
         String username;
@@ -148,7 +144,7 @@ public class TokenHelper {
      * Find a specific HTTP cookie in a request.
      *
      * @param request The HTTP request object.
-     * @param name The cookie name to look for.
+     * @param name    The cookie name to look for.
      * @return The cookie, or <code>null</code> if not found.
      */
     public Cookie getCookieValueByName(HttpServletRequest request, String name) {

@@ -1,8 +1,5 @@
 package com.bfwg.security.auth;
 
-/**
- * Created by fan.jin on 2016-11-07.
- */
 import com.bfwg.model.User;
 import com.bfwg.model.UserTokenState;
 import com.bfwg.security.TokenHelper;
@@ -19,24 +16,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Created by fan.jin on 2016-11-07.
+ */
 @Component
 public class AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
+    private final TokenHelper tokenHelper;
+    private final ObjectMapper objectMapper;
     @Value("${jwt.expires_in}")
     private int EXPIRES_IN;
-
     @Value("${jwt.cookie}")
     private String TOKEN_COOKIE;
 
     @Autowired
-    private TokenHelper tokenHelper;
-
-    @Autowired
-    private ObjectMapper objectMapper;
+    public AuthenticationSuccessHandler(TokenHelper tokenHelper, ObjectMapper objectMapper) {
+        this.tokenHelper = tokenHelper;
+        this.objectMapper = objectMapper;
+    }
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
-            Authentication authentication) throws IOException, ServletException {
+                                        Authentication authentication) throws IOException, ServletException {
         clearAuthenticationAttributes(request);
         User user = (User) authentication.getPrincipal();
 

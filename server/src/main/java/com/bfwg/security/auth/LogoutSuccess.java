@@ -19,8 +19,12 @@ import java.util.Map;
 @Component
 public class LogoutSuccess implements LogoutSuccessHandler {
 
+    private final ObjectMapper objectMapper;
+
     @Autowired
-    private ObjectMapper objectMapper;
+    public LogoutSuccess(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
 
     @Override
     public void onLogoutSuccess(HttpServletRequest httpServletRequest, HttpServletResponse response, Authentication authentication)

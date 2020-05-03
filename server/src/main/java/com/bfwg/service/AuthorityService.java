@@ -1,12 +1,15 @@
 package com.bfwg.service;
 
-import java.util.List;
 import com.bfwg.model.Authority;
+import com.bfwg.model.UserRoleName;
 
+import java.util.List;
+
+/**
+ * Created by fan.jin on 2016-11-07.
+ */
 public interface AuthorityService {
 
-    public List<Authority> findById(Long id);
-
-    public List<Authority> findByname(String name);
+  List<Authority> findByName(UserRoleName name);
 
 }

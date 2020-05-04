@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * Created by fan.jin on 2016-10-15.
  */
+
 @Entity
 @Table(name = "USER")
 public class User implements UserDetails, Serializable {
@@ -32,6 +33,7 @@ public class User implements UserDetails, Serializable {
 
     @Column(name = "lastname")
     private String lastname;
+
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_authority",

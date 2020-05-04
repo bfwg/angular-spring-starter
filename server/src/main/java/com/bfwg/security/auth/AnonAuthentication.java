@@ -8,8 +8,6 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
 
 public class AnonAuthentication extends AbstractAuthenticationToken {
 
-    private static final long serialVersionUID = -7156048126414519693L;
-
     public AnonAuthentication() {
         super(null);
     }

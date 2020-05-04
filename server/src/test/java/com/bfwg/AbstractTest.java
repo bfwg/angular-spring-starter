@@ -73,15 +73,6 @@ public abstract class AbstractTest {
         return user;
     }
 
-        User user = new User();
-        Authority userAuthority = new Authority();
-        userAuthority.setName("ROLE_USER");
-        List<Authority> userAuthorities = new ArrayList<>();
-        userAuthorities.add(userAuthority);
-        user.setUsername("user");
-        user.setAuthorities(userAuthorities);
-        return user;
-    }
 
     protected User buildTestAdmin() {
         Authority userAuthority = new Authority();
@@ -96,5 +87,6 @@ public abstract class AbstractTest {
         admin.setAuthorities(adminAuthorities);
         return admin;
     }
+
 
 }

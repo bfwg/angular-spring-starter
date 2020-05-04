@@ -8,11 +8,10 @@ import javax.persistence.*;
 /**
  * Created by fan.jin on 2016-11-03.
  */
+
 @Entity
 @Table(name = "AUTHORITY")
 public class Authority implements GrantedAuthority {
-
-    private static final long serialVersionUID = -6173672801831223096L;
 
     @Id
     @Column(name = "id")

@@ -27,6 +27,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 /**
  * Created by fan.jin on 2016-10-15.
  */
+
 @RestController
 @RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
@@ -56,13 +57,6 @@ public class UserController {
         return ResponseEntity.accepted().body(result);
     }
 
-    @RequestMapping(method = GET, value = "/user/reset-credentials")
-    public ResponseEntity<Map> resetCredentials() {
-        this.userService.resetCredentials();
-        Map<String, String> result = new HashMap<>();
-        result.put("result", "success");
-        return ResponseEntity.accepted().body(result);
-    }
 
     @RequestMapping(method = POST, value = "/signup")
     public ResponseEntity<?> addUser(@RequestBody UserRequest userRequest,

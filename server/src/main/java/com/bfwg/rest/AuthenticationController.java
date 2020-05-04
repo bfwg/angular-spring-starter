@@ -22,6 +22,7 @@ import java.util.Map;
 /**
  * Created by fan.jin on 2017-05-10.
  */
+
 @RestController
 @RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticationController {
@@ -73,8 +74,7 @@ public class AuthenticationController {
         return ResponseEntity.accepted().body(result);
     }
 
-    private static class PasswordChanger {
-
+    static class PasswordChanger {
         public String oldPassword;
         public String newPassword;
     }

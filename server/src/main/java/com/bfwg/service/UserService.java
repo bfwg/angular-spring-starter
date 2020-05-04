@@ -9,14 +9,13 @@ import java.util.List;
  * Created by fan.jin on 2016-10-15.
  */
 public interface UserService {
+  void resetCredentials();
 
-    public void resetCredentials();
+  User findById(Long id);
 
-    public User findById(Long id);
+  User findByUsername(String username);
 
-    public User findByUsername(String username);
+  List<User> findAll();
 
-    public List<User> findAll();
-
-    public User save(UserRequest user);
+  User save(UserRequest user);
 }

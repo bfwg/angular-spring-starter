@@ -16,7 +16,6 @@
 *.launch
 .settings/
 *.sublime-workspace
-nbproject/
 
 # IDE - VSCode
 .vscode/*
@@ -42,4 +41,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
+#package-lock.json
 package-lock.json

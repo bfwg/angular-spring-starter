@@ -1,8 +1,8 @@
 package com.bfwg.rest;
 
+import com.bfwg.config.WebSecurityConfig;
 import com.bfwg.model.UserTokenState;
 import com.bfwg.security.TokenHelper;
-import com.bfwg.service.impl.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
@@ -26,17 +26,20 @@ import java.util.Map;
 @RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticationController {
 
-    @Autowired
-    private CustomUserDetailsService userDetailsService;
-
-    @Autowired
-    private TokenHelper tokenHelper;
+    private final TokenHelper tokenHelper;
+    private final WebSecurityConfig userDetailsService;
 
     @Value("${jwt.expires_in}")
     private int EXPIRES_IN;
 
     @Value("${jwt.cookie}")
     private String TOKEN_COOKIE;
+
+    @Autowired
+    public AuthenticationController(TokenHelper tokenHelper, WebSecurityConfig userDetailsService) {
+        this.tokenHelper = tokenHelper;
+        this.userDetailsService = userDetailsService;
+    }
 
     @RequestMapping(value = "/refresh", method = RequestMethod.GET)
     public ResponseEntity<?> refreshAuthenticationToken(HttpServletRequest request, HttpServletResponse response) {
@@ -63,7 +66,7 @@ public class AuthenticationController {
 
     @RequestMapping(value = "/changePassword", method = RequestMethod.POST)
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> changePassword(@RequestBody PasswordChanger passwordChanger) {
+    public ResponseEntity<?> changePassword(@RequestBody PasswordChanger passwordChanger) throws Exception {
         userDetailsService.changePassword(passwordChanger.oldPassword, passwordChanger.newPassword);
         Map<String, String> result = new HashMap<>();
         result.put("result", "success");

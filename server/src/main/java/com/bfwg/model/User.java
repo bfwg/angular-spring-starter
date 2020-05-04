@@ -1,22 +1,13 @@
 package com.bfwg.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Created by fan.jin on 2016-10-15.
@@ -24,8 +15,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "USER")
 public class User implements UserDetails, Serializable {
-
-    private static final long serialVersionUID = -1660789895013162876L;
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -58,7 +47,6 @@ public class User implements UserDetails, Serializable {
         this.id = id;
     }
 
-    @Override
     public String getUsername() {
         return username;
     }
@@ -67,7 +55,6 @@ public class User implements UserDetails, Serializable {
         this.username = username;
     }
 
-    @Override
     public String getPassword() {
         return password;
     }
@@ -89,17 +76,16 @@ public class User implements UserDetails, Serializable {
     }
 
     public void setLastname(String lastname) {
-
         this.lastname = lastname;
-    }
-
-    public void setAuthorities(List<Authority> authorities) {
-        this.authorities = authorities;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return this.authorities;
+    }
+
+    public void setAuthorities(List<Authority> authorities) {
+        this.authorities = authorities;
     }
 
     // We can add the below fields in the users table.

@@ -10,91 +10,23 @@
   </a>
 </p>
 
-# Angular5 Spring Boot JWT Starter
-> An Angular full stack starter kit featuring [Angular 4](https://angular.io), [Router](https://angular.io/docs/ts/latest/guide/router.html), [Forms](https://angular.io/docs/ts/latest/guide/forms.html),
+# Angular Spring Boot JWT Starter
+> An Angular full stack starter kit featuring [Angular](https://angular.io), [Router](https://angular.io/docs/ts/latest/guide/router.html), [Forms](https://angular.io/docs/ts/latest/guide/forms.html),
 [Http](https://angular.io/docs/ts/latest/guide/server-communication.html),
 [Services](https://gist.github.com/gdi2290/634101fec1671ee12b3e#_follow_@AngularClass_on_twitter),
 [Spring boot](https://projects.spring.io/spring-boot/),
 [JSON Web Token](https://jwt.io/)
-> If you're looking for using Angular 1.x for frontend implementation, please check out [springboot-jwt-starter](https://github.com/bfwg/springboot-jwt-starter)
+
+> If you're looking to use Angular as your frontend implementation, please check out [springboot-jwt-starter](https://github.com/bfwg/springboot-jwt-starter)
 > A Spring Boot token-based security starter kit featuring [AngularJS](https://angularjs.org/) and [Spring Boot](https://projects.spring.io/spring-boot/) ([JSON Web Token](https://jwt.io/))
 ### [Live Demo](http://angular-spring-starter.fanjin.io)
 <p align="center">
     <img width="800" alt="Springboot JWT Starter" src="https://cloud.githubusercontent.com/assets/12819525/26290994/3895daca-3e60-11e7-9465-421e0b029343.png">
 </p>
 
-## Table of Contents
-
-- [Quick start with docker](#quick-start-with-docker)
-  - [Recipe to install docker-compose on Linux](#recipe-to-install-docker-compose-on-linux)
-- [Quick start without docker](#quick-start-without-docker)
-- [Deployment](#deployment)
-  - [JSON Web Token](#json-web-token)
-  - [Importing the Project in IntelliJ IDEA](#importing-the-project-in-intellij-idea)
-
-## Quick start with docker
-
-**You'll need docker and docker-compose installed**
-
-In order to install __docker__ and __docker-compose__ follow these:
-
-1. [docker](https://docs.docker.com/install) installation
-
-2. [docker compose](https://docs.docker.com/compose/install/) installation
-
-    > on Linux check [docker-compose recipe](#recipe-to-install-docker-compose-on-linux)
-
-3. check __docker__ and __docker-compose__ installation, issue the following command on a terminal or console:
-
-```bash
-docker --version
-Docker version 17.12.0-ce, build c97c6d6     # or similar to 17.1x.x
-
-docker-compose --version
-docker-compose version 1.18.0, build 8dd22a9 # or similar to 1.1x.x
-```
-
-```bash
-# clone our repo
-# --depth 1 removes all but one .git commit history
-git clone --depth 1 https://github.com/bfwg/angular-spring-starter.git
-
-# issue docker-compose to start services, these will start in background mode as denoted by the -d flag
-docker-compose up -d
-
-# if everything builds successfully you should see something similar to:
-
-Successfully built 0017f554842f
-Successfully tagged angularspringstarter_angular:latest
-Creating angularspringstarter_springboot_1 ... done
-Creating angularspringstarter_angular_1    ... done
-
-# the app will be available at localhost
-# if you wish to see your newly created containers issue:
-docker ps
-
-# if you wish to have access to a running shell inside a running container you can issue:
-docker exec -it <container name> sh
-```
-
-### Recipe to install docker-compose on Linux
-
-To install __docker-compose__ under a GNU/nix system, one could use the following enchantment:
-
-```bash
-COMPOSE_VERSION=`git ls-remote https://github.com/docker/compose | grep refs/tags | grep -oP "[0-9]+\.[0-9][0-9]+\.[0-9]+$" | tail -n 1`    # get latest docker-compose version
-
-sudo sh -c "curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose"    # download and extract to /usr/local/bin with appropriate permissions, this should be already in your $PATH
-
-sudo chmod +x /usr/local/bin/docker-compose
-sudo sh -c "curl -L https://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose"    # docker-compose bash completions ... why not ?!
-```
-
-## Quick start without docker
-
-**Make sure you have Maven and Java 1.7 or greater**
-**Make sure you also have NPM 3.1, Node 6.9.5 and angular-cli@1.0.0 globally installed**
-
+## Quick start
+**Make sure you have Maven and Java 11 or greater**
+**Make sure you also have NPM 6.12.0, Node 12.13.0 and angular-cli@9.1.3 globally installed**
 ```bash
 # clone our repo
 # --depth 1 removes all but one .git commit history
@@ -104,7 +36,7 @@ git clone --depth 1 https://github.com/bfwg/angular-spring-starter.git
 cd angular-spring-starter/frontend
 
 # install the frontend dependencies with npm
-# npm install @angular/cli@1.0.0 -g
+# npm install @angular/cli@9.1.3 -g
 npm install
 
 # start the frontend app
@@ -144,7 +76,7 @@ git clone --depth 1 https://github.com/bfwg/angular-spring-starter.git
 cd angular-spring-starter/frontend
 
 # install the frontend dependencies with npm
-# npm install @angular/cli@1.0.0 -g
+# npm install @angular/cli@9.1.3 -g
 npm install
 
 # build frontend project to /server/src/main/resources/static folder

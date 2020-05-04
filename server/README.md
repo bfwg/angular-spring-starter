@@ -1,7 +1,7 @@
-# Angular4 Spring Boot JWT Starter
+# Angular Spring Boot JWT Starter
 This sub-project is the backend server portion of the project.
 
-**Make sure you have Maven and Java 1.7 or greater**
+**Make sure you have Maven and Java 1.8 or greater**
 
 ```bash
 # change directory to server
@@ -58,7 +58,7 @@ angular-spring-starter/server
  │   │   │   │   └──UserService.java
  │   │   │   └──Application.java                                * Application main enterance
  │   │   └──recources
- │   │       ├──static                                          * Angular2 frontend code will get built and served from here.
+ │   │       ├──static                                          * Angular7 frontend code will get built and served from here.
  │   │       ├──application.yml                                 * application variables are configured here
  │   │       ├──banner.txt                                      * application banner :^)
  │   │       └──import.sql                                      * h2 database query(table creation)

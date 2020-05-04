@@ -1,10 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {
-  ConfigService,
-  AuthService,
-  UserService
-} from '../../../service';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {AuthService, ConfigService, UserService} from '../../../service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-account-menu',
@@ -21,7 +17,8 @@ export class AccountMenuComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private userService: UserService
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.user = this.userService.currentUser;

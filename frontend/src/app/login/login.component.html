@@ -1,43 +1,45 @@
 <div class="content" fxLayout="row" fxLayoutAlign="center">
 
-    <mat-card elevation="5" fxFlex>
+  <mat-card elevation="5" fxFlex>
 
-      <mat-card-subtitle>
-        <h2>Angular Spring Starter</h2>
-      </mat-card-subtitle>
+    <mat-card-subtitle>
+      <h2>Angular Spring Starter</h2>
+    </mat-card-subtitle>
 
-      <mat-card-title>
-        <h2>{{title}}</h2>
-      </mat-card-title>
+    <mat-card-title>
+      <h2>{{title}}</h2>
+    </mat-card-title>
 
-      <mat-card-content>
+    <mat-card-content>
 
-        <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
+      <p *ngIf="notification" [class]="notification.msgType">{{notification.msgBody}}</p>
 
-        <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
-          <mat-input-container>
-            <input matInput formControlName="username" required placeholder="user/admin">
-          </mat-input-container>
-          <mat-input-container>
-            <input matInput formControlName="password" required type="password" placeholder="123">
-          </mat-input-container>
-          <button type="submit" [disabled]="!loginForm.form.valid" mat-raised-button color="primary">Login</button>
-        </form>
-        <br>
-        <div *ngIf="!submitted" >
-          <button matTooltip="Reset password if someone has changed it already!" (click)="onResetCredentials()" mat-raised-button color="accent">Reset Credentials</button>
-        </div>
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submitted" [formGroup]="form">
+        <mat-form-field>
+          <input formControlName="username" matInput placeholder="user/admin" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="password" matInput placeholder="123" required type="password">
+        </mat-form-field>
+        <button [disabled]="!loginForm.form.valid" color="primary" mat-raised-button type="submit">Login</button>
+      </form>
+      <br>
+      <div *ngIf="!submitted">
+        <button (click)="onResetCredentials()" color="accent"
+                mat-raised-button matTooltip="Reset password if someone has changed it already!">Reset Credentials
+        </button>
+      </div>
 
-        <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
-        <br>
-        <hr>
+      <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+      <br>
+      <hr>
 
-        <p><i>Created by <a href="https://github.com/bfwg">Fan Jin</a></i></p>
-        <p><i>Click below to go to repository</i></p>
-        <button (click)="repository()" mat-raised-button color="accent">GitHub Repository</button>
+      <p><i>Created by <a href="https://github.com/bfwg">Fan Jin</a></i></p>
+      <p><i>Click below to go to repository</i></p>
+      <button (click)="repository()" color="accent" mat-raised-button>GitHub Repository</button>
 
-      </mat-card-content>
+    </mat-card-content>
 
-    </mat-card>
+  </mat-card>
 
 </div>

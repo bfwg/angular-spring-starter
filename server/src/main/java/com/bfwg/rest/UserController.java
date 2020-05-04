@@ -1,10 +1,9 @@
 package com.bfwg.rest;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.bfwg.exception.ResourceConflictException;
+import com.bfwg.model.User;
+import com.bfwg.model.UserRequest;
+import com.bfwg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -17,10 +16,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
-import com.bfwg.exception.ResourceConflictException;
-import com.bfwg.model.User;
-import com.bfwg.model.UserRequest;
-import com.bfwg.service.UserService;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
  * Created by fan.jin on 2016-10-15.
@@ -29,8 +31,12 @@ import com.bfwg.service.UserService;
 @RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
 
+    private final UserService userService;
+
     @Autowired
-    private UserService userService;
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping(method = GET, value = "/user/{userId}")
     public User loadById(@PathVariable Long userId) {
@@ -50,9 +56,17 @@ public class UserController {
         return ResponseEntity.accepted().body(result);
     }
 
+    @RequestMapping(method = GET, value = "/user/reset-credentials")
+    public ResponseEntity<Map> resetCredentials() {
+        this.userService.resetCredentials();
+        Map<String, String> result = new HashMap<>();
+        result.put("result", "success");
+        return ResponseEntity.accepted().body(result);
+    }
+
     @RequestMapping(method = POST, value = "/signup")
     public ResponseEntity<?> addUser(@RequestBody UserRequest userRequest,
-            UriComponentsBuilder ucBuilder) {
+                                     UriComponentsBuilder ucBuilder) {
 
         User existUser = this.userService.findByUsername(userRequest.getUsername());
         if (existUser != null) {
@@ -65,8 +79,8 @@ public class UserController {
     }
 
     /*
-   * We are not using userService.findByUsername here(we could), so it is good that we are making
-   * sure that the user has role "ROLE_USER" to access this endpoint.
+     * We are not using userService.findByUsername here(we could), so it is good that we are making
+     * sure that the user has role "ROLE_USER" to access this endpoint.
      */
     @RequestMapping("/whoami")
     @PreAuthorize("hasRole('USER')")

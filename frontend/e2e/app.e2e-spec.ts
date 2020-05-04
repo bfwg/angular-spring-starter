@@ -1,4 +1,4 @@
-import { WebUiPage } from './app.po';
+import {WebUiPage} from './app.po';
 
 describe('web-ui App', () => {
   let page: WebUiPage;
@@ -9,6 +9,6 @@ describe('web-ui App', () => {
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toContain('ANGULAR-SPRING-JWT-STARTER');
+    expect(page.getParagraphText()).toContain('ANGULAR-SPRING-STARTER');
   });
 });

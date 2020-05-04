@@ -11,13 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Created by fan.jin on 2016-10-15.
@@ -25,17 +22,20 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+
+    private final AuthorityService authService;
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    public UserServiceImpl(UserRepository userRepository, AuthorityService authService) {
+        this.userRepository = userRepository;
+        this.authService = authService;
+    }
 
-    @Override
     public void resetCredentials() {
         List<User> users = userRepository.findAll();
         for (User user : users) {
-            user.setPassword(passwordEncoder.encode("123"));
+            user.setPassword(getBCryptPasswordEncoder().encode("123"));
             userRepository.save(user);
         }
     }
@@ -43,41 +43,33 @@ public class UserServiceImpl implements UserService {
     @Override
     // @PreAuthorize("hasRole('USER')")
     public User findByUsername(String username) throws UsernameNotFoundException {
-        User u = userRepository.findByUsername(username);
-        return u;
+        return userRepository.findByUsername(username).orElse(null);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @Override
-    public User findById(Long id) throws AccessDeniedException, UsernameNotFoundException {
-        Optional<User> opt_u = userRepository.findById(id);
-        if (opt_u.isPresent()) {
-            return opt_u.get();
-        }
-        throw new UsernameNotFoundException("User not found !!!");
+    public User findById(Long id) throws AccessDeniedException {
+        return userRepository.getOne(id);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @Override
     public List<User> findAll() throws AccessDeniedException {
-        List<User> result = userRepository.findAll();
-        return result;
+        return userRepository.findAll();
     }
 
     @Override
     public User save(UserRequest userRequest) {
         User user = new User();
         user.setUsername(userRequest.getUsername());
-        user.setPassword(passwordEncoder.encode(userRequest.getPassword()));
+        user.setPassword(getBCryptPasswordEncoder().encode(userRequest.getPassword()));
         user.setFirstname(userRequest.getFirstname());
         user.setLastname(userRequest.getLastname());
-        Authority userAuthority = new Authority();
-        userAuthority.setName( UserRoleName.ROLE_USER );
-        List<Authority> userAuthorities = new ArrayList<>();
-        userAuthorities.add(userAuthority);
-        user.setAuthorities(userAuthorities);
-        this.userRepository.save(user);
-        return user;
+        List<Authority> auth = authService.findByName(UserRoleName.ROLE_USER);
+        user.setAuthorities(auth);
+        return userRepository.save(user);
+    }
+
+    private BCryptPasswordEncoder getBCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
 }

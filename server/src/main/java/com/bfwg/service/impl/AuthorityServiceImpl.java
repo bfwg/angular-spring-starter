@@ -1,31 +1,28 @@
 package com.bfwg.service.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import com.bfwg.model.Authority;
+import com.bfwg.model.UserRoleName;
 import com.bfwg.repository.AuthorityRepository;
 import com.bfwg.service.AuthorityService;
-import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class AuthorityServiceImpl implements AuthorityService {
 
-    @Autowired
-    private AuthorityRepository authorityRepository;
+    private final AuthorityRepository authorityRepository;
 
-    @Override
-    public List<Authority> findById(Long id) {
-        Optional<Authority> optauth = authorityRepository.findById(id);
-        List<Authority> auths = new ArrayList<>();
-        auths.add(optauth.get());
-        return auths;
+    @Autowired
+    public AuthorityServiceImpl(AuthorityRepository authorityRepository) {
+        this.authorityRepository = authorityRepository;
     }
 
     @Override
-    public List<Authority> findByname(String name) {
-        Authority auth = authorityRepository.findByName(name);
+    public List<Authority> findByName(UserRoleName name) {
+        Authority auth = this.authorityRepository.findByName(name);
         List<Authority> auths = new ArrayList<>();
         auths.add(auth);
         return auths;

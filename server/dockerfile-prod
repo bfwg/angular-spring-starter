@@ -1,5 +1,5 @@
 # FROM frolvlad/alpine-oraclejdk8:slim
-FROM maven:3-jdk-8-alpine
+FROM maven:3-jdk-13-alpine
 
 VOLUME /tmp
 

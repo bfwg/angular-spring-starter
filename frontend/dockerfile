@@ -1,8 +1,13 @@
 FROM node:alpine
 
 RUN addgroup -S app && adduser -S -g app app \
-&& apk update && apk upgrade \
-&& apk add --no-cache build-base python curl
+&& apk add --no-cache build-base python3 curl \
+&& apk update && apk upgrade 
+
+# https://www.alpinelinux.org/posts/Docker-image-vulnerability-CVE-2019-5021.html
+# https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5021
+# make sure root login is disabled
+RUN sed -i -e 's/^root::/root:!:/' /etc/shadow
 
 RUN chown -R app:app /home/app
 
@@ -13,9 +18,8 @@ COPY . $WORKDIR
 USER app
 
 # RUN npm install
-RUN yarn
+RUN npm i
 
 EXPOSE 4200
 
-#CMD ["yarn", "run", "start"]
-CMD ["npm", "start"]
+CMD ["npm", "run","start"]

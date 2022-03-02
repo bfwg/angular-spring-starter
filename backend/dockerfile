@@ -6,6 +6,11 @@ ENV JAVA_OPTS=""
 
 RUN addgroup -S app && adduser -S -g app app && apk update && apk upgrade
 
+# https://www.alpinelinux.org/posts/Docker-image-vulnerability-CVE-2019-5021.html
+# https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5021
+# make sure root login is disabled
+RUN sed -i -e 's/^root::/root:!:/' /etc/shadow
+
 WORKDIR /home/app
 
 # COPY target/*.jar app.jar
@@ -18,7 +23,7 @@ EXPOSE 8080
 
 USER app
 
-CMD java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar app.jar
-# CMD ["java", "$JAVA_OPTS","-Djava.security.egd=file:/dev/./urandom -jar app.jar"]
+# CMD java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar app.jar
+CMD ["java", "$JAVA_OPTS","-Djava.security.egd=file:/dev/./urandom -jar app.jar"]
 # CMD [ "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar app.jar" ]
 # ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar app.jar" ]

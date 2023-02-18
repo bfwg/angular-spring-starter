@@ -2,7 +2,7 @@
 [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/bfwg/angular4-spring-boot-jwt-starter)
 [![Build Status](https://travis-ci.org/bfwg/angular-spring-starter.svg?branch=master)](https://travis-ci.org/bfwg/angular-spring-starter)
 [![Maintenance Status][status-image]][status-url]
-[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/apeixinho/angular-spring-jwt-starter/blob/master/LICENSE)
+[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bfwg/angular-spring-jwt-starter/blob/master/LICENSE)
 
 <p align="center">
   <a href="http://angular-spring-starter.fanjin.io" target="_blank">

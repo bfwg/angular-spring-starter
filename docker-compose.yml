@@ -22,7 +22,7 @@ services:
   springboot: #name of the second service
     build: backend # specify the directory of the Dockerfile
     ports:
-    - "8080" #specify ports forewarding
+    - "8080" #specify ports forwarding
     # expose:
     # - "8080"
     networks:

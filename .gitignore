@@ -45,7 +45,6 @@ nbdist/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-settings.json
 
 # misc
 /.sass-cache

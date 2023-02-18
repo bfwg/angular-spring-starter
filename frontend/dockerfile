@@ -1,19 +1,19 @@
-FROM node:alpine
+FROM node:14-alpine
 
 RUN addgroup -S app && adduser -S -g app app \
 && apk add --no-cache build-base python3 curl \
-&& apk update && apk upgrade 
+&& apk update && apk upgrade
 
 # https://www.alpinelinux.org/posts/Docker-image-vulnerability-CVE-2019-5021.html
 # https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5021
 # make sure root login is disabled
 RUN sed -i -e 's/^root::/root:!:/' /etc/shadow
 
-RUN chown -R app:app /home/app
-
 WORKDIR /home/app
 
 COPY . $WORKDIR
+
+RUN chown -R app:app /home/app
 
 USER app
 

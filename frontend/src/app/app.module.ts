@@ -1,51 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, APP_INITIALIZER} from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
-// material
-import {
-  MatButtonModule,
-  MatMenuModule,
-  MatIconModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatCardModule,
-  MatInputModule,
-  MatIconRegistry,
-  MatProgressSpinnerModule
-} from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home';
-import { LoginComponent } from './login';
-import { LoginGuard, GuestGuard, AdminGuard } from './guard';
-import { NotFoundComponent } from './not-found';
-import { AccountMenuComponent } from './component/header/account-menu/account-menu.component';
-import {
-  HeaderComponent,
-  ApiCardComponent,
-  FooterComponent,
-  GithubComponent
-} from './component';
+import {BrowserModule} from '@angular/platform-browser';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AppComponent} from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {HomeComponent} from './home';
+import {LoginComponent} from './login';
+import {AdminGuard, GuestGuard, LoginGuard} from './guard';
+import {NotFoundComponent} from './not-found';
+import {AccountMenuComponent} from './component/header/account-menu/account-menu.component';
+import {ApiCardComponent, FooterComponent, GithubComponent, HeaderComponent} from './component';
 
-import {
-  ApiService,
-  AuthService,
-  UserService,
-  FooService,
-  ConfigService
-} from './service';
-import { ChangePasswordComponent } from './change-password/change-password.component';
-import { ForbiddenComponent } from './forbidden/forbidden.component';
-import { AdminComponent } from './admin/admin.component';
-import { SignupComponent } from './signup/signup.component';
-
-export function initUserFactory(userService: UserService) {
-    return () => userService.initUser();
-}
+import {ApiService, AuthService, ConfigService, FooService, UserService} from './service';
+import {ChangePasswordComponent} from './change-password/change-password.component';
+import {ForbiddenComponent} from './forbidden/forbidden.component';
+import {AdminComponent} from './admin/admin.component';
+import {SignupComponent} from './signup/signup.component';
+import {AngularMaterialModule} from './angular-material/angular-material.module';
+import {MatIconRegistry} from '@angular/material/icon';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -66,21 +40,14 @@ export function initUserFactory(userService: UserService) {
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
     HttpClientModule,
     AppRoutingModule,
-    MatMenuModule,
-    MatTooltipModule,
-    MatButtonModule,
-    MatIconModule,
-    MatInputModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatProgressSpinnerModule,
-    FlexLayoutModule
+    FormsModule,
+    ReactiveFormsModule,
+    FlexLayoutModule,
+    AngularMaterialModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     LoginGuard,
     GuestGuard,
@@ -90,14 +57,9 @@ export function initUserFactory(userService: UserService) {
     ApiService,
     UserService,
     ConfigService,
-    MatIconRegistry,
-    {
-      'provide': APP_INITIALIZER,
-      'useFactory': initUserFactory,
-      'deps': [UserService],
-      'multi': true
-    }
+    MatIconRegistry
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}

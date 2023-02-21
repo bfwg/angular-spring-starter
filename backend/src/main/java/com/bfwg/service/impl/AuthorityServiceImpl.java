@@ -22,7 +22,6 @@ public class AuthorityServiceImpl implements AuthorityService {
 
     @Override
     public List<Authority> findById(Long id) {
-        // TODO Auto-generated method stub
 
         Authority auth = this.authorityRepository.getOne(id);
         List<Authority> auths = new ArrayList<>();
@@ -32,7 +31,7 @@ public class AuthorityServiceImpl implements AuthorityService {
 
     @Override
     public List<Authority> findByName(UserRoleName name) {
-        // TODO Auto-generated method stub
+
         Authority auth = this.authorityRepository.findByName(name);
         List<Authority> auths = new ArrayList<>();
         auths.add(auth);

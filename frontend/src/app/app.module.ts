@@ -46,17 +46,7 @@ import {MatIconRegistry} from '@angular/material/icon';
     AngularMaterialModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [
-    LoginGuard,
-    GuestGuard,
-    AdminGuard,
-    FooService,
-    AuthService,
-    ApiService,
-    UserService,
-    ConfigService,
-    MatIconRegistry
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {

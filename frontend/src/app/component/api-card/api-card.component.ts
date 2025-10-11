@@ -1,9 +1,10 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-api-card',
-  templateUrl: './api-card.component.html',
-  styleUrls: ['./api-card.component.scss']
+    selector: 'app-api-card',
+    templateUrl: './api-card.component.html',
+    styleUrls: ['./api-card.component.scss'],
+    standalone: false
 })
 export class ApiCardComponent implements OnInit {
 

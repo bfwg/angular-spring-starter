@@ -3,9 +3,10 @@ import {AuthService, ConfigService, UserService} from '../../../service';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-account-menu',
-  templateUrl: './account-menu.component.html',
-  styleUrls: ['./account-menu.component.scss']
+    selector: 'app-account-menu',
+    templateUrl: './account-menu.component.html',
+    styleUrls: ['./account-menu.component.scss'],
+    standalone: false
 })
 export class AccountMenuComponent implements OnInit {
 

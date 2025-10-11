@@ -6,9 +6,10 @@ import {AuthService} from '../service';
 import {mergeMap} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-change-password',
-  templateUrl: './change-password.component.html',
-  styleUrls: ['./change-password.component.scss']
+    selector: 'app-change-password',
+    templateUrl: './change-password.component.html',
+    styleUrls: ['./change-password.component.scss'],
+    standalone: false
 })
 export class ChangePasswordComponent implements OnInit {
 

@@ -5,17 +5,35 @@
 
 mat-card {
   text-align: left;
+  background-color: var(--dark-card-bg) !important;
+  color: var(--dark-card-text) !important;
+
+  mat-card-header {
+    mat-card-title {
+      color: var(--dark-card-text) !important;
+    }
+    
+    mat-card-subtitle {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+  }
+
+  mat-card-content {
+    p {
+      color: var(--dark-card-text) !important;
+    }
+  }
 
   .response-success {
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #3c763d;
+    background-color: #4caf50;
+    border-color: #4caf50;
+    color: #ffffff;
   }
 
   .response-error {
-    background-color: #f2dede;
-    border-color: #ebccd1;
-    color: #a94442;
+    background-color: #f44336;
+    border-color: #f44336;
+    color: #ffffff;
   }
 
   .response {
@@ -39,6 +57,16 @@ mat-card {
   mat-card-actions {
     margin-bottom: 0;
     padding-bottom: 8px;
+
+    button[mat-raised-button] {
+      background-color: var(--primary-color) !important;
+      color: white !important;
+      border: none;
+      
+      &:hover {
+        background-color: var(--accent-color) !important;
+      }
+    }
   }
 
   pre {

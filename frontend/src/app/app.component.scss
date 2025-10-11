@@ -6,6 +6,8 @@
 
 .content {
   margin: 50px 70px;
+  background-color: var(--light-bg);
+  min-height: calc(100vh - 64px);
 }
 
 @media screen and (min-width: 600px) and (max-width: 1279px) {

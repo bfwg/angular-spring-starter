@@ -11,10 +11,19 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  background-color: var(--primary-color) !important;
 
   .right {
     margin-left: auto;
     float: right;
+  }
+
+  button {
+    color: white !important;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1) !important;
+    }
   }
 }
 

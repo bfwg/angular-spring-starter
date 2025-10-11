@@ -7,6 +7,16 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Custom theme colors to match the pink header and dark cards */
+:root {
+  --primary-color: #e91e63; /* Pink color for header */
+  --accent-color: #ff4081; /* Lighter pink for accents */
+  --dark-card-bg: #424242; /* Dark gray for cards */
+  --dark-card-text: #ffffff; /* White text on dark cards */
+  --light-bg: #f5f5f5; /* Light gray background */
 }
 
 /* Flexbox utility classes to replace @angular/flex-layout */

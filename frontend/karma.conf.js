@@ -25,8 +25,18 @@ module.exports = function (config) {
       'text/x-typescript': ['ts', 'tsx']
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, 'coverage'), reports: ['html', 'lcovonly'],
-      fixWebpackSourcePaths: true
+      dir: require('path').join(__dirname, 'coverage'), 
+      reports: ['html', 'lcovonly', 'text-summary'],
+      fixWebpackSourcePaths: true,
+      thresholds: {
+        emitWarning: false,
+        global: {
+          statements: 100,
+          branches: 100,
+          functions: 100,
+          lines: 100
+        }
+      }
     },
 
     reporters: config.angularCli && config.angularCli.codeCoverage

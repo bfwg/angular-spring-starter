@@ -10,3 +10,7 @@ INSERT INTO AUTHORITY (id, name) VALUES (2, 'ROLE_ADMIN');
 INSERT INTO USER_AUTHORITY (user_id, authority_id) VALUES (1, 1);
 INSERT INTO USER_AUTHORITY (user_id, authority_id) VALUES (2, 1);
 INSERT INTO USER_AUTHORITY (user_id, authority_id) VALUES (2, 2);
+
+-- Reset the auto-increment sequences to avoid conflicts with existing data
+ALTER TABLE USER ALTER COLUMN ID RESTART WITH 3;
+ALTER TABLE AUTHORITY ALTER COLUMN ID RESTART WITH 3;

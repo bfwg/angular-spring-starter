@@ -51,17 +51,12 @@ export class HomeComponent implements OnInit {
   forgeResonseObj(obj, res, path) {
     obj.path = path;
     obj.method = 'GET';
-    if (res.ok === false) {
-      // err
+    if (res.status && res.status !== 200) {
+      // Error response (401, 403, 500, etc.)
       obj.status = res.status;
-      try {
-        obj.body = JSON.stringify(JSON.parse(res._body), null, 2);
-      } catch (err) {
-        console.log(res);
-        obj.body = res.error.message;
-      }
+      obj.body = JSON.stringify(res, null, 2);
     } else {
-      // 200
+      // Success response (200)
       obj.status = 200;
       obj.body = JSON.stringify(res, null, 2);
     }

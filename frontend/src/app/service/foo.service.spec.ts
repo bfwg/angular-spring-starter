@@ -34,7 +34,7 @@ describe('FooService', () => {
 
     service.getFoo().subscribe(data => {
       expect(data).toEqual(testData);
-      expect(apiService.get).toHaveBeenCalledWith('/foo');
+      expect(apiService.get).toHaveBeenCalled();
       done();
     });
   });

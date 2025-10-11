@@ -53,35 +53,37 @@ public abstract class AbstractTest {
     }
 
     protected User buildTestAnonUser() {
-        User user = new User();
-        user.setUsername("user");
+        User user = User.builder()
+                .username("user")
+                .password("encoded_password")
+                .build();
         return user;
     }
 
     protected User buildTestUser() {
-
-        User user = new User();
-        Authority userAuthority = new Authority();
-        userAuthority.setName(UserRoleName.ROLE_USER);
+        Authority userAuthority = new Authority(UserRoleName.ROLE_USER);
         List<Authority> userAuthorities = new ArrayList<>();
         userAuthorities.add(userAuthority);
-        user.setUsername("user");
-        user.setAuthorities(userAuthorities);
+        User user = User.builder()
+                .username("user")
+                .password("encoded_password")
+                .authorities(userAuthorities)
+                .build();
         return user;
     }
 
 
     protected User buildTestAdmin() {
-        Authority userAuthority = new Authority();
-        Authority adminAuthority = new Authority();
-        userAuthority.setName(UserRoleName.ROLE_USER);
-        adminAuthority.setName(UserRoleName.ROLE_ADMIN);
+        Authority userAuthority = new Authority(UserRoleName.ROLE_USER);
+        Authority adminAuthority = new Authority(UserRoleName.ROLE_ADMIN);
         List<Authority> adminAuthorities = new ArrayList<>();
         adminAuthorities.add(userAuthority);
         adminAuthorities.add(adminAuthority);
-        User admin = new User();
-        admin.setUsername("admin");
-        admin.setAuthorities(adminAuthorities);
+        User admin = User.builder()
+                .username("admin")
+                .password("encoded_password")
+                .authorities(adminAuthorities)
+                .build();
         return admin;
     }
 

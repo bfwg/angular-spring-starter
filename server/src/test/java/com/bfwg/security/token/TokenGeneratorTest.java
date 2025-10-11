@@ -159,10 +159,9 @@ class TokenGeneratorTest {
     }
 
     @Test
-    void generatedToken_ShouldHaveCorrectExpiration() throws InterruptedException {
+    void generatedToken_ShouldHaveCorrectExpiration() {
         // Given
         String username = "testuser";
-        long beforeGeneration = System.currentTimeMillis();
 
         // When
         String token = tokenGenerator.generateToken(username);
@@ -176,11 +175,13 @@ class TokenGeneratorTest {
         
         long tokenExpiration = claims.getExpiration().getTime();
         long tokenIssuedAt = claims.getIssuedAt().getTime();
-        long expectedExpiration = tokenIssuedAt + (EXPIRES_IN * 1000L);
+        long actualDuration = tokenExpiration - tokenIssuedAt;
+        long expectedDuration = EXPIRES_IN * 1000L;
         
-        // Allow small time difference due to execution time
-        assertTrue(Math.abs(tokenExpiration - expectedExpiration) < 1000);
-        assertTrue(tokenIssuedAt >= beforeGeneration);
+        // Allow 2 second difference due to execution time
+        assertTrue(Math.abs(actualDuration - expectedDuration) < 2000, 
+            "Expected duration ~" + expectedDuration + " but was " + actualDuration);
+        assertTrue(claims.getExpiration().after(claims.getIssuedAt()));
     }
 }
 

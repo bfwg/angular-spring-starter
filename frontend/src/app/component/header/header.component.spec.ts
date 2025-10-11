@@ -37,17 +37,18 @@ describe('HeaderComponent', () => {
   });
 
   it('should check if user has signed in', () => {
-    authService.hasToken.and.returnValue(true);
+    userService.currentUser = { id: 1, username: 'testuser' };
     expect(component.hasSignedIn()).toBe(true);
   });
 
-  it('should get username when signed in', () => {
-    const mockUser = { username: 'testuser' };
-    authService.hasToken.and.returnValue(true);
-    userService.getMyInfo.and.returnValue(of(mockUser));
-    
-    component.ngOnInit();
-    expect(component.userName()).toBe('testuser');
+  it('should check if user is not signed in', () => {
+    userService.currentUser = null;
+    expect(component.hasSignedIn()).toBe(false);
+  });
+
+  it('should get full name when signed in', () => {
+    userService.currentUser = { id: 1, username: 'testuser', firstname: 'Test', lastname: 'User' };
+    expect(component.userName()).toBe('Test User');
   });
 });
 

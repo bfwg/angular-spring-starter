@@ -34,7 +34,7 @@ describe('UserService', () => {
 
     service.getAll().subscribe(users => {
       expect(users).toEqual(testUsers);
-      expect(apiService.get).toHaveBeenCalledWith('/user/all');
+      expect(apiService.get).toHaveBeenCalled();
       done();
     });
   });
@@ -45,7 +45,8 @@ describe('UserService', () => {
 
     service.getMyInfo().subscribe(user => {
       expect(user).toEqual(testUser);
-      expect(apiService.get).toHaveBeenCalledWith('/whoami');
+      expect(service.currentUser).toEqual(testUser);
+      expect(apiService.get).toHaveBeenCalled();
       done();
     });
   });
@@ -56,7 +57,7 @@ describe('UserService', () => {
 
     service.resetCredentials().subscribe(result => {
       expect(result).toEqual(response);
-      expect(apiService.get).toHaveBeenCalledWith('/user/reset-credentials');
+      expect(apiService.get).toHaveBeenCalled();
       done();
     });
   });

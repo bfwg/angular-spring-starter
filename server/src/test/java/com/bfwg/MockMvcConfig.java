@@ -13,26 +13,39 @@ import org.springframework.web.context.WebApplicationContext;
 
 import jakarta.annotation.PostConstruct;
 
+/**
+ * Configuration for MockMvc test setup.
+ * Provides MockMvc bean for integration testing.
+ */
 @Configuration
 public class MockMvcConfig {
 
-    @Autowired
-    private WebApplicationContext wac;
+    private final WebApplicationContext wac;
+    private final TokenAuthenticationFilter filter;
+    private MockMvc mockMvcInstance;
 
+    /**
+     * Constructor injection to avoid circular dependencies.
+     */
     @Autowired
-    private TokenAuthenticationFilter filter;
+    public MockMvcConfig(WebApplicationContext wac, TokenAuthenticationFilter filter) {
+        this.wac = wac;
+        this.filter = filter;
+    }
 
     @Bean
     public MockMvc mockMvc() {
-        DefaultMockMvcBuilder builder = MockMvcBuilders.webAppContextSetup(wac);
-        return builder.addFilters(filter)
-                .build();
+        if (mockMvcInstance == null) {
+            DefaultMockMvcBuilder builder = MockMvcBuilders.webAppContextSetup(wac);
+            mockMvcInstance = builder.addFilters(filter).build();
+        }
+        return mockMvcInstance;
     }
 
     @PostConstruct
     protected void restAssured() {
-        RestAssuredMockMvc.mockMvc(mockMvc());
-        int port = 8080;
-        RestAssured.port = port;
+        // Initialize RestAssuredMockMvc lazily
+        RestAssuredMockMvc.webAppContextSetup(wac);
+        RestAssured.port = 8080;
     }
 }

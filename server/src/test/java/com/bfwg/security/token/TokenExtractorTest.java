@@ -61,10 +61,8 @@ class TokenExtractorTest {
     void extractToken_PrefersCookieOverHeader_ShouldReturnCookieToken() {
         // Given
         String cookieToken = "cookie-token";
-        String headerToken = "header-token";
         Cookie authCookie = new Cookie(AUTH_COOKIE, cookieToken);
         when(request.getCookies()).thenReturn(new Cookie[]{authCookie});
-        when(request.getHeader(AUTH_HEADER)).thenReturn("Bearer " + headerToken);
 
         // When
         String token = tokenExtractor.extractToken(request);

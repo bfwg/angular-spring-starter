@@ -34,7 +34,7 @@ describe('ApiService', () => {
       expect(data).toEqual(testData);
     });
 
-    const req = httpMock.expectOne(`${configService.getApiURI()}${endpoint}`);
+    const req = httpMock.expectOne(endpoint);
     expect(req.request.method).toBe('GET');
     req.flush(testData);
   });
@@ -48,7 +48,7 @@ describe('ApiService', () => {
       expect(data).toEqual(testData);
     });
 
-    const req = httpMock.expectOne(`${configService.getApiURI()}${endpoint}`);
+    const req = httpMock.expectOne(endpoint);
     expect(req.request.method).toBe('POST');
     expect(req.request.body).toEqual(payload);
     req.flush(testData);
@@ -63,7 +63,7 @@ describe('ApiService', () => {
       expect(data).toEqual(testData);
     });
 
-    const req = httpMock.expectOne(`${configService.getApiURI()}${endpoint}`);
+    const req = httpMock.expectOne(endpoint);
     expect(req.request.method).toBe('PUT');
     expect(req.request.body).toEqual(payload);
     req.flush(testData);
@@ -76,7 +76,7 @@ describe('ApiService', () => {
       expect(data).toBeTruthy();
     });
 
-    const req = httpMock.expectOne(`${configService.getApiURI()}${endpoint}`);
+    const req = httpMock.expectOne(endpoint);
     expect(req.request.method).toBe('DELETE');
     req.flush({});
   });

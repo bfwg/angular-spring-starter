@@ -15,15 +15,40 @@ describe('ConfigService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should return correct API URI', () => {
-    const apiURI = service.getApiURI();
-    expect(apiURI).toBeTruthy();
-    expect(typeof apiURI).toBe('string');
+  it('should return correct login URL', () => {
+    expect(service.loginUrl).toBe('/api/login');
   });
 
-  it('should return localhost URI in development', () => {
-    const apiURI = service.getApiURI();
-    expect(apiURI).toContain('localhost');
+  it('should return correct logout URL', () => {
+    expect(service.logoutUrl).toBe('/api/logout');
+  });
+
+  it('should return correct signup URL', () => {
+    expect(service.signupUrl).toBe('/api/signup');
+  });
+
+  it('should return correct whoami URL', () => {
+    expect(service.whoamiUrl).toBe('/api/whoami');
+  });
+
+  it('should return correct users URL', () => {
+    expect(service.usersUrl).toBe('/api/user/all');
+  });
+
+  it('should return correct refresh token URL', () => {
+    expect(service.refreshTokenUrl).toBe('/api/refresh');
+  });
+
+  it('should return correct change password URL', () => {
+    expect(service.changePasswordUrl).toBe('/api/changePassword');
+  });
+
+  it('should return correct reset credentials URL', () => {
+    expect(service.resetCredentialsUrl).toBe('/api/user/reset-credentials');
+  });
+
+  it('should return correct foo URL', () => {
+    expect(service.fooUrl).toBe('/api/foo');
   });
 });
 

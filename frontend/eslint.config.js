@@ -32,6 +32,12 @@ module.exports = tseslint.config(
       ],
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
+      "@typescript-eslint/no-empty-function": "warn",
+      "@typescript-eslint/no-unused-expressions": "warn",
+      "@angular-eslint/prefer-standalone": "warn",
+      "@angular-eslint/prefer-inject": "warn",
+      "@angular-eslint/no-empty-lifecycle-method": "warn",
+      "no-prototype-builtins": "warn",
     },
   },
   {
@@ -40,7 +46,12 @@ module.exports = tseslint.config(
       ...angular.configs.templateRecommended,
       ...angular.configs.templateAccessibility,
     ],
-    rules: {},
+    rules: {
+      "@angular-eslint/template/label-has-associated-control": "warn",
+      "@angular-eslint/template/click-events-have-key-events": "warn",
+      "@angular-eslint/template/interactive-supports-focus": "warn",
+      "@angular-eslint/template/alt-text": "warn",
+    },
   }
 );
 

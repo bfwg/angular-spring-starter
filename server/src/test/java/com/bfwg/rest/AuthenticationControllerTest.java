@@ -1,24 +1,31 @@
 package com.bfwg.rest;
 
-import com.bfwg.AbstractTest;
 import com.bfwg.model.UserTokenState;
 import com.bfwg.security.TokenHelper;
+import com.bfwg.service.PasswordService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-public class AuthenticationControllerTest extends AbstractTest {
+@ExtendWith(MockitoExtension.class)
+public class AuthenticationControllerTest {
 
     @Mock
     private TokenHelper tokenHelper;
+
+    @Mock
+    private PasswordService passwordService;
 
     @Mock
     private HttpServletRequest request;
@@ -26,8 +33,14 @@ public class AuthenticationControllerTest extends AbstractTest {
     @Mock
     private HttpServletResponse response;
 
-    @InjectMocks
     private AuthenticationController authenticationController;
+
+    @BeforeEach
+    void setUp() {
+        authenticationController = new AuthenticationController(tokenHelper, passwordService);
+        ReflectionTestUtils.setField(authenticationController, "expiresIn", 3600);
+        ReflectionTestUtils.setField(authenticationController, "tokenCookie", "AUTH-TOKEN");
+    }
 
     @Test
     public void testRefreshAuthenticationToken_Success() {

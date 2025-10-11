@@ -14,6 +14,7 @@ describe('ApiCardComponent', () => {
 
     fixture = TestBed.createComponent(ApiCardComponent);
     component = fixture.componentInstance;
+    component.responseObj = { status: 200, data: 'test' };
     fixture.detectChanges();
   });
 
@@ -22,17 +23,11 @@ describe('ApiCardComponent', () => {
   });
 
   it('should emit api click event', () => {
-    spyOn(component.apiClick, 'emit');
-    component.makeRequest();
-    expect(component.apiClick.emit).toHaveBeenCalledWith(component.apiText);
-  });
-
-  it('should have default values', () => {
-    expect(component.title).toBeDefined();
-    expect(component.subTitle).toBeDefined();
-    expect(component.content).toBeDefined();
-    expect(component.imgUrl).toBeDefined();
-    expect(component.apiText).toBeDefined();
+    spyOn(component.apiClick, 'next');
+    component.apiText = 'test-api';
+    component.onButtonClick();
+    expect(component.apiClick.next).toHaveBeenCalledWith('test-api');
+    expect(component.expand).toBe(true);
   });
 });
 

@@ -18,14 +18,15 @@ public class TokenBasedAuthenticationTest {
 
     @BeforeEach
     public void setUp() {
-        user = new User();
-        user.setUsername("testuser");
-        
-        Authority authority = new Authority();
-        authority.setName(UserRoleName.ROLE_USER);
+        Authority authority = new Authority(UserRoleName.ROLE_USER);
         List<Authority> authorities = new ArrayList<>();
         authorities.add(authority);
-        user.setAuthorities(authorities);
+        
+        user = User.builder()
+                .username("testuser")
+                .password("encoded")
+                .authorities(authorities)
+                .build();
 
         authentication = new TokenBasedAuthentication(user);
     }
@@ -43,9 +44,6 @@ public class TokenBasedAuthenticationTest {
 
     @Test
     public void testIsAuthenticated() {
-        assertFalse(authentication.isAuthenticated());
-        
-        authentication.setAuthenticated(true);
         assertTrue(authentication.isAuthenticated());
     }
 

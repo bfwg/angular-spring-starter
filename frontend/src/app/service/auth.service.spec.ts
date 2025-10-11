@@ -78,7 +78,7 @@ describe('AuthService', () => {
     it('should encode URL parameters', (done) => {
       const credentials = { username: 'test@user.com', password: 'pass word' };
       apiServiceSpy.post.and.returnValue(of({}));
-      userServiceSpy.getMyInfo.and.returnValue(of({}));
+      userServiceSpy.getMyInfo.and.returnValue(of({ id: 1, username: 'test@user.com' }));
 
       service.login(credentials).subscribe({
         next: () => {
@@ -95,7 +95,7 @@ describe('AuthService', () => {
 
       service.login(credentials).subscribe({
         error: (error) => {
-          expect(error.message).toContain('Login failed');
+          expect(error.message).toContain('Invalid credentials');
           done();
         }
       });
@@ -134,7 +134,7 @@ describe('AuthService', () => {
 
       service.signup(userData).subscribe({
         error: (error) => {
-          expect(error.message).toContain('Signup failed');
+          expect(error.message).toContain('Username exists');
           done();
         }
       });
@@ -210,36 +210,11 @@ describe('AuthService', () => {
 
       service.changePassword(request).subscribe({
         error: (error) => {
-          expect(error.message).toContain('Failed to change password');
+          expect(error.message).toContain('Incorrect password');
           done();
         }
       });
     });
-  });
-});
-    localStorage.setItem('jwt', token);
-    expect(service.getAccessToken()).toBe(token);
-  });
-
-  it('should return null when no token exists', () => {
-    expect(service.getAccessToken()).toBeNull();
-  });
-
-  it('should remove access token', () => {
-    const token = 'test-token';
-    localStorage.setItem('jwt', token);
-    service.removeAccessToken();
-    expect(localStorage.getItem('jwt')).toBeNull();
-  });
-
-  it('should return true when user has token', () => {
-    const token = 'test-token';
-    localStorage.setItem('jwt', token);
-    expect(service.hasToken()).toBe(true);
-  });
-
-  it('should return false when user has no token', () => {
-    expect(service.hasToken()).toBe(false);
   });
 });
 

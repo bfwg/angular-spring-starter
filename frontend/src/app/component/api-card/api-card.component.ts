@@ -16,7 +16,7 @@ export class ApiCardComponent implements OnInit {
   @Input() responseObj: any;
   expand = false;
 
-  @Output() apiClick: EventEmitter<any> = new EventEmitter();
+  @Output() apiClick = new EventEmitter<any>();
 
   constructor() {
   }

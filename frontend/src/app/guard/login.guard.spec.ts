@@ -1,26 +1,27 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Router } from '@angular/router';
 import { LoginGuard } from './login.guard';
-import { AuthService } from '../service/auth.service';
+import { UserService } from '../service/user.service';
 
 describe('LoginGuard', () => {
   let guard: LoginGuard;
-  let authService: jasmine.SpyObj<AuthService>;
+  let userService: UserService;
   let router: jasmine.SpyObj<Router>;
 
   beforeEach(() => {
-    const authServiceSpy = jasmine.createSpyObj('AuthService', ['hasToken']);
     const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
 
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       providers: [
         LoginGuard,
-        { provide: AuthService, useValue: authServiceSpy },
+        UserService,
         { provide: Router, useValue: routerSpy }
       ]
     });
     guard = TestBed.inject(LoginGuard);
-    authService = TestBed.inject(AuthService) as jasmine.SpyObj<AuthService>;
+    userService = TestBed.inject(UserService);
     router = TestBed.inject(Router) as jasmine.SpyObj<Router>;
   });
 
@@ -28,16 +29,16 @@ describe('LoginGuard', () => {
     expect(guard).toBeTruthy();
   });
 
-  it('should allow access when user has token', () => {
-    authService.hasToken.and.returnValue(true);
+  it('should allow access when user is authenticated', () => {
+    userService.currentUser = { id: 1, username: 'test' };
     expect(guard.canActivate()).toBe(true);
     expect(router.navigate).not.toHaveBeenCalled();
   });
 
-  it('should redirect to login when user has no token', () => {
-    authService.hasToken.and.returnValue(false);
+  it('should redirect to home when user is not authenticated', () => {
+    userService.currentUser = null;
     expect(guard.canActivate()).toBe(false);
-    expect(router.navigate).toHaveBeenCalledWith(['/login']);
+    expect(router.navigate).toHaveBeenCalledWith(['/']);
   });
 });
 

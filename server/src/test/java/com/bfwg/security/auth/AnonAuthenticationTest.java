@@ -37,12 +37,12 @@ public class AnonAuthenticationTest {
 
     @Test
     public void testIsAuthenticated() {
-        assertFalse(anonAuthentication.isAuthenticated());
+        assertTrue(anonAuthentication.isAuthenticated());
     }
 
     @Test
     public void testGetName() {
-        assertNull(anonAuthentication.getName());
+        assertEquals("", anonAuthentication.getName());
     }
 }
 

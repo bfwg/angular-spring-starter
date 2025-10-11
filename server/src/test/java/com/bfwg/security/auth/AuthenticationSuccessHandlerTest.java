@@ -48,8 +48,10 @@ public class AuthenticationSuccessHandlerTest {
 
     @Test
     public void testOnAuthenticationSuccess() throws Exception {
-        User user = new User();
-        user.setUsername("testuser");
+        User user = User.builder()
+                .username("testuser")
+                .password("encoded")
+                .build();
 
         when(authentication.getPrincipal()).thenReturn(user);
         when(tokenHelper.generateToken("testuser")).thenReturn("test-token");

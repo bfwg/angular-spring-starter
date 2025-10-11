@@ -36,41 +36,45 @@ public class UserControllerTest {
 
     @Test
     public void testLoadById() {
-        User user = new User();
-        user.setId(1L);
-        user.setUsername("testuser");
+        User user = User.builder()
+                .username("testuser")
+                .password("encoded")
+                .build();
 
         when(userService.findById(1L)).thenReturn(user);
 
-        User result = userController.loadById(1L);
+        ResponseEntity<User> response = userController.loadById(1L);
 
-        assertNotNull(result);
-        assertEquals(1L, result.getId());
-        assertEquals("testuser", result.getUsername());
+        assertNotNull(response);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals("testuser", response.getBody().getUsername());
     }
 
     @Test
     public void testLoadAll() {
         List<User> users = new ArrayList<>();
-        User user1 = new User();
-        user1.setId(1L);
+        User user1 = User.builder()
+                .username("user1")
+                .password("encoded")
+                .build();
         users.add(user1);
 
         when(userService.findAll()).thenReturn(users);
 
-        List<User> result = userController.loadAll();
+        ResponseEntity<List<User>> response = userController.loadAll();
 
-        assertNotNull(result);
-        assertEquals(1, result.size());
+        assertNotNull(response);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(1, response.getBody().size());
     }
 
     @Test
     public void testResetCredentials() {
         doNothing().when(userService).resetCredentials();
 
-        ResponseEntity<Map> response = userController.resetCredentials();
+        ResponseEntity<Map<String, String>> response = userController.resetCredentials();
 
-        assertEquals(HttpStatus.ACCEPTED, response.getStatusCode());
+        assertEquals(HttpStatus.OK, response.getStatusCode());
         assertTrue(response.getBody().containsKey("result"));
         assertEquals("success", response.getBody().get("result"));
     }
@@ -80,9 +84,10 @@ public class UserControllerTest {
         UserRequest userRequest = new UserRequest();
         userRequest.setUsername("newuser");
 
-        User savedUser = new User();
-        savedUser.setId(1L);
-        savedUser.setUsername("newuser");
+        User savedUser = User.builder()
+                .username("newuser")
+                .password("encoded")
+                .build();
 
         when(userService.findByUsername("newuser")).thenReturn(null);
         when(userService.save(any(UserRequest.class))).thenReturn(savedUser);
@@ -99,8 +104,10 @@ public class UserControllerTest {
         UserRequest userRequest = new UserRequest();
         userRequest.setUsername("existinguser");
 
-        User existingUser = new User();
-        existingUser.setUsername("existinguser");
+        User existingUser = User.builder()
+                .username("existinguser")
+                .password("encoded")
+                .build();
 
         when(userService.findByUsername("existinguser")).thenReturn(existingUser);
 

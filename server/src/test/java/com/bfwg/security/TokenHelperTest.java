@@ -3,8 +3,8 @@ package com.bfwg.security;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.security.Keys;
-import org.joda.time.DateTimeUtils;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -28,7 +28,6 @@ public class TokenHelperTest {
     @BeforeEach
     public void init() {
         tokenHelper = new TokenHelper();
-        DateTimeUtils.setCurrentMillisFixed(20L);
         ReflectionTestUtils.setField(tokenHelper, "EXPIRES_IN", 1);
         ReflectionTestUtils.setField(tokenHelper, "SECRET", "mySecretKeyThatIsLongEnoughForHS256Algorithm");
         ReflectionTestUtils.setField(tokenHelper, "APP_NAME", "test-app");
@@ -43,7 +42,6 @@ public class TokenHelperTest {
 
     @Test
     public void testGetUsernameFromToken() {
-        DateTimeUtils.setCurrentMillisFixed(System.currentTimeMillis());
         ReflectionTestUtils.setField(tokenHelper, "EXPIRES_IN", 60000);
         String token = tokenHelper.generateToken("testuser");
         String username = tokenHelper.getUsernameFromToken(token);
@@ -51,10 +49,11 @@ public class TokenHelperTest {
     }
 
     @Test
-    public void testExpiredToken() {
+    public void testExpiredToken() throws InterruptedException {
+        ReflectionTestUtils.setField(tokenHelper, "EXPIRES_IN", 1);
         String token = tokenHelper.generateToken("testuser");
-        // Token is created at time 20ms with 1ms expiration
-        // So it's already expired
+        // Wait for token to expire (1 second + buffer)
+        Thread.sleep(2000);
         String username = tokenHelper.getUsernameFromToken(token);
         // With expired token, should return null
         assertNull(username);

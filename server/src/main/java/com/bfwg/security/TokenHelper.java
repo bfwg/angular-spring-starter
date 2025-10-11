@@ -3,7 +3,6 @@ package com.bfwg.security;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
-import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -115,7 +114,7 @@ public class TokenHelper {
     }
 
     private long getCurrentTimeMillis() {
-        return DateTime.now().getMillis();
+        return System.currentTimeMillis();
     }
 
     private Date generateCurrentDate() {
@@ -123,8 +122,7 @@ public class TokenHelper {
     }
 
     private Date generateExpirationDate() {
-
-        return new Date(getCurrentTimeMillis() + this.EXPIRES_IN * 1000);
+        return new Date(getCurrentTimeMillis() + this.EXPIRES_IN * 1000L);
     }
 
     public String getToken(HttpServletRequest request) {

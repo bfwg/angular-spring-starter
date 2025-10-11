@@ -1,35 +1,112 @@
 package com.bfwg.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
 /**
- * Created by fan.jin on 2016-10-17.
+ * Data Transfer Object representing the state of a user's JWT token.
+ * 
+ * <p>This DTO is returned to clients upon successful authentication,
+ * containing the access token and its expiration time.</p>
+ * 
+ * <p>Uses JSON property annotations to maintain backwards compatibility
+ * with snake_case API contracts while following Java naming conventions.</p>
+ * 
+ * @author fan.jin
+ * @since 2016-10-17
  */
 public class UserTokenState {
-    private String access_token;
-    private Long expires_in;
 
+    @JsonProperty("access_token")
+    private String accessToken;
+
+    @JsonProperty("expires_in")
+    private Long expiresIn;
+
+    /**
+     * Default constructor creating an empty token state.
+     */
     public UserTokenState() {
-        this.access_token = null;
-        this.expires_in = null;
+        this.accessToken = null;
+        this.expiresIn = null;
     }
 
-    public UserTokenState(String access_token, long expires_in) {
-        this.access_token = access_token;
-        this.expires_in = expires_in;
+    /**
+     * Constructs a UserTokenState with token and expiration.
+     * 
+     * @param accessToken the JWT access token
+     * @param expiresIn the expiration time in seconds
+     */
+    public UserTokenState(String accessToken, long expiresIn) {
+        this.accessToken = accessToken;
+        this.expiresIn = expiresIn;
     }
 
-    public String getAccess_token() {
-        return access_token;
+    /**
+     * Gets the JWT access token.
+     * 
+     * @return the access token
+     */
+    public String getAccessToken() {
+        return accessToken;
     }
 
-    public void setAccess_token(String access_token) {
-        this.access_token = access_token;
+    /**
+     * Sets the JWT access token.
+     * 
+     * @param accessToken the access token
+     */
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 
-    public Long getExpires_in() {
-        return expires_in;
+    /**
+     * Gets the token expiration time in seconds.
+     * 
+     * @return the expiration time
+     */
+    public Long getExpiresIn() {
+        return expiresIn;
     }
 
-    public void setExpires_in(Long expires_in) {
-        this.expires_in = expires_in;
+    /**
+     * Sets the token expiration time in seconds.
+     * 
+     * @param expiresIn the expiration time
+     */
+    public void setExpiresIn(Long expiresIn) {
+        this.expiresIn = expiresIn;
+    }
+
+    /**
+     * Checks if the token is valid (non-null and non-empty).
+     * 
+     * @return true if token is valid, false otherwise
+     */
+    public boolean isValid() {
+        return accessToken != null && !accessToken.trim().isEmpty() && expiresIn != null && expiresIn > 0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UserTokenState)) return false;
+        UserTokenState that = (UserTokenState) o;
+        return Objects.equals(accessToken, that.accessToken) &&
+                Objects.equals(expiresIn, that.expiresIn);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(accessToken, expiresIn);
+    }
+
+    @Override
+    public String toString() {
+        return "UserTokenState{" +
+                "accessToken='***'" +
+                ", expiresIn=" + expiresIn +
+                '}';
     }
 }

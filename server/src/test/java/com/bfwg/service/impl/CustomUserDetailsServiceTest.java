@@ -29,8 +29,10 @@ public class CustomUserDetailsServiceTest {
 
     @Test
     public void testLoadUserByUsername_Success() {
-        User user = new User();
-        user.setUsername("testuser");
+        User user = User.builder()
+                .username("testuser")
+                .password("encoded_password")
+                .build();
 
         when(userRepository.findByUsername("testuser")).thenReturn(Optional.of(user));
 
@@ -50,8 +52,10 @@ public class CustomUserDetailsServiceTest {
 
     @Test
     public void testSave() {
-        User user = new User();
-        user.setUsername("newuser");
+        User user = User.builder()
+                .username("newuser")
+                .password("encoded_password")
+                .build();
 
         when(userRepository.save(user)).thenReturn(user);
 

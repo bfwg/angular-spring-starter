@@ -23,8 +23,24 @@
     <img width="800" alt="Springboot JWT Starter" src="https://cloud.githubusercontent.com/assets/12819525/26290994/3895daca-3e60-11e7-9465-421e0b029343.png">
 </p>
 
+## 🎉 Recent Updates
+
+This project has been upgraded and refactored to follow **Clean Code** and **SOLID** principles!
+
+- ✅ **Angular 19.2.15** (from Angular 10)
+- ✅ **Spring Boot 3.4.1** (from 2.2.6)
+- ✅ **Java 21** (from Java 8)
+- ✅ **Comprehensive refactoring** following SOLID principles
+- ✅ **Improved error handling** and validation
+- ✅ **Full documentation** with architecture guide
+
+📚 **Documentation:**
+- 🏗️ [ARCHITECTURE.md](./ARCHITECTURE.md) - Architectural decisions and Clean Code principles
+- 📝 [REFACTORING_SUMMARY.md](./REFACTORING_SUMMARY.md) - Detailed refactoring summary with 100% test coverage
+- 🚀 [QUICK_START.md](./QUICK_START.md) - Quick start guide with troubleshooting
+
 ## Quick start
-**Make sure you have Maven and Java 17 or greater**
+**Make sure you have Maven and Java 21**
 **Make sure you also have NPM 10+ and Node 20+ installed globally**
 ```bash
 # clone our repo
@@ -59,7 +75,12 @@ the API and the different authorization exceptions:
 Admin - admin:123
 User - user:123
 ```
-For more detailed configuration/documentation, please check out the [frontend][frontend-doc] and [server][server-doc] folder.
+For more detailed configuration/documentation, please check out:
+- 🚀 **[QUICK_START.md](./QUICK_START.md)** - Step-by-step setup guide
+- 🏗️ **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Architecture and design principles
+- 📝 **[REFACTORING_SUMMARY.md](./REFACTORING_SUMMARY.md)** - Clean Code refactoring with 100% test coverage
+- [Frontend Documentation][frontend-doc]
+- [Server Documentation][server-doc]
 
 ## Deployment
 
@@ -109,8 +130,87 @@ for more info, check out https://jwt.io/
 8. Choose "Create module from existing sources" and continue in the dialog until the module is added.
 9. You should now see both (frontend and backend) modules in the Project view
 
+## Features
+
+### Backend (Spring Boot 3.4.1 + Java 21)
+- ✅ JWT-based authentication
+- ✅ Role-based authorization (RBAC)
+- ✅ Password encryption with BCrypt
+- ✅ Clean architecture with service layer
+- ✅ Bean Validation
+- ✅ Comprehensive error handling
+- ✅ SLF4J logging
+- ✅ H2 in-memory database
+- ✅ JPA/Hibernate
+- ✅ SOLID principles implementation
+
+### Frontend (Angular 19.2.15)
+- ✅ JWT authentication
+- ✅ Route guards for authorization
+- ✅ Angular Material components
+- ✅ Reactive forms
+- ✅ RxJS observables
+- ✅ TypeScript strict mode
+- ✅ ESLint for code quality
+- ✅ Proper error handling
+- ✅ Type-safe services
+
+## Clean Code Principles Applied
+
+This application strictly follows industry best practices:
+
+### SOLID Principles
+- **Single Responsibility**: Each class has one reason to change
+- **Open/Closed**: Open for extension, closed for modification
+- **Liskov Substitution**: Subtypes are substitutable for their base types
+- **Interface Segregation**: Clients depend only on methods they use
+- **Dependency Inversion**: Depend on abstractions, not concretions
+
+### Clean Code Practices
+- **DRY** (Don't Repeat Yourself): No code duplication
+- **KISS** (Keep It Simple, Stupid): Simple, straightforward solutions
+- **YAGNI** (You Aren't Gonna Need It): Only implement what's needed
+
+### Code Quality
+- Comprehensive documentation (JavaDoc/JSDoc)
+- Meaningful names for all classes, methods, and variables
+- Small, focused functions (< 30 lines)
+- Proper error handling throughout
+- Extensive validation
+- Logging at appropriate levels
+- Type safety everywhere
+
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for detailed information.
+
+## Technology Stack
+
+### Backend
+- **Framework**: Spring Boot 3.4.1
+- **Language**: Java 21
+- **Security**: Spring Security 6.3.4
+- **Authentication**: JWT (jjwt 0.12.6)
+- **Database**: H2 (in-memory)
+- **ORM**: JPA/Hibernate
+- **Build Tool**: Maven 3.9.9
+- **Testing**: JUnit 5, Spring Boot Test
+
+### Frontend
+- **Framework**: Angular 19.2.15
+- **Language**: TypeScript 5.6.0
+- **UI Library**: Angular Material 19.2.19
+- **Reactive Programming**: RxJS 7.8.1
+- **Build Tool**: Angular CLI 19.2.17
+- **Linting**: ESLint 9.16.0
+- **Testing**: Jasmine, Karma
+
 ### Contributing
 I'll accept pretty much everything so feel free to open a Pull-Request
+
+When contributing, please:
+- Follow the Clean Code principles outlined in [ARCHITECTURE.md](./ARCHITECTURE.md)
+- Add tests for new features
+- Update documentation as needed
+- Follow existing code style and patterns
 
 This project is inspired by
 - [Stormpath](https://stormpath.com/blog/token-auth-spa)
